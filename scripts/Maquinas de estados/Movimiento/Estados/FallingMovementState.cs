@@ -14,6 +14,7 @@ namespace NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.Estados
 			if (!_player.IsNodeReady())
 				await ToSignal(_player, "ready");
 		}
+		
 		public override void Enter()
 		{
 			_player.SetAnimation("fall");

@@ -45,6 +45,7 @@ namespace NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.Estados
 				}
 			}
 		}
+		
 		public override void UpdatePhysics(double delta)
 		{
 			if (!_player.IsOnFloor())
