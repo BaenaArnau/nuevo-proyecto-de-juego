@@ -1,4 +1,47 @@
-# Godot 4+ specific ignores
+# --- Godot ---
+# Editor config, caches, import files and generated mono assemblies
 .godot/
+*.import
+.import/
+
+# Exported builds and export presets
+.export/
+export_presets.cfg
+
+# Godot mono / C# artifacts
+.mono/
+.godot/mono/
+.godot/mono/**
+
+# --- .NET / C# ---
+# Build folders
+bin/
+obj/
+
+# Visual Studio / JetBrains
+.vs/
 .vscode/
-/android/
+.idea/
+
+# User-specific files
+*.user
+*.suo
+*.userprefs
+*.csproj.user
+
+# Rider
+*.sln.iml
+
+# Symbols and debug
+*.pdb
+*.mdb
+
+# Other temporary
+*.log
+*.tmp
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# Keep project files and scenes tracked (do NOT ignore .tscn or .gd or .cs files)

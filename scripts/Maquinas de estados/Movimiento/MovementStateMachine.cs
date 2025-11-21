@@ -1,8 +1,11 @@
 using System.Collections.Generic;
 using Godot;
+using NuevoProyectodeJuego.scripts.Maquinas_de_estados;
 
-public partial class MovementStateMachine : Node
+namespace NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento
 {
+    public partial class MovementStateMachine : Node
+    {
 	[Export] public NodePath initialState;
 
     private Dictionary<string, State> _states;
@@ -51,5 +54,8 @@ public partial class MovementStateMachine : Node
         _current_state.Exit();
         _current_state = _states[key];
         _current_state.Enter();
-    }   
+    }
 }
+
+}
+

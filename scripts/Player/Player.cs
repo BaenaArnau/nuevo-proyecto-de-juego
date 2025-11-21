@@ -1,26 +1,29 @@
 using Godot;
 using System;
 
-public partial class Player : CharacterBody2D
+namespace NuevoProyectodeJuego.scripts.Player
 {
-	public const float Speed = 300.0f;
-	public const float JumpVelocity = -400.0f;
-
-	public override void _PhysicsProcess(double delta)
+	public partial class Player : CharacterBody2D
 	{
-		/*Vector2 velocity = Velocity;
-		// Add the gravity.
-		if (!IsOnFloor())
-			velocity += GetGravity() * (float)delta;
+		public const float Speed = 300.0f;
+		public const float JumpVelocity = -400.0f;
 
-		Velocity = velocity;
-		MoveAndSlide();*/
-	}
+		public override void _PhysicsProcess(double delta)
+		{
+			/*Vector2 velocity = Velocity;
+			// Add the gravity.
+			if (!IsOnFloor())
+				velocity += GetGravity() * (float)delta;
 
-	public void SetAnimation(string animationName)
-	{
-		AnimatedSprite2D animatedSprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
-		animatedSprite.Play(animationName);
-		GD.Print($"Setting animation to: {animationName}");
+			Velocity = velocity;
+			MoveAndSlide();*/
+		}
+
+		public void SetAnimation(string animationName)
+		{
+			AnimatedSprite2D animatedSprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
+			animatedSprite.Play(animationName);
+			GD.Print($"Setting animation to: {animationName}");
+		}
 	}
 }
