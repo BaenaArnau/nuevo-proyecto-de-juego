@@ -48,6 +48,10 @@ namespace NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.Estados
 				Vector2 velocity = _player.Velocity;
 				velocity += _player.GetGravity() * (float)delta;
 				_player.Velocity = velocity;
+
+				Vector2 direction = Input.GetVector("move_left", "move_right", "ui_up", "ui_down");
+				if (direction != Vector2.Zero)
+					_player.Velocity = new Vector2(direction.X * PlayerType.Speed, _player.Velocity.Y);
 				_player.MoveAndSlide();
 			}
 		}

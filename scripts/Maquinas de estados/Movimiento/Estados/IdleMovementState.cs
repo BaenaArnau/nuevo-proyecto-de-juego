@@ -1,7 +1,6 @@
 using Godot;
 using System;
 using PlayerType = NuevoProyectodeJuego.scripts.Player.Player;
-using NuevoProyectodeJuego.scripts.Maquinas_de_estados;
 
 namespace NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.Estados
 {
