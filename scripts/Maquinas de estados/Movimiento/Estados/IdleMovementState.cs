@@ -15,6 +15,9 @@ namespace NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.Estados
                 await ToSignal(_player, "ready");
         }
         
+        /// <summary>
+        /// Al entrar en el estado Idle: establece la animación y detiene la velocidad horizontal.
+        /// </summary>
         public override void Enter()
         {
             _player.SetAnimation("idle");
@@ -22,6 +25,8 @@ namespace NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.Estados
             _player.MoveAndSlide();
         }
 
+        /// <summary>Actualización por frame del estado Idle: decide transiciones en base a input/physics.</summary>
+        /// <param name="delta">Delta en segundos desde el último frame.</param>
         public override void Update(double delta)
         {
             if (!_player.IsOnFloor())
@@ -47,11 +52,13 @@ namespace NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.Estados
             }
         }
 
-        public override void HandleInput(InputEvent @event)
+        /// <summary>Procesa eventos de entrada no manejados cuando estamos en Idle.</summary>
+        /// <param name="ev">Evento de entrada recibido.</param>
+        public override void HandleInput(InputEvent ev)
         {
-            if (@event.IsActionPressed("move_left") || @event.IsActionPressed("move_right"))
+            if (ev.IsActionPressed("move_left") || ev.IsActionPressed("move_right"))
                 stateMachine.TransitionTo("RunningMovementState");
-            if (@event.IsActionPressed("jump") && _player.IsOnFloor())
+            if (ev.IsActionPressed("jump") && _player.IsOnFloor())
                 stateMachine.TransitionTo("JumpingMovementState");
         }
     }

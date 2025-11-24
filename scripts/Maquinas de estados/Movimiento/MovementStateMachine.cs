@@ -6,9 +6,13 @@ namespace NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento
 {
     public partial class MovementStateMachine : Node
     {
+        /// <summary>Ruta (NodePath) al estado inicial dentro de este nodo.</summary>
         [Export] public NodePath initialState;
 
+        /// <summary>Mapa de estados indexado por el <c>Node.Name</c> de cada estado.</summary>
         private Dictionary<string, State> _states;
+
+        /// <summary>Estado actualmente activo en la máquina.</summary>
         private State _current_state;
 
         public override void _Ready()
@@ -25,6 +29,7 @@ namespace NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento
                 }
             }
 
+            // Inicializar el estado actual a partir de la ruta exportada.
             _current_state = GetNode<State>(initialState);
             _current_state.Enter();
         }
@@ -44,10 +49,16 @@ namespace NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento
             _current_state.HandleInput(@event);
         }
 
+        /// <summary>
+        /// Pide la transición a otro estado por su clave (nombre del nodo).
+        /// Si la clave no existe o ya estamos en ese estado la petición se ignora.
+        /// </summary>
+        /// <param name="key">Nombre del nodo-estado destino dentro de este nodo.</param>
         public void TransitionTo(string key)
         {
             if (!_states.ContainsKey(key) || _current_state == _states[key])
             {
+                // Ignorar si la clave no existe o ya es el estado actual.
                 return;
             }
 

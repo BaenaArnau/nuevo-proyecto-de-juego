@@ -15,11 +15,14 @@ namespace NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.Estados
 				await ToSignal(_player, "ready");
 		}
 		
+		/// <summary>Al entrar en Falling: reproducir animación de caída.</summary>
 		public override void Enter()
 		{
 			_player.SetAnimation("fall");
 		}
 
+		/// <summary>Actualización por frame en Falling: transiciones al aterrizar.</summary>
+		/// <param name="delta">Delta en segundos.</param>
 		public override void Update(double delta)
 		{
 			if (_player.IsOnFloor() && _player.Velocity.X != 0)
@@ -34,25 +37,30 @@ namespace NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.Estados
 			}
 		}
 
-		public override void HandleInput(InputEvent @event)
+		/// <summary>Procesa eventos de entrada mientras se está en Falling.</summary>
+		/// <param name="ev">Evento de entrada recibido.</param>
+		public override void HandleInput(InputEvent ev)
 		{
-			if (!@event.IsActionPressed("move_left") || !@event.IsActionPressed("move_right") && _player.IsOnFloor())
+			if (!ev.IsActionPressed("move_left") || !ev.IsActionPressed("move_right") && _player.IsOnFloor())
 				stateMachine.TransitionTo("IdleMovementState");
-			if (@event.IsActionReleased("move_left") && @event.IsActionReleased("move_right") && _player.IsOnFloor())
+			if (ev.IsActionReleased("move_left") && ev.IsActionReleased("move_right") && _player.IsOnFloor())
 				stateMachine.TransitionTo("RunningMovementState");
 		}
 
+		/// <summary>Update de física en Falling: aplica gravedad y control horizontal inmediato en aire.</summary>
+		/// <param name="delta">Delta en segundos.</param>
 		public override void UpdatePhysics(double delta)
 		{
 			if (!_player.IsOnFloor())
 			{
 				Vector2 velocity = _player.Velocity;
 				velocity += _player.GetGravity() * (float)delta;
+				float move = Input.GetActionStrength("move_right") - Input.GetActionStrength("move_left");
+				if (Mathf.Abs(move) > 0f)
+					velocity.X = move * PlayerType.Speed;
+				else
+					velocity.X = 0f;
 				_player.Velocity = velocity;
-
-				Vector2 direction = Input.GetVector("move_left", "move_right", "ui_up", "ui_down");
-				if (direction != Vector2.Zero)
-					_player.Velocity = new Vector2(direction.X * PlayerType.Speed, _player.Velocity.Y);
 				_player.MoveAndSlide();
 			}
 		}

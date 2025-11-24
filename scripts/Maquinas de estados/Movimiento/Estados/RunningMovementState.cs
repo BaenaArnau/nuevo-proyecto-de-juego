@@ -15,13 +15,16 @@ namespace NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.Estados
 				await ToSignal(_player, "ready");
 		}
 
+		/// <summary>Al entrar en Running: reproducir animación de carrera y preparar estado.</summary>
 		public override void Enter()
 		{
 			_player.SetAnimation("run");
 		}
 		
-		public override void Update(double delta)
-		{
+	/// <summary>Actualización por frame del estado Running: controla transiciones por physics o input.</summary>
+	/// <param name="delta">Delta en segundos.</param>
+	public override void Update(double delta)
+	{
 			if (!_player.IsOnFloor())
 			{
 				GD.Print("Transitioning to falling or jumping state from running.");
@@ -43,6 +46,8 @@ namespace NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.Estados
 			}
 		}
 
+		/// <summary>Update de física en Running: aplica la velocidad horizontal en función del input.</summary>
+		/// <param name="delta">Delta en segundos.</param>
 		public override void UpdatePhysics(double delta)
 		{
 			float move = Input.GetActionStrength("move_right") - Input.GetActionStrength("move_left");
@@ -53,9 +58,11 @@ namespace NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.Estados
 			_player.MoveAndSlide();
 		}
 
-		public override void HandleInput(InputEvent @event)
+		/// <summary>Procesa input no manejado en Running (ej. pulsación de salto).</summary>
+		/// <param name="ev">Evento de entrada recibido.</param>
+		public override void HandleInput(InputEvent ev)
 		{
-			if (@event.IsActionPressed("jump") && _player.IsOnFloor())
+			if (ev.IsActionPressed("jump") && _player.IsOnFloor())
 				stateMachine.TransitionTo("JumpingMovementState");
 		}
 	}

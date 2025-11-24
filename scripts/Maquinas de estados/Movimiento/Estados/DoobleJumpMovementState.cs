@@ -4,7 +4,7 @@ using PlayerType = NuevoProyectodeJuego.scripts.Player.Player;
 
 namespace NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.Estados
 {
-	public partial class JumpingMovementState : State
+	public partial class DoobleJumpMovementState : State
 	{
 		private PlayerType _player;
 
@@ -14,16 +14,20 @@ namespace NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.Estados
 			if (!_player.IsNodeReady())
 				await ToSignal(_player, "ready");
 		}
-		/// <summary>Acciones al inicio del salto: aplicar la velocidad vertical de salto.</summary>
+		/// <summary>Al entrar en el estado de doble salto aplica la velocidad vertical de doble salto.</summary>
 		public override void Enter()
 		{
 			_player.SetAnimation("jump");
 
+			GD.Print("Entered DoobleJumpMovementState (double jump)");
+
 			_player.Velocity = new Vector2(_player.Velocity.X, PlayerType.JumpVelocity);
 			_player.MoveAndSlide();
+
+			_player.IsMySecondJumpAvailable = false;
 		}
 
-		/// <summary>Actualización por frame durante el salto: gestiona transición a caída o al suelo.</summary>
+		/// <summary>Actualización por frame en doble salto: transiciones a caída o al aterrizar.</summary>
 		/// <param name="delta">Delta en segundos.</param>
 		public override void Update(double delta)
 		{
@@ -48,8 +52,8 @@ namespace NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.Estados
 				}
 			}
 		}
-		
-		/// <summary>Update de física durante el salto. Implementa control horizontal inmediato (stop si no hay input).</summary>
+
+		/// <summary>Update de física en doble salto: aplica gravedad y control horizontal inmediato.</summary>
 		/// <param name="delta">Delta en segundos.</param>
 		public override void UpdatePhysics(double delta)
 		{
@@ -57,7 +61,6 @@ namespace NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.Estados
 			{
 				Vector2 velocity = _player.Velocity;
 				velocity += _player.GetGravity() * (float)delta;
-				// Horizontal air control tipo Hollow Knight: detenerse inmediatamente si no hay input
 				float move = Input.GetActionStrength("move_right") - Input.GetActionStrength("move_left");
 				if (Mathf.Abs(move) > 0f)
 					velocity.X = move * PlayerType.Speed;
