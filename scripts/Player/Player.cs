@@ -11,13 +11,6 @@ namespace NuevoProyectodeJuego.scripts.Player
 		/// <summary>Velocidad vertical aplicada al iniciar un salto (negativa = hacia arriba).</summary>
 		public const float JumpVelocity = -500.0f;
 
-		/// <summary>
-		/// Bandera serializable que indica si el jugador aún puede realizar el segundo salto.
-		/// Se expone al editor para facilitar pruebas y depuración desde Godot.
-		/// </summary>
-		[Export]
-		public bool IsMySecondJumpAvailable = true;
-
 		/// <summary>Actualización de física del jugador. Mantener ligera para lógica central.</summary>
 		/// <param name="delta">Tiempo en segundos desde el último paso de física.</param>
 		public override void _PhysicsProcess(double delta) { }

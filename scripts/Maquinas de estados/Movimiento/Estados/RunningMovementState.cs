@@ -21,10 +21,10 @@ namespace NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.Estados
 			_player.SetAnimation("run");
 		}
 		
-	/// <summary>Actualización por frame del estado Running: controla transiciones por physics o input.</summary>
-	/// <param name="delta">Delta en segundos.</param>
-	public override void Update(double delta)
-	{
+		/// <summary>Actualización por frame del estado Running: controla transiciones por physics o input.</summary>
+		/// <param name="delta">Delta en segundos.</param>
+		public override void Update(double delta)
+		{
 			if (!_player.IsOnFloor())
 			{
 				GD.Print("Transitioning to falling or jumping state from running.");
