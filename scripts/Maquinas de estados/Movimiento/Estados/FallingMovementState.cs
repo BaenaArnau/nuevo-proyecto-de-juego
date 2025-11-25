@@ -21,30 +21,15 @@ namespace NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.Estados
 			_player.SetAnimation("fall");
 		}
 
-		/// <summary>Actualización por frame en Falling: transiciones al aterrizar.</summary>
+		/// <summary>Actualización por frame en Falling: transiciones al aterrizar o doble salto.</summary>
 		/// <param name="delta">Delta en segundos.</param>
 		public override void Update(double delta)
 		{
-			if (_player.IsOnFloor() && _player.Velocity.X != 0)
-			{
-				GD.Print("Transitioning to running state from falling.");
-				stateMachine.TransitionTo("RunningMovementState");    
-			}
 			if (_player.IsOnFloor() && _player.Velocity.X == 0)
 			{
 				GD.Print("Transitioning to idle state from falling.");
 				stateMachine.TransitionTo("IdleMovementState");
 			}
-		}
-
-		/// <summary>Procesa eventos de entrada mientras se está en Falling.</summary>
-		/// <param name="ev">Evento de entrada recibido.</param>
-		public override void HandleInput(InputEvent ev)
-		{
-			if (!ev.IsActionPressed("move_left") || !ev.IsActionPressed("move_right") && _player.IsOnFloor())
-				stateMachine.TransitionTo("IdleMovementState");
-			if (ev.IsActionReleased("move_left") && ev.IsActionReleased("move_right") && _player.IsOnFloor())
-				stateMachine.TransitionTo("RunningMovementState");
 		}
 
 		/// <summary>Update de física en Falling: aplica gravedad y control horizontal inmediato en aire.</summary>
@@ -63,6 +48,28 @@ namespace NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.Estados
 				_player.Velocity = velocity;
 				_player.MoveAndSlide();
 			}
+
+			if (_player.IsOnFloor())
+			{
+				if (Mathf.Abs(_player.Velocity.X) > 0.1f)
+				{
+					GD.Print("Transitioning to running state from jumping (landed).");
+					stateMachine.TransitionTo("RunningMovementState");
+				}
+				else
+				{
+					GD.Print("Transitioning to idle state from jumping (landed).");
+					stateMachine.TransitionTo("IdleMovementState");
+				}
+			}
+		}
+
+		/// <summary>Procesa eventos de entrada mientras se está en Falling.</summary>
+		/// <param name="ev">Evento de entrada recibido.</param>
+		public override void HandleInput(InputEvent ev)
+		{
+			if (ev.IsActionPressed("jump") && _player.DoubleJumpAvailable)
+				stateMachine.TransitionTo("DoubleJumpMovementState");
 		}
 	}
 }

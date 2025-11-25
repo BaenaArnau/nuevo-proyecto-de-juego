@@ -18,6 +18,7 @@ namespace NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.Estados
 		/// <summary>Al entrar en Running: reproducir animación de carrera y preparar estado.</summary>
 		public override void Enter()
 		{
+			_player.DoubleJumpAvailable = true;
 			_player.SetAnimation("run");
 		}
 		

@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://bjsf3q6hvbyji"]
+[gd_scene load_steps=58 format=3 uid="uid://bjsf3q6hvbyji"]
 
 [ext_resource type="Texture2D" uid="uid://dytn1kitsc804" path="res://assets/Main Characters/Ninja Frog/Idle (32x32).png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://b0m5xni6ow08l" path="res://scripts/Player/Player.cs" id="1_g2els"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://cqr06fk3t2li3" path="res://scripts/Maquinas de estados/Movimiento/Estados/RunningMovementState.cs" id="11_d2wvv"]
 [ext_resource type="Script" uid="uid://bqdyvw1r6p6lv" path="res://scripts/Maquinas de estados/Movimiento/Estados/JumpingMovementState.cs" id="12_3v2ag"]
 [ext_resource type="Script" uid="uid://do0bieokxjn43" path="res://scripts/Maquinas de estados/Movimiento/Estados/FallingMovementState.cs" id="13_jej6c"]
+[ext_resource type="Script" uid="uid://jci8sp5dmh5r" path="res://scripts/Maquinas de estados/Movimiento/Estados/DoubleJumpMovementState.cs" id="14_f1ej7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f1ej7"]
 atlas = ExtResource("2_smehm")
@@ -199,9 +200,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4r5pv")
 }],
-"loop": true,
+"loop": false,
 "name": &"double_jump",
-"speed": 5.0
+"speed": 24.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -235,7 +236,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"hit",
-"speed": 5.0
+"speed": 14.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -342,7 +343,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"wall_jump",
-"speed": 5.0
+"speed": 14.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g2els"]
@@ -353,8 +354,7 @@ script = ExtResource("1_g2els")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_f1ej7")
-animation = &"run"
-frame_progress = 0.7488575
+animation = &"double_jump"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2.5)
@@ -376,3 +376,6 @@ script = ExtResource("12_3v2ag")
 
 [node name="FallingMovementState" type="Node" parent="MovementStateMachine"]
 script = ExtResource("13_jej6c")
+
+[node name="DoubleJumpMovementState" type="Node" parent="MovementStateMachine"]
+script = ExtResource("14_f1ej7")

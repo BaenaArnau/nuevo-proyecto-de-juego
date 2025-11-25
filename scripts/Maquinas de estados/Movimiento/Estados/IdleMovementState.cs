@@ -17,9 +17,11 @@ namespace NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.Estados
         
         /// <summary>
         /// Al entrar en el estado Idle: establece la animación y detiene la velocidad horizontal.
+        /// También resetea el doble salto porque estamos en suelo.
         /// </summary>
         public override void Enter()
         {
+            _player.DoubleJumpAvailable = true;
             _player.SetAnimation("idle");
             _player.Velocity = new Vector2(0, _player.Velocity.Y);
             _player.MoveAndSlide();

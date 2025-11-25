@@ -4,7 +4,7 @@ using PlayerType = NuevoProyectodeJuego.scripts.Player.Player;
 
 namespace NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.Estados
 {
-	public partial class JumpingMovementState : State
+	public partial class DoubleJumpMovementState : State
 	{
 		private PlayerType _player;
 
@@ -14,18 +14,19 @@ namespace NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.Estados
 			if (!_player.IsNodeReady())
 				await ToSignal(_player, "ready");
 		}
-
-		/// <summary>Acciones al inicio del salto: aplicar la velocidad vertical de salto.</summary>
+		
+		/// <summary>Al entrar en el estado de doble salto aplica la velocidad vertical de doble salto.</summary>
 		public override void Enter()
 		{
-			_player.SetAnimation("jump");
+			_player.DoubleJumpAvailable = false;
+			_player.SetAnimation("double_jump");
+
+			GD.Print("Entered DoobleJumpMovementState (double jump)");
 
 			_player.Velocity = new Vector2(_player.Velocity.X, PlayerType.JumpVelocity);
 			_player.MoveAndSlide();
 		}
 
-		/// <summary>Actualización por frame durante el salto: gestiona transición a caída o al suelo.</summary>
-		/// <param name="delta">Delta en segundos.</param>
 		public override void Update(double delta)
 		{
 			if (_player.Velocity.Y >= 0)
@@ -34,18 +35,10 @@ namespace NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.Estados
 				stateMachine.TransitionTo("FallingMovementState");
 			}
 
-			if (_player.IsOnFloor())
+			if (_player.animatedSprite.Frame == 5)
 			{
-				if (Mathf.Abs(_player.Velocity.X) > 0.1f)
-				{
-					GD.Print("Transitioning to running state from jumping (landed).");
-					stateMachine.TransitionTo("RunningMovementState");
-				}
-				else
-				{
-					GD.Print("Transitioning to idle state from jumping (landed).");
-					stateMachine.TransitionTo("IdleMovementState");
-				}
+				GD.Print("Double jump animation finished, transitioning to falling state.");
+				_player.SetAnimation("jump");
 			}
 		}
 		
@@ -66,12 +59,6 @@ namespace NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.Estados
 				_player.Velocity = velocity;
 				_player.MoveAndSlide();
 			}
-		}
-
-		public override void HandleInput(InputEvent ev)
-		{
-			if (ev.IsActionPressed("jump") && _player.DoubleJumpAvailable)
-				stateMachine.TransitionTo("DoubleJumpMovementState");
 		}
 	}
 }
