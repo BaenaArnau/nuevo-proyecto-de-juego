@@ -68,8 +68,15 @@ namespace NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.Estados
 		/// <param name="ev">Evento de entrada recibido.</param>
 		public override void HandleInput(InputEvent ev)
 		{
+			if (ev.IsActionPressed("jump") && _player.CoyoteTimeCounter > 0f)
+			{
+				stateMachine.TransitionTo("JumpingMovementState");
+				return;
+			}
 			if (ev.IsActionPressed("jump") && _player.DoubleJumpAvailable)
+			{
 				stateMachine.TransitionTo("DoubleJumpMovementState");
+			}
 		}
 	}
 }

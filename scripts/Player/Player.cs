@@ -13,6 +13,11 @@ namespace NuevoProyectodeJuego.scripts.Player
 
 		public bool DoubleJumpAvailable = true;
 
+        /// <summary>Duración máxima del salto coyote en segundos.</summary>
+        public const float CoyoteTimeMax = 0.15f;
+        /// <summary>Tiempo restante para salto coyote.</summary>
+        public float CoyoteTimeCounter = 0f;
+
 		public AnimatedSprite2D animatedSprite;
 
 		public override void _Ready()
@@ -28,6 +33,18 @@ namespace NuevoProyectodeJuego.scripts.Player
 				animatedSprite.FlipH = true;
 			else if (Velocity.X > 0f)
 				animatedSprite.FlipH = false;
+
+			// Actualiza el contador de coyote time
+			if (IsOnFloor())
+			{
+				CoyoteTimeCounter = CoyoteTimeMax;
+			}
+			else
+			{
+				CoyoteTimeCounter -= (float)delta;
+				if (CoyoteTimeCounter < 0f)
+					CoyoteTimeCounter = 0f;
+			}
 		}
 
 		/// <summary>

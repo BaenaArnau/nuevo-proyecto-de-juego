@@ -20,8 +20,10 @@ namespace NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.Estados
 		{
 			_player.SetAnimation("jump");
 
-			_player.Velocity = new Vector2(_player.Velocity.X, PlayerType.JumpVelocity);
-			_player.MoveAndSlide();
+            // Resetear coyote time al saltar
+            _player.CoyoteTimeCounter = 0f;
+            _player.Velocity = new Vector2(_player.Velocity.X, PlayerType.JumpVelocity);
+            _player.MoveAndSlide();
 		}
 
 		/// <summary>Actualización por frame durante el salto: gestiona transición a caída o al suelo.</summary>
