@@ -15,6 +15,9 @@ namespace NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento
         /// <summary>Estado actualmente activo en la máquina.</summary>
         private State _current_state;
 
+		/// <summary>Referencia al jugador para verificar si está muriendo.</summary>
+		private NuevoProyectodeJuego.scripts.Player.Player _player;
+
         public override void _Ready()
         {
             _states = new Dictionary<string, State>();
@@ -29,23 +32,36 @@ namespace NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento
                 }
             }
 
-            // Inicializar el estado actual a partir de la ruta exportada.
             _current_state = GetNode<State>(initialState);
             _current_state.Enter();
+
+			var parent = GetParent();
+			if (parent is NuevoProyectodeJuego.scripts.Player.Player player)
+				_player = player;
         }
 
         public override void _Process(double delta)
         {
+			if (_player != null && _player.IsDying)
+				return;
+			
             _current_state.Update(delta);
         }
 
         public override void _PhysicsProcess(double delta)
         {
+			if (_player != null && _player.IsDying)
+				return;
+			
             _current_state.UpdatePhysics(delta);
         }
 
         public override void _UnhandledInput(InputEvent @event)
         {
+			// No procesar input si el jugador está muriendo
+			if (_player != null && _player.IsDying)
+				return;
+			
             _current_state.HandleInput(@event);
         }
 

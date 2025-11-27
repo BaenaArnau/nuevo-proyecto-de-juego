@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dtwg6kltixrrg"]
+
+[ext_resource type="Script" uid="uid://b2m8npcyjvfga" path="res://scripts/Trampas/Sierra.cs" id="1_7koqq"]
+[ext_resource type="Texture2D" uid="uid://hg5pw86ddjy2" path="res://assets/Traps/Saw/Off.png" id="2_untav"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fws66"]
+radius = 15.666687
+
+[node name="Sierra" type="Area2D"]
+scale = Vector2(3, 3)
+script = ExtResource("1_7koqq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_untav")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_fws66")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

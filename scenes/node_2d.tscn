@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=4 uid="uid://bfcs2ntcb6p3x"]
+[gd_scene load_steps=8 format=4 uid="uid://bfcs2ntcb6p3x"]
 
 [ext_resource type="Texture2D" uid="uid://bbr1mhv8m6x0a" path="res://assets/Background/Green.png" id="1_rnjyy"]
 [ext_resource type="Texture2D" uid="uid://c07fbknla2wj5" path="res://assets/Terrain/Terrain (16x16).png" id="2_4vge2"]
 [ext_resource type="PackedScene" uid="uid://bjsf3q6hvbyji" path="res://scenes/player.tscn" id="3_rnjyy"]
+[ext_resource type="PackedScene" uid="uid://dtwg6kltixrrg" path="res://scenes/sierra.tscn" id="4_4vge2"]
+[ext_resource type="PackedScene" uid="uid://dfune0elld607" path="res://scenes/pato.tscn" id="5_04qyp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j7wrs"]
 texture = ExtResource("2_4vge2")
@@ -186,3 +188,9 @@ tile_set = SubResource("TileSet_fws66")
 [node name="CharacterBody2D" parent="." instance=ExtResource("3_rnjyy")]
 position = Vector2(155, 505)
 scale = Vector2(3, 3)
+
+[node name="Sierra" parent="." instance=ExtResource("4_4vge2")]
+position = Vector2(1008, 383)
+
+[node name="Pato" parent="." instance=ExtResource("5_04qyp")]
+position = Vector2(392, 533)

@@ -18,6 +18,9 @@ namespace NuevoProyectodeJuego.scripts.Player
         /// <summary>Tiempo restante para salto coyote.</summary>
         public float CoyoteTimeCounter = 0f;
 
+		/// <summary>Bool para indicar que el jugador está en proceso de muerte.</summary>
+		public bool IsDying = false;
+
 		public AnimatedSprite2D animatedSprite;
 
 		public override void _Ready()
@@ -34,11 +37,8 @@ namespace NuevoProyectodeJuego.scripts.Player
 			else if (Velocity.X > 0f)
 				animatedSprite.FlipH = false;
 
-			// Actualiza el contador de coyote time
 			if (IsOnFloor())
-			{
 				CoyoteTimeCounter = CoyoteTimeMax;
-			}
 			else
 			{
 				CoyoteTimeCounter -= (float)delta;
@@ -54,6 +54,8 @@ namespace NuevoProyectodeJuego.scripts.Player
 		/// <param name="animationName">Nombre de la animación a reproducir.</param>
 		public void SetAnimation(string animationName)
 		{
+			if (IsDying)
+				return;
 			
 			if (animatedSprite != null)
 			{
@@ -61,5 +63,26 @@ namespace NuevoProyectodeJuego.scripts.Player
 				GD.Print($"Setting animation to: {animationName}");
 			}
 		}
+
+		public async void Hit()
+		{
+			IsDying = true;
+			
+			animatedSprite.Play("hit");
+			
+			await ToSignal(animatedSprite, "animation_finished");
+			
+			GD.Print("Reloading scene after player hit animation finished.");
+			GetTree().ReloadCurrentScene();
+		}		
+	
+		/*public void Morir()
+		{
+			if (animatedSprite.Frame == 6)
+			{
+				GD.Print("Player has died.");
+				
+			}
+		}*/
 	}
 }
