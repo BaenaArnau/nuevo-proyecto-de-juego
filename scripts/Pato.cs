@@ -15,6 +15,8 @@ namespace NuevoProyectodeJuego.scripts.Enemigos
 
 		// Última componente Y del jugador para detectar el inicio del salto (edge detect)
 		private float _lastPlayerVelY = 0f;
+    
+		private bool canJump = true;
 		private Player.Player player;
     	public AnimatedSprite2D animatedSprite;
 
@@ -29,10 +31,11 @@ namespace NuevoProyectodeJuego.scripts.Enemigos
 		{
 			if (isInside && player != null)
 			{
-				if (player.Velocity.Y < -10f && _lastPlayerVelY >= -10f)
+				if (player.Velocity.Y < -10f && _lastPlayerVelY >= -10f && canJump)
 				{
 					animatedSprite.SetAnimation("jump");
 					LinearVelocity = new Vector2(LinearVelocity.X, JumpVelocity);
+          			canJump = false;
 				}
 
 				_lastPlayerVelY = player.Velocity.Y;
@@ -41,6 +44,12 @@ namespace NuevoProyectodeJuego.scripts.Enemigos
 			{
 				_lastPlayerVelY = 0f;
 			}
+
+			if (LinearVelocity.Y == 0)
+            {
+				animatedSprite.SetAnimation("idle");
+				canJump = true;
+            }
 		}
 
 		private void _on_area_2d_body_entered (Node2D body)
