@@ -11,6 +11,10 @@ namespace NuevoProyectodeJuego.scripts.Player
 		/// <summary>Velocidad vertical aplicada al iniciar un salto (negativa = hacia arriba).</summary>
 		public const float JumpVelocity = -500.0f;
 
+		/// <summary>Velocidad vertical aplicada al rebotar sobre un enemigo (negativa = hacia arriba).</summary>
+		public const float BounceVelocity = -300.0f;
+
+		/// <summary>Indica si el doble salto está disponible.</summary>
 		public bool DoubleJumpAvailable = true;
 
         /// <summary>Duración máxima del salto coyote en segundos.</summary>
