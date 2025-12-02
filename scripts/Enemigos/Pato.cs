@@ -92,20 +92,8 @@ namespace NuevoProyectodeJuego.scripts.Enemigos
 		/// <param name="body">El cuerpo que entró en el área</param>
 		private void _on_area_2d_body_entered (Node2D body)
 		{
-			if (body.IsInGroup("NinjaFrogGroup"))
-			{
-				if (body.Position.Y < this.Position.Y - 10)
-				{
-					IsDying = true;
-					GD.Print("Duck hit by player, dying.");
-					
-          			Die();
-
-			        player.Velocity = new Vector2(player.Velocity.X, Player.Player.BounceVelocity);
-					player.MoveAndSlide();
-					return;
-				}
-				
+			if (body.IsInGroup("NinjaFrogGroup") && !IsDying)
+			{	
 				GD.Print("Player hit by duck, dying.");
 				body.Call("Hit");
 			}
@@ -136,6 +124,21 @@ namespace NuevoProyectodeJuego.scripts.Enemigos
 			{
 				isInside = true; // El jugador está dentro del área de detección
 				this.player = p; // Guarda la referencia al jugador
+			}
+		}
+    
+		private void _on_damage_area_2d_body_entered (Node2D body)
+		{
+			if (body.IsInGroup("NinjaFrogGroup"))
+			{
+				IsDying = true;
+				GD.Print("Duck hit by player, dying.");
+
+				Die();
+
+				player.Velocity = new Vector2(player.Velocity.X, Player.Player.BounceVelocity);
+				player.MoveAndSlide();
+				return;
 			}
 		}
     
