@@ -1,7 +1,6 @@
 using Godot;
 using System;
 
-
 namespace NuevoProyectodeJuego.scripts.Enemigos
 {
 	/// <summary>
