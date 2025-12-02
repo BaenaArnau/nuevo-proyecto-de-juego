@@ -3,6 +3,9 @@ using System;
 
 namespace NuevoProyectodeJuego.scripts.Player
 {
+	/// <summary>
+	/// Clase que representa al jugador.
+	/// </summary>
 	public partial class Player : CharacterBody2D
 	{
 		/// <summary>Velocidad horizontal configurada del jugador (px/s).</summary>
@@ -25,8 +28,12 @@ namespace NuevoProyectodeJuego.scripts.Player
 		/// <summary>Bool para indicar que el jugador está en proceso de muerte.</summary>
 		public bool IsDying = false;
 
+		/// <summary> Sprite animado del jugador para controlar las animaciones.</summary>
 		public AnimatedSprite2D animatedSprite;
 
+		/// <summary>
+		/// Método llamado al iniciar el nodo.
+		/// </summary>
 		public override void _Ready()
 		{
 			animatedSprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
@@ -68,6 +75,9 @@ namespace NuevoProyectodeJuego.scripts.Player
 			}
 		}
 
+		/// <summary>
+		/// Método llamado cuando el jugador recibe daño.
+		/// </summary>
 		public async void Hit()
 		{
 			IsDying = true;
@@ -80,13 +90,13 @@ namespace NuevoProyectodeJuego.scripts.Player
 			GetTree().ReloadCurrentScene();
 		}		
 	
-		/*public void Morir()
-		{
-			if (animatedSprite.Frame == 6)
-			{
-				GD.Print("Player has died.");
+		// public void Morir()
+		// {
+		// 	if (animatedSprite.Frame == 6)
+		// 	{
+		// 		GD.Print("Player has died.");
 				
-			}
-		}*/
+		// 	}
+		// }
 	}
 }

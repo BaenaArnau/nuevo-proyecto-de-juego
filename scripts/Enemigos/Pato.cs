@@ -10,26 +10,43 @@ namespace NuevoProyectodeJuego.scripts.Enemigos
 	/// </summary>
 	public partial class Pato : RigidBody2D
 	{
-		// Velocidad de salto del pato (valor negativo para ir hacia arriba)
+		/// <summary>
+		/// Velocidad de salto del pato (valor negativo para ir hacia arriba).
+		/// </summary>
 		public const float JumpVelocity = -500.0f;
 		
-		// Indica si el jugador está dentro del área de detección del pato
+		/// <summary>
+		/// Indica si el jugador está dentro del área de detección del pato.
+		/// </summary>
 		private bool isInside = false;
 
-		// Valores exportados para configurar desde el editor (coinciden con pato.tscn)
+		/// <summary>
+		/// Velocidad de movimiento del pato.
+		/// </summary>
 		public float speed = 5.0f;
 
-		// Última componente Y de la velocidad del jugador para detectar el inicio del salto
+		/// <summary>
+		/// Última componente Y de la velocidad del jugador para detectar el inicio del salto.
+		/// </summary>
 		private float _lastPlayerVelY = 0f;
     
-		// Indica si el pato puede saltar (evita saltos múltiples en el aire)
+		/// <summary>
+		/// Indica si el pato puede saltar (evita saltos múltiples en el aire).
+		/// </summary>
 		private bool canJump = true;
 		
-		// Referencia al jugador cuando está en el área de detección
+		/// <summary>
+		/// Referencia al jugador cuando está en el área de detección.
+		/// </summary>
 		private Player.Player player;
 		
-		// Sprite animado del pato para controlar las animaciones
+		/// <summary>
+		/// Sprite animado del pato para controlar las animaciones.
+		/// </summary>
     	public AnimatedSprite2D animatedSprite;
+      
+		/// <summary>Bool para indicar que el jugador está en proceso de muerte.</summary>
+		public bool IsDying = false;
 
 		/// <summary>
 		/// Inicializa el pato obteniendo la referencia al AnimatedSprite2D.
@@ -47,7 +64,7 @@ namespace NuevoProyectodeJuego.scripts.Enemigos
 		/// <param name="delta">Tiempo transcurrido desde el último frame</param>
 		public override void _Process(double delta)
 		{
-			if (isInside && player != null)
+			if (isInside && player != null && !IsDying)
 			{
 				if (player.Velocity.Y < -10f && _lastPlayerVelY >= -10f && canJump)
 				{
@@ -77,14 +94,13 @@ namespace NuevoProyectodeJuego.scripts.Enemigos
 		{
 			if (body.IsInGroup("NinjaFrogGroup"))
 			{
-				if (body.Position.Y < this.Position.Y)
+				if (body.Position.Y < this.Position.Y - 10)
 				{
+					IsDying = true;
 					GD.Print("Duck hit by player, dying.");
 					
           			Die();
-					
-			        QueueFree();
-		
+
 			        player.Velocity = new Vector2(player.Velocity.X, Player.Player.BounceVelocity);
 					player.MoveAndSlide();
 					return;
@@ -142,13 +158,9 @@ namespace NuevoProyectodeJuego.scripts.Enemigos
 		/// </summary>
 		public async void Die()
 		{
-			// Reproduce la animación de ser golpeado
 			animatedSprite.Play("hit");
-			
-			// Espera a que la animación termine antes de eliminar el objeto
+			GD.Print("Duck is dying.");
 			await ToSignal(animatedSprite, "animation_finished");
-			
-			// Elimina el pato de la escena
 			QueueFree();
 		}
 	}

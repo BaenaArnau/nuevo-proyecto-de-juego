@@ -4,10 +4,19 @@ using PlayerType = NuevoProyectodeJuego.scripts.Player.Player;
 
 namespace NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.Estados
 {
+	/// <summary>
+	/// Estado de movimiento para el salto del jugador.
+	/// </summary>
 	public partial class JumpingMovementState : State
 	{
+		/// <summary>
+		/// Referencia al jugador.
+		/// </summary>
 		private PlayerType _player;
 
+		/// <summary>
+		/// Método llamado al iniciar el nodo.
+		/// </summary>
 		public override async void Ready()
 		{
 			_player = (PlayerType)GetTree().GetFirstNodeInGroup("NinjaFrogGroup");
