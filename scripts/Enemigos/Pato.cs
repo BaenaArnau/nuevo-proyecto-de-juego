@@ -127,6 +127,11 @@ namespace NuevoProyectodeJuego.scripts.Enemigos
 			}
 		}
     
+		/// <summary>
+		/// Se ejecuta cuando un cuerpo entra en el área de daño del pato.
+		/// Si el jugador toca esta área, el pato muere y el jugador rebota.
+		/// </summary>
+		/// <param name="body">El cuerpo que entró en el área</param>
 		private void _on_damage_area_2d_body_entered (Node2D body)
 		{
 			if (body.IsInGroup("NinjaFrogGroup"))
