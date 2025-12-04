@@ -13,8 +13,27 @@ namespace NuevoProyectodeJuego.scripts.Maquinas_de_estados
         /// <summary>
         /// Referencia a la máquina de estados que contiene este estado.
         /// Se asigna desde <see cref="MovementStateMachine"/> en tiempo de preparación.
+        /// Expuesta como lectura pública pero solo asignable internamente por la máquina.
         /// </summary>
-        public MovementStateMachine stateMachine;
+        private MovementStateMachine _stateMachine;
+        /// <summary>
+        /// Propiedad pública para acceder a la máquina de estados. El setter es interno.
+        /// </summary>
+        public MovementStateMachine StateMachine
+        {
+            get => _stateMachine;
+            internal set
+            {
+                _stateMachine = value;
+                // Mantener el campo protegido `stateMachine` para compatibilidad con estados existentes.
+                stateMachine = value;
+            }
+        }
+
+        /// <summary>
+        /// Campo protegido mantenido por compatibilidad. Los estados existentes usan `stateMachine`.
+        /// </summary>
+        protected MovementStateMachine stateMachine;
 
         /// <summary>Se invoca cuando el estado empieza (se entra en él).</summary>
         public virtual void Enter() { }
@@ -22,8 +41,9 @@ namespace NuevoProyectodeJuego.scripts.Maquinas_de_estados
         /// <summary>Se invoca cuando el estado termina (se sale de él).</summary>
         public virtual void Exit() { }
 
-        /// <summary>Se invoca una sola vez cuando se inicializa el nodo/estado.</summary>
-        public new virtual void Ready() { }
+        /// <summary>Se invoca una sola vez cuando se inicializa el nodo/estado.
+        /// Versión asíncrona para permitir esperas (por ejemplo, espera a otros nodos).</summary>
+        public new virtual System.Threading.Tasks.Task Ready() { return System.Threading.Tasks.Task.CompletedTask; }
 
         /// <summary>Actualización por frame (non-physics). Delta en segundos.</summary>
         /// <param name="delta">Tiempo en segundos desde el último frame.</param>
@@ -33,8 +53,8 @@ namespace NuevoProyectodeJuego.scripts.Maquinas_de_estados
         /// <param name="delta">Tiempo en segundos desde la última física.</param>
         public virtual void UpdatePhysics(double delta) { }
 
-    /// <summary>Procesa eventos de entrada no manejados (unhandled input).</summary>
-    /// <param name="ev">Evento de entrada recibido.</param>
-    public virtual void HandleInput(InputEvent ev) { }
+        /// <summary>Procesa eventos de entrada no manejados (unhandled input).</summary>
+        /// <param name="ev">Evento de entrada recibido.</param>
+        public virtual void HandleInput(InputEvent ev) { }
     }
 }

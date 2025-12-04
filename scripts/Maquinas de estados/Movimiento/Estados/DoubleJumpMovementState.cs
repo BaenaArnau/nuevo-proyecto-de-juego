@@ -3,12 +3,21 @@ using System;
 using PlayerType = NuevoProyectodeJuego.scripts.Player.Player;
 
 namespace NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.Estados
-{
+{	
+	/// <summary>
+	/// Estado de movimiento para el doble salto del jugador.
+	/// </summary>
 	public partial class DoubleJumpMovementState : State
 	{
+		/// <summary>
+		/// Referencia al jugador.
+		/// </summary>
 		private PlayerType _player;
 
-		public override async void Ready()
+		/// <summary>
+		/// Método llamado al iniciar el nodo.
+		/// </summary>
+		public override async System.Threading.Tasks.Task Ready()
 		{
 			_player = (PlayerType)GetTree().GetFirstNodeInGroup("NinjaFrogGroup");
 			if (!_player.IsNodeReady())
@@ -27,6 +36,8 @@ namespace NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.Estados
 			_player.MoveAndSlide();
 		}
 
+		/// <summary>Update por frame en doble salto: transiciones a caída al empezar a descender.</summary>
+		/// <param name="delta">Delta en segundos.</param>
 		public override void Update(double delta)
 		{
 			if (_player.Velocity.Y >= 0)

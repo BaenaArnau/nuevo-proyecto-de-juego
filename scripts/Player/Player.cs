@@ -3,6 +3,9 @@ using System;
 
 namespace NuevoProyectodeJuego.scripts.Player
 {
+	/// <summary>
+	/// Clase que representa al jugador.
+	/// </summary>
 	public partial class Player : CharacterBody2D
 	{
 		/// <summary>Velocidad horizontal configurada del jugador (px/s).</summary>
@@ -11,21 +14,51 @@ namespace NuevoProyectodeJuego.scripts.Player
 		/// <summary>Velocidad vertical aplicada al iniciar un salto (negativa = hacia arriba).</summary>
 		public const float JumpVelocity = -500.0f;
 
-		public bool DoubleJumpAvailable = true;
+		/// <summary>Velocidad vertical aplicada al rebotar sobre un enemigo (negativa = hacia arriba).</summary>
+		public const float BounceVelocity = -300.0f;
 
-        /// <summary>Duración máxima del salto coyote en segundos.</summary>
-        public const float CoyoteTimeMax = 0.15f;
-        /// <summary>Tiempo restante para salto coyote.</summary>
-        public float CoyoteTimeCounter = 0f;
+		/// <summary>Indica si el doble salto está disponible.</summary>
+		public bool DoubleJumpAvailable { get; internal set; } = true;
 
-		/// <summary>Bool para indicar que el jugador está en proceso de muerte.</summary>
-		public bool IsDying = false;
+		/// <summary>Duración máxima del salto coyote en segundos.</summary>
+		public const float CoyoteTimeMax = 0.15f;
+		/// <summary>Tiempo restante para salto coyote (lectura pública, modificación privada).</summary>
+		private float _coyoteTimeCounter;
+		public float CoyoteTimeRemaining => _coyoteTimeCounter;
 
-		public AnimatedSprite2D animatedSprite;
+		/// <summary>
+		/// Compatibilidad: propiedad con el nombre antiguo usada por estados externos.
+		/// Permite lectura pública y asignación interna.
+		/// </summary>
+		public float CoyoteTimeCounter { get => _coyoteTimeCounter; internal set => _coyoteTimeCounter = value; }
 
+		/// <summary>
+		/// Compatibilidad: exponer AnimatedSprite2D como propiedad pública para estados que lo usan directamente.
+		/// </summary>
+		public AnimatedSprite2D animatedSprite
+		{
+			get
+			{
+				if (_animatedSpriteNode is AnimatedSprite2D aspr)
+					return aspr;
+				return GetNode<AnimatedSprite2D>("AnimatedSprite2D");
+			}
+		}
+
+		/// <summary>Bool para indicar que el jugador está en proceso de muerte (solo lectura externa).</summary>
+		public bool IsDying { get; private set; }
+
+		/// <summary> Sprite animado del jugador para controlar las animaciones (privado).</summary>
+		private Node _animatedSpriteNode;
+
+		/// <summary>
+		/// Método llamado al iniciar el nodo.
+		/// </summary>
 		public override void _Ready()
 		{
-			animatedSprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
+			_animatedSpriteNode = GetNodeOrNull("AnimatedSprite2D");
+			if (_animatedSpriteNode == null)
+				GD.PrintErr("AnimatedSprite2D no encontrado en Player. Comprueba la escena.");
 		}
 
 		/// <summary>Actualización de física del jugador. Mantener ligera para lógica central.</summary>
@@ -33,17 +66,23 @@ namespace NuevoProyectodeJuego.scripts.Player
 		public override void _PhysicsProcess(double delta) 
 		{
 			if (Velocity.X < 0f)
-				animatedSprite.FlipH = true;
+			{
+				if (_animatedSpriteNode is AnimatedSprite2D aspr)
+					aspr.FlipH = true;
+			}
 			else if (Velocity.X > 0f)
-				animatedSprite.FlipH = false;
+			{
+				if (_animatedSpriteNode is AnimatedSprite2D aspr2)
+					aspr2.FlipH = false;
+			}
 
 			if (IsOnFloor())
-				CoyoteTimeCounter = CoyoteTimeMax;
+				_coyoteTimeCounter = CoyoteTimeMax;
 			else
 			{
-				CoyoteTimeCounter -= (float)delta;
-				if (CoyoteTimeCounter < 0f)
-					CoyoteTimeCounter = 0f;
+				_coyoteTimeCounter -= (float)delta;
+				if (_coyoteTimeCounter < 0f)
+					_coyoteTimeCounter = 0f;
 			}
 		}
 
@@ -57,32 +96,44 @@ namespace NuevoProyectodeJuego.scripts.Player
 			if (IsDying)
 				return;
 			
-			if (animatedSprite != null)
+			if (_animatedSpriteNode is AnimatedSprite2D aspr)
 			{
-				animatedSprite.Play(animationName);
+				aspr.Play(animationName);
 				GD.Print($"Setting animation to: {animationName}");
 			}
 		}
 
-		public async void Hit()
+		/// <summary>
+		/// Método llamado cuando el jugador recibe daño.
+		/// </summary>
+		public async System.Threading.Tasks.Task HitAsync()
 		{
-			IsDying = true;
-			
-			animatedSprite.Play("hit");
-			
-			await ToSignal(animatedSprite, "animation_finished");
-			
-			GD.Print("Reloading scene after player hit animation finished.");
-			GetTree().ReloadCurrentScene();
-		}		
-	
-		/*public void Morir()
-		{
-			if (animatedSprite.Frame == 6)
+			try
 			{
-				GD.Print("Player has died.");
-				
+				IsDying = true;
+				if (_animatedSpriteNode is AnimatedSprite2D aspr)
+				{
+					aspr.Play("hit");
+					await ToSignal(aspr, "animation_finished");
+				}
+				GD.Print("Reloading scene after player hit animation finished.");
+				GetTree().ReloadCurrentScene();
 			}
-		}*/
+			catch (Exception ex)
+			{
+				GD.PrintErr("Error en HitAsync: ", ex);
+			}
+		}
+	
+		// public void Morir()
+		// {
+		// 	if (animatedSprite.Frame == 6)
+		// 	{
+		// 		GD.Print("Player has died.");
+				
+		// 	}
+		// }
+
+
 	}
 }

@@ -1,7 +1,7 @@
-[gd_scene load_steps=32 format=3 uid="uid://dfune0elld607"]
+[gd_scene load_steps=33 format=3 uid="uid://dfune0elld607"]
 
 [ext_resource type="Texture2D" uid="uid://dmtv8d054duuq" path="res://assets/Enemies/Duck/Fall (36x36).png" id="1_4rrr4"]
-[ext_resource type="Script" uid="uid://v512a25atjbb" path="res://scripts/Pato.cs" id="1_x7n1l"]
+[ext_resource type="Script" uid="uid://v512a25atjbb" path="res://scripts/Enemigos/Pato.cs" id="1_x7n1l"]
 [ext_resource type="Texture2D" uid="uid://ca1f270yeu2rx" path="res://assets/Enemies/Duck/Hit (36x36).png" id="2_x7n1l"]
 [ext_resource type="Texture2D" uid="uid://ccituejfur3jd" path="res://assets/Enemies/Duck/Idle (36x36).png" id="3_g1r64"]
 [ext_resource type="Texture2D" uid="uid://c14l3c51wgbhv" path="res://assets/Enemies/Duck/Jump (36x36).png" id="4_8ag4g"]
@@ -117,7 +117,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_m62sg")
 }],
-"loop": true,
+"loop": false,
 "name": &"hit",
 "speed": 10.0
 }, {
@@ -186,29 +186,35 @@ animations = [{
 size = Vector2(34, 30)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x7n1l"]
-size = Vector2(72, 65)
+size = Vector2(73, 67.5)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4rrr4"]
 radius = 212.23572
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_x7n1l"]
+b = Vector2(88, 0)
 
 [node name="Pato" type="RigidBody2D"]
 script = ExtResource("1_x7n1l")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(2, 2)
+scale = Vector2(2.2, 2.2)
 sprite_frames = SubResource("SpriteFrames_anf5m")
-animation = &"idle"
+animation = &"hit"
 autoplay = "idle"
+frame = 4
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2, 7)
-scale = Vector2(2, 2)
+scale = Vector2(2.4, 2.4)
 shape = SubResource("RectangleShape2D_umrmv")
 
 [node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(1.2, 1.2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(2, 7.5)
+position = Vector2(1.5, 6.2500005)
 shape = SubResource("RectangleShape2D_x7n1l")
 
 [node name="TriggerArea2D" type="Area2D" parent="."]
@@ -217,6 +223,14 @@ shape = SubResource("RectangleShape2D_x7n1l")
 position = Vector2(2, 8)
 shape = SubResource("CircleShape2D_4rrr4")
 
+[node name="DamageArea2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageArea2D"]
+position = Vector2(-42, -34)
+shape = SubResource("SegmentShape2D_x7n1l")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="TriggerArea2D" to="." method="_on_trigger_area_2d_body_entered"]
 [connection signal="body_exited" from="TriggerArea2D" to="." method="_on_trigger_area_2d_body_exited"]
+[connection signal="body_entered" from="DamageArea2D" to="." method="_on_damage_area_2d_body_entered"]

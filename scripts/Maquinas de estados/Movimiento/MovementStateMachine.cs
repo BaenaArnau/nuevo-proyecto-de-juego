@@ -4,6 +4,9 @@ using NuevoProyectodeJuego.scripts.Maquinas_de_estados;
 
 namespace NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento
 {
+    /// <summary>
+    /// Máquina de estados para el movimiento del jugador.
+    /// </summary>
     public partial class MovementStateMachine : Node
     {
         /// <summary>Ruta (NodePath) al estado inicial dentro de este nodo.</summary>
@@ -18,6 +21,7 @@ namespace NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento
 		/// <summary>Referencia al jugador para verificar si está muriendo.</summary>
 		private NuevoProyectodeJuego.scripts.Player.Player _player;
 
+        /// <summary>Inicialización de la máquina de estados: carga estados hijos y establece el estado inicial.</summary>
         public override void _Ready()
         {
             _states = new Dictionary<string, State>();
@@ -26,7 +30,7 @@ namespace NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento
                 if (node is State s)
                 {
                     _states[node.Name] = s;
-                    s.stateMachine = this;
+                    s.StateMachine = this;
                     s.Ready();
                     s.Exit();
                 }
@@ -40,6 +44,8 @@ namespace NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento
 				_player = player;
         }
 
+        /// <summary>Procesamiento por frame: delega al estado actual.</summary>
+        /// <param name="delta">Delta en segundos desde el último frame.</param>
         public override void _Process(double delta)
         {
 			if (_player != null && _player.IsDying)
@@ -56,6 +62,9 @@ namespace NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento
             _current_state.UpdatePhysics(delta);
         }
 
+        /// <summary>Procesamiento de eventos de entrada: delega al estado actual.</summary>
+        /// <param name="event">Evento de entrada.</param>
+        /// <returns>Si el evento fue procesado.</returns>
         public override void _UnhandledInput(InputEvent @event)
         {
 			// No procesar input si el jugador está muriendo

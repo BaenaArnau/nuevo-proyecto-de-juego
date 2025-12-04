@@ -3,28 +3,46 @@ using System;
 
 namespace NuevoProyectodeJuego.scripts.Trampas
 {
+	/// <summary>
+	/// Clase que representa una trampa de sierra giratoria.
+	/// </summary>
 	public partial class Sierra : Area2D
 	{
-		public Sprite2D sprite;
+		/// <summary>
+		/// Nodo Sprite de la trampa (privado, casteado al usar).
+		/// </summary>
+		private Node _spriteNode;
 
-		// Called when the node enters the scene tree for the first time.
+		/// <summary>
+		/// Método llamado al iniciar el nodo.
+		/// </summary>
 		public override void _Ready()
 		{
-			sprite = GetNode<Sprite2D>("Sprite2D");
+			_spriteNode = GetNodeOrNull("Sprite2D");
+			if (_spriteNode == null)
+				GD.PrintErr("Sprite2D no encontrado en Sierra. Comprueba la escena.");
 		}
 
-		// Called every frame. 'delta' is the elapsed time since the previous frame.
+		/// <summary>
+		/// Método de procesamiento por frame.
+		/// </summary>
+		/// <param name="delta">Delta en segundos desde el último frame.</param>		
 		public override void _Process(double delta)
 		{
-			sprite.Rotation += (float)(delta * 10.0);
+			if (_spriteNode is Sprite2D spr)
+				spr.Rotation += (float)(delta * 10.0);
 		}
 
+		/// <summary>
+		/// Método llamado al detectar una colisión con otro cuerpo.
+		/// </summary>
+		/// <param name="body">El cuerpo que ha entrado en colisión.</param>
 		private void _on_body_entered(Node2D body)
 		{
-			if (body.IsInGroup("NinjaFrogGroup"))
+			if (body is NuevoProyectodeJuego.scripts.Player.Player p)
 			{
 				GD.Print("Player hit by saw trap, dying.");
-				body.Call("Hit");
+				_ = p.HitAsync();
 			}
 		}
 	}

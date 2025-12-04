@@ -1,0 +1,59 @@
+# Doxygen configuration file for "Nuevo Proyecto de Juego"
+
+PROJECT_NAME           = "Nuevo Proyecto de Juego"
+PROJECT_BRIEF          = "Juego Godot con scripts C# (documentación generada con Doxygen)"
+OUTPUT_DIRECTORY       = docs
+CREATE_SUBDIRS         = NO
+
+# Build
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = YES
+EXTRACT_STATIC         = YES
+EXTRACT_LOCAL_METHODS  = YES
+OPTIMIZE_OUTPUT_FOR_C  = NO
+OPTIMIZE_OUTPUT_JAVA   = NO
+OPTIMIZE_OUTPUT_VHDL   = NO
+
+# Input
+INPUT                  = scripts docs
+RECURSIVE              = YES
+FILE_PATTERNS          = *.cs *.tscn *.csproj *.md
+
+# Output formats
+GENERATE_HTML          = YES
+HTML_OUTPUT            = html
+HTML_DYNAMIC_SECTIONS  = NO
+## GENERATE_INDEX is obsolete in recent Doxygen versions; removed to avoid warnings
+HAVE_DOT               = YES
+# Ruta absoluta a dot.exe (Graphviz). Ajustada automáticamente si 'dot.exe' se encuentra en una ubicación común.
+DOT_PATH              = C:/Program Files/Graphviz/bin
+# If dot is not on PATH set DOT_PATH to the folder containing dot.exe, for example:
+# DOT_PATH = C:/Program Files/Graphviz/bin
+DOT_IMAGE_FORMAT       = svg
+DOT_GRAPH_MAX_NODES    = 50
+# CLASS_DIAGRAMS and DOT_TRANSPARENT are obsolete in newer Doxygen releases
+# Call/caller graphs are still configured via CALL_GRAPH/CALLER_GRAPH below.
+CALL_GRAPH             = YES
+CALLER_GRAPH           = YES
+DOT_MULTI_TARGETS      = YES
+GENERATE_LATEX         = NO
+
+# Appearance
+GENERATE_TREEVIEW      = YES
+FULL_PATH_NAMES        = NO
+STRIP_FROM_PATH        = ${PROJECT_SOURCE_DIR}
+
+# Source browsing
+SOURCE_BROWSER         = YES
+INLINE_SOURCES         = YES
+USE_MDFILE_AS_MAINPAGE = docs/README.md
+HTML_EXTRA_STYLESHEET  = docs/custom.css
+HTML_EXTRA_FILES       = docs/custom.css
+
+# Encoding
+INPUT_ENCODING         = UTF-8
+
+# Misc
+QUIET                  = NO
+WARNINGS               = YES
+WARN_IF_UNDOCUMENTED   = YES
