@@ -26,6 +26,7 @@ var NAVTREE =
 [
   [ "Nuevo Proyecto de Juego", "index.html", [
     [ "Documentación del proyecto", "index.html", "index" ],
+    [ "Pato (enemigo)", "md__2home_2runner_2work_2nuevo-proyecto-de-juego_2nuevo-proyecto-de-juego_2scripts_2Enemigos_2README.html", null ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ]
     ] ],
