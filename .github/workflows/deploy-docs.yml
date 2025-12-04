@@ -2,7 +2,7 @@ name: Deploy Doxygen docs to GitHub Pages
 
 on:
   push:
-    branches: [ main, PatoEnSierraActividades ]
+    branches: [ main ]
   workflow_dispatch:
 
 jobs:
