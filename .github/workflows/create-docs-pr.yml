@@ -1,0 +1,80 @@
+name: Create Docs Pull Request
+
+on:
+  workflow_dispatch:
+    inputs:
+      target_branch:
+        description: 'Branch to update with docs'
+        required: true
+        default: 'main'
+      docs_branch:
+        description: 'Branch that contains generated docs'
+        required: true
+        default: 'gh-pages'
+      method:
+        description: 'How to copy files: checkout or worktree'
+        required: true
+        default: 'checkout'
+
+jobs:
+  create-docs-pr:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Fetch docs branch
+        run: git fetch origin ${{ github.event.inputs.docs_branch }} --depth=1
+
+      - name: Create branch from target
+        run: |
+          git fetch origin ${{ github.event.inputs.target_branch }} --depth=1
+          git checkout -b docs-for-${{ github.event.inputs.target_branch }} origin/${{ github.event.inputs.target_branch }}
+
+      - name: Copy docs (checkout)
+        if: ${{ github.event.inputs.method == 'checkout' }}
+        run: |
+          git checkout origin/${{ github.event.inputs.docs_branch }} -- docs/html || true
+
+      - name: Copy docs (worktree)
+        if: ${{ github.event.inputs.method == 'worktree' }}
+        run: |
+          tmpdir=$(mktemp -d)
+          git worktree add --detach "$tmpdir" origin/${{ github.event.inputs.docs_branch }}
+          mkdir -p docs
+          rsync -a --delete "$tmpdir/docs/html" docs/html || true
+          git worktree remove "$tmpdir"
+
+      - name: Commit changes
+        id: commit
+        run: |
+          git add -A docs/html
+          if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "No changes to commit"
+            exit 0
+          fi
+          git commit -m "chore(docs): update docs/html from ${{ github.event.inputs.docs_branch }}"
+          git push --set-upstream origin HEAD
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Create Pull Request
+        if: steps.commit.outputs.changed == 'true'
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "chore(docs): update docs/html from ${{ github.event.inputs.docs_branch }}"
+          committer: "GitHub <actions@github.com>"
+          author: "GitHub <actions@github.com>"
+          title: "Update docs from ${{ github.event.inputs.docs_branch }} to ${{ github.event.inputs.target_branch }}"
+          body: |
+            This PR updates the generated documentation (docs/html) from `${{ github.event.inputs.docs_branch }}` into `${{ github.event.inputs.target_branch }}` for review.
+          base: ${{ github.event.inputs.target_branch }}
+          branch: docs-for-${{ github.event.inputs.target_branch }}
+
