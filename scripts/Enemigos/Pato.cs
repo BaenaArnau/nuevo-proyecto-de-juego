@@ -62,7 +62,7 @@ namespace NuevoProyectodeJuego.scripts.Enemigos
 		/// <param name="delta">Tiempo transcurrido desde el último frame</param>
 		public override void _Process(double delta)
 		{
-			if (LinearVelocity.Y == 0)
+			if (LinearVelocity.Y == 0 && !IsDying)
 			{
 				SetAnimation("idle");
 				_canJump = true;
@@ -111,11 +111,9 @@ namespace NuevoProyectodeJuego.scripts.Enemigos
 		{
 			if (body is NuevoProyectodeJuego.scripts.Player.Player p)
 			{
-				_isInside = true; // El jugador está dentro del área de detección
-				this._playerNode = p; // Guarda la referencia al jugador (Node)
+				_isInside = true;
+				this._playerNode = p; 
 
-				// Conectamos la señal de salto del jugador para reaccionar de forma reactiva
-				// Usamos un Callable para conectar/desconectar correctamente.
 				var callable = new Callable(this, nameof(OnPlayerInJumping));
 				if (!p.IsConnected("InJumping", callable))
 					p.Connect("InJumping", callable);
@@ -162,10 +160,7 @@ namespace NuevoProyectodeJuego.scripts.Enemigos
 		public void SetAnimation(string animationName)
 		{
 			if (_animatedSpriteNode is AnimatedSprite2D aspr)
-			{
 				aspr.Play(animationName);
-				GD.Print($"Setting animation to: {animationName}");
-			}
 		}
 
 		/// <summary>

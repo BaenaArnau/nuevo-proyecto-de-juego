@@ -37,7 +37,6 @@ namespace NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.Estados
 		{
 			if (!_player.IsOnFloor())
 			{
-				GD.Print("Transitioning to falling or jumping state from running.");
 				if (_player.Velocity.Y < 0)
 					stateMachine.TransitionTo("JumpingMovementState");
 				else 
@@ -49,10 +48,7 @@ namespace NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.Estados
 			{
 				bool inputPressed = Input.IsActionPressed("move_left") || Input.IsActionPressed("move_right");
 				if (!inputPressed)
-				{
-					GD.Print("Transitioning to idle state from running.");
 					stateMachine.TransitionTo("IdleMovementState");
-				}
 			}
 		}
 

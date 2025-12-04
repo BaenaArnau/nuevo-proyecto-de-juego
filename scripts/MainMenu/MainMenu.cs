@@ -3,13 +3,15 @@ using System;
 
 public partial class MainMenu : Node
 {
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
+	private void _on_launch_pressed()
 	{
+		GD.Print("Launch button pressed. Starting the game...");
+		GetTree().ChangeSceneToFile("res://scenes/node_2d.tscn");
 	}
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
+	private void _on_exit_pressed()
 	{
+		GD.Print("Exit button pressed. Quitting the game...");
+		GetTree().Quit();
 	}
 }

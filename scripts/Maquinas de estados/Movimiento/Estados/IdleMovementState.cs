@@ -42,7 +42,6 @@ namespace NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.Estados
         {
             if (!_player.IsOnFloor())
             {
-                GD.Print("Transitioning to falling or jumping state from idle.");
                 if (_player.Velocity.Y < 0)
                     stateMachine.TransitionTo("JumpingMovementState");
                 else
@@ -51,16 +50,12 @@ namespace NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.Estados
             
             if (Input.IsActionPressed("move_left") || Input.IsActionPressed("move_right"))
             {
-                GD.Print("Transitioning to running state from idle (input polling).");
                 stateMachine.TransitionTo("RunningMovementState");
                 return;
             }
 
             if (Mathf.Abs(_player.Velocity.X) > 0)
-            {
-                GD.Print("Transitioning to running state from idle (velocity). ");
                 stateMachine.TransitionTo("RunningMovementState");
-            }
         }
 
         /// <summary>Procesa eventos de entrada no manejados cuando estamos en Idle.</summary>

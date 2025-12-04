@@ -59,8 +59,6 @@ namespace NuevoProyectodeJuego.scripts.Player
 		public override void _Ready()
 		{
 			_animatedSpriteNode = GetNodeOrNull("AnimatedSprite2D");
-			if (_animatedSpriteNode == null)
-				GD.PrintErr("AnimatedSprite2D no encontrado en Player. Comprueba la escena.");
 		}
 
 		/// <summary>Actualización de física del jugador. Mantener ligera para lógica central.</summary>
@@ -99,10 +97,8 @@ namespace NuevoProyectodeJuego.scripts.Player
 				return;
 			
 			if (_animatedSpriteNode is AnimatedSprite2D aspr)
-			{
 				aspr.Play(animationName);
-				GD.Print($"Setting animation to: {animationName}");
-			}
+
 		}
 
 		/// <summary>
@@ -118,24 +114,12 @@ namespace NuevoProyectodeJuego.scripts.Player
 					aspr.Play("hit");
 					await ToSignal(aspr, "animation_finished");
 				}
-				GD.Print("Reloading scene after player hit animation finished.");
-				GetTree().ReloadCurrentScene();
+				GetTree().CallDeferred("reload_current_scene");
 			}
-			catch (Exception ex)
+			catch (Exception)
 			{
-				GD.PrintErr("Error en HitAsync: ", ex);
+				// Error capturado en HitAsync; se omite el log para producción.
 			}
 		}
-	
-		// public void Morir()
-		// {
-		// 	if (animatedSprite.Frame == 6)
-		// 	{
-		// 		GD.Print("Player has died.");
-				
-		// 	}
-		// }
-
-
 	}
 }
