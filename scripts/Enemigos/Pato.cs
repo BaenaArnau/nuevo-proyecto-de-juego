@@ -177,12 +177,12 @@ namespace NuevoProyectodeJuego.scripts.Enemigos
 					GD.Print("Duck is dying.");
 					await ToSignal(aspr, "animation_finished");
 				}
-				QueueFree();
+				CallDeferred("queue_free");
 			}
 			catch (Exception ex)
 			{
 				GD.PrintErr("Error en DieAsync: ", ex);
-				QueueFree();
+				CallDeferred("queue_free");
 			}
 		}
 	}
