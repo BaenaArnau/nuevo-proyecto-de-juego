@@ -1,0 +1,5 @@
+<map id="NuevoProyectodeJuego.scripts.Enemigos.Pato" name="NuevoProyectodeJuego.scripts.Enemigos.Pato">
+<area shape="rect" id="Node000001" title="Clase que representa un enemigo tipo pato que salta cuando el jugador salta cerca de él...." alt="" coords="5,79,229,119"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="64,5,171,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="120,44,120,79,115,79,115,44"/>
+</map>

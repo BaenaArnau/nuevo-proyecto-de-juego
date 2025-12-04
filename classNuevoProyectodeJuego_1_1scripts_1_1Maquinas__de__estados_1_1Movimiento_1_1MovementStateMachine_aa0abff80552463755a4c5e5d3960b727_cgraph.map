@@ -1,0 +1,5 @@
+<map id="NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.MovementStateMachine._Ready" name="NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.MovementStateMachine._Ready">
+<area shape="rect" id="Node000001" title="Inicialización de la máquina de estados: carga estados hijos y establece el estado inicial." alt="" coords="5,5,328,60"/>
+<area shape="rect" id="Node000002" href="$classNuevoProyectodeJuego_1_1scripts_1_1Maquinas__de__estados_1_1State.html#a37da4d76055d9f0b12986c596dc85cad" title="Se invoca cuando el estado empieza (se entra en él)." alt="" coords="376,13,619,53"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="328,30,362,30,362,35,328,35"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="NuevoProyectodeJuego.scripts.Maquinas_de_estados.State.Exit" name="NuevoProyectodeJuego.scripts.Maquinas_de_estados.State.Exit">
+<area shape="rect" id="Node000001" title="Se invoca cuando el estado termina (se sale de él)." alt="" coords="376,13,609,53"/>
+<area shape="rect" id="Node000002" href="$classNuevoProyectodeJuego_1_1scripts_1_1Maquinas__de__estados_1_1Movimiento_1_1MovementStateMachine.html#a5c267d10474c175dc5b121b4ee0a89ca" title="Pide la transición a otro estado por su clave (nombre del nodo). Si la clave no existe o ya estamos e..." alt="" coords="5,5,328,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="362,35,329,35,329,30,362,30"/>
+</map>

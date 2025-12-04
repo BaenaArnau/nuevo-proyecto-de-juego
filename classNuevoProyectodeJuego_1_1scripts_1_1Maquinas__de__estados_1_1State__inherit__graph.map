@@ -1,0 +1,15 @@
+<map id="NuevoProyectodeJuego.scripts.Maquinas_de_estados.State" name="NuevoProyectodeJuego.scripts.Maquinas_de_estados.State">
+<area shape="rect" id="Node000001" title="Clase base para todos los estados de la máquina de movimiento. Contiene los métodos ciclo de vida que..." alt="" coords="109,170,333,210"/>
+<area shape="rect" id="Node000003" href="$classNuevoProyectodeJuego_1_1scripts_1_1Maquinas__de__estados_1_1Movimiento_1_1Estados_1_1DoubleJumpMovementState.html" title="Estado de movimiento para el doble salto del jugador." alt="" coords="381,5,688,60"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="252,159,309,112,344,89,380,69,408,58,410,63,382,74,347,94,312,117,256,163"/>
+<area shape="rect" id="Node000004" href="$classNuevoProyectodeJuego_1_1scripts_1_1Maquinas__de__estados_1_1Movimiento_1_1Estados_1_1FallingMovementState.html" title="Estado de movimiento para la caída del jugador." alt="" coords="381,84,688,139"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="314,164,424,136,426,141,316,169"/>
+<area shape="rect" id="Node000005" href="$classNuevoProyectodeJuego_1_1scripts_1_1Maquinas__de__estados_1_1Movimiento_1_1Estados_1_1IdleMovementState.html" title="Estado de movimiento para el estado Idle del jugador." alt="" coords="381,163,688,217"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="347,187,381,187,381,193,347,193"/>
+<area shape="rect" id="Node000006" href="$classNuevoProyectodeJuego_1_1scripts_1_1Maquinas__de__estados_1_1Movimiento_1_1Estados_1_1JumpingMovementState.html" title="Estado de movimiento para el salto del jugador." alt="" coords="381,241,688,296"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="316,211,426,239,424,244,314,216"/>
+<area shape="rect" id="Node000007" href="$classNuevoProyectodeJuego_1_1scripts_1_1Maquinas__de__estados_1_1Movimiento_1_1Estados_1_1RunningMovementState.html" title="Estado de movimiento para la carrera del jugador." alt="" coords="381,320,688,375"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="256,217,312,263,347,286,382,306,410,317,408,322,380,311,344,291,309,268,252,221"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,177,61,203"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="75,187,109,187,109,193,75,193"/>
+</map>

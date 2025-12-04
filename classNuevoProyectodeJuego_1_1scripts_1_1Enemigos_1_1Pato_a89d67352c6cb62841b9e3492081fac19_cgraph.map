@@ -1,0 +1,5 @@
+<map id="NuevoProyectodeJuego.scripts.Enemigos.Pato._on_damage_area_2d_body_entered" name="NuevoProyectodeJuego.scripts.Enemigos.Pato._on_damage_area_2d_body_entered">
+<area shape="rect" id="Node000001" title="Se ejecuta cuando un cuerpo entra en el área de daño del pato. Si el jugador toca esta área,..." alt="" coords="5,5,229,60"/>
+<area shape="rect" id="Node000002" href="$classNuevoProyectodeJuego_1_1scripts_1_1Enemigos_1_1Pato.html#a956011d1d3109fb4dafdaa53dcc2d637" title="Ejecuta la secuencia de muerte del pato. Reproduce la animación &quot;hit&quot;, espera a que termine y luego e..." alt="" coords="277,13,501,53"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="229,30,264,30,264,35,229,35"/>
+</map>

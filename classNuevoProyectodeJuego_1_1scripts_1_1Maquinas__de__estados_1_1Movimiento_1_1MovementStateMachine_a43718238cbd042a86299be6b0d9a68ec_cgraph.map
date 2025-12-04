@@ -1,0 +1,5 @@
+<map id="NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.MovementStateMachine._UnhandledInput" name="NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.MovementStateMachine._UnhandledInput">
+<area shape="rect" id="Node000001" title="Procesamiento de eventos de entrada: delega al estado actual." alt="" coords="5,5,328,60"/>
+<area shape="rect" id="Node000002" href="$classNuevoProyectodeJuego_1_1scripts_1_1Maquinas__de__estados_1_1State.html#a6bf47cf972e3ae0cd084e88136bbd54d" title="Procesa eventos de entrada no manejados (unhandled input)." alt="" coords="376,13,663,53"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="328,30,362,30,362,35,328,35"/>
+</map>

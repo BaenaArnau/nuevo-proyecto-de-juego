@@ -1,0 +1,7 @@
+<map id="NuevoProyectodeJuego.scripts.Maquinas_de_estados.State.Enter" name="NuevoProyectodeJuego.scripts.Maquinas_de_estados.State.Enter">
+<area shape="rect" id="Node000001" title="Se invoca cuando el estado empieza (se entra en él)." alt="" coords="376,53,619,93"/>
+<area shape="rect" id="Node000002" href="$classNuevoProyectodeJuego_1_1scripts_1_1Maquinas__de__estados_1_1Movimiento_1_1MovementStateMachine.html#aa0abff80552463755a4c5e5d3960b727" title="Inicialización de la máquina de estados: carga estados hijos y establece el estado inicial." alt="" coords="5,5,328,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="362,59,328,55,328,50,362,54"/>
+<area shape="rect" id="Node000003" href="$classNuevoProyectodeJuego_1_1scripts_1_1Maquinas__de__estados_1_1Movimiento_1_1MovementStateMachine.html#a5c267d10474c175dc5b121b4ee0a89ca" title="Pide la transición a otro estado por su clave (nombre del nodo). Si la clave no existe o ya estamos e..." alt="" coords="5,84,328,139"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="362,91,328,95,328,90,362,86"/>
+</map>

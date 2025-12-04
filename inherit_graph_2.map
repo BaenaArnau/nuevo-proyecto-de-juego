@@ -1,0 +1,17 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,141,61,167"/>
+<area shape="rect" id="Node000001" href="$classNuevoProyectodeJuego_1_1scripts_1_1Maquinas__de__estados_1_1Movimiento_1_1MovementStateMachine.html" title="Máquina de estados para el movimiento del jugador." alt="" coords="109,91,432,145"/>
+<area shape="poly" id="edge3_Node000000_Node000001" title=" " alt="" coords="75,145,109,140,110,145,75,150"/>
+<area shape="rect" id="Node000002" href="$classNuevoProyectodeJuego_1_1scripts_1_1Maquinas__de__estados_1_1State.html" title="Clase base para todos los estados de la máquina de movimiento. Contiene los métodos ciclo de vida que..." alt="" coords="159,170,383,210"/>
+<area shape="poly" id="edge4_Node000000_Node000002" title=" " alt="" coords="75,158,159,170,158,176,75,163"/>
+<area shape="rect" id="Node000003" href="$classNuevoProyectodeJuego_1_1scripts_1_1Maquinas__de__estados_1_1Movimiento_1_1Estados_1_1DoubleJumpMovementState.html" title="Estado de movimiento para el doble salto del jugador." alt="" coords="480,5,787,60"/>
+<area shape="poly" id="edge5_Node000002_Node000003" title=" " alt="" coords="394,173,430,155,447,135,454,114,461,91,478,69,496,58,499,62,482,73,465,93,459,115,452,137,434,159,397,178"/>
+<area shape="rect" id="Node000004" href="$classNuevoProyectodeJuego_1_1scripts_1_1Maquinas__de__estados_1_1Movimiento_1_1Estados_1_1FallingMovementState.html" title="Estado de movimiento para la caída del jugador." alt="" coords="480,84,787,139"/>
+<area shape="poly" id="edge6_Node000002_Node000004" title=" " alt="" coords="382,165,431,154,512,136,513,141,433,159,383,170"/>
+<area shape="rect" id="Node000005" href="$classNuevoProyectodeJuego_1_1scripts_1_1Maquinas__de__estados_1_1Movimiento_1_1Estados_1_1IdleMovementState.html" title="Estado de movimiento para el estado Idle del jugador." alt="" coords="480,163,787,217"/>
+<area shape="poly" id="edge7_Node000002_Node000005" title=" " alt="" coords="396,187,480,187,480,193,396,193"/>
+<area shape="rect" id="Node000006" href="$classNuevoProyectodeJuego_1_1scripts_1_1Maquinas__de__estados_1_1Movimiento_1_1Estados_1_1JumpingMovementState.html" title="Estado de movimiento para el salto del jugador." alt="" coords="480,241,787,296"/>
+<area shape="poly" id="edge8_Node000002_Node000006" title=" " alt="" coords="378,210,507,239,506,244,377,216"/>
+<area shape="rect" id="Node000007" href="$classNuevoProyectodeJuego_1_1scripts_1_1Maquinas__de__estados_1_1Movimiento_1_1Estados_1_1RunningMovementState.html" title="Estado de movimiento para la carrera del jugador." alt="" coords="480,320,787,375"/>
+<area shape="poly" id="edge9_Node000002_Node000007" title=" " alt="" coords="315,215,390,261,481,305,516,317,514,322,479,310,388,265,312,220"/>
+</map>

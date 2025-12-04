@@ -1,0 +1,12 @@
+<map id="NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.MovementStateMachine" name="NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.MovementStateMachine">
+<area shape="rect" id="Node000001" title="Máquina de estados para el movimiento del jugador." alt="" coords="5,197,328,252"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="311,5,367,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="299,34,256,53,217,82,197,109,184,139,171,198,166,196,179,138,192,106,213,78,253,48,296,29"/>
+<area shape="rect" id="Node000003" href="$classNuevoProyectodeJuego_1_1scripts_1_1Maquinas__de__estados_1_1State.html" title="Clase base para todos los estados de la máquina de movimiento. Contiene los métodos ciclo de vida que..." alt="" coords="227,80,451,120"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="341,44,341,80,336,80,336,44"/>
+<area shape="rect" id="Node000004" href="$classNuevoProyectodeJuego_1_1scripts_1_1Maquinas__de__estados_1_1Movimiento_1_1MovementStateMachine.html" title="Máquina de estados para el movimiento del jugador." alt="" coords="352,197,675,252"/>
+<area shape="poly" id="edge5_Node000004_Node000002" title=" " alt="" coords="381,25,428,39,481,63,531,96,553,118,570,143,575,158,570,175,553,199,548,196,566,172,570,158,566,145,549,121,528,100,478,67,426,44,379,30"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="244,128,214,146,193,171,178,198,174,196,188,168,210,142,241,123"/>
+<area shape="poly" id="edge6_Node000004_Node000003" title=" " alt="" coords="331,134,330,154,337,172,353,184,381,195,379,200,351,189,333,175,325,155,326,134"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="478,189,436,146,391,122,394,118,439,142,482,185"/>
+</map>

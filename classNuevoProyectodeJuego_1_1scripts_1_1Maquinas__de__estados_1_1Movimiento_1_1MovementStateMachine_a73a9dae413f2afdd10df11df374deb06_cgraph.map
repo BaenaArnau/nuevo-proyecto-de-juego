@@ -1,0 +1,5 @@
+<map id="NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.MovementStateMachine._PhysicsProcess" name="NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.MovementStateMachine._PhysicsProcess">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,328,60"/>
+<area shape="rect" id="Node000002" href="$classNuevoProyectodeJuego_1_1scripts_1_1Maquinas__de__estados_1_1State.html#a8503584e744d325f9a9b3b0bead586f9" title="Actualización en el paso de física (_PhysicsProcess). Delta en segundos." alt="" coords="376,5,631,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="328,30,362,30,362,35,328,35"/>
+</map>

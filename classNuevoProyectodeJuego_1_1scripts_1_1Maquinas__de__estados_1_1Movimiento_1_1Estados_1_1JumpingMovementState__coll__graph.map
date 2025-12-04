@@ -1,0 +1,14 @@
+<map id="NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.Estados.JumpingMovementState" name="NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.Estados.JumpingMovementState">
+<area shape="rect" id="Node000001" title="Estado de movimiento para el salto del jugador." alt="" coords="855,5,1161,60"/>
+<area shape="rect" id="Node000002" href="$classNuevoProyectodeJuego_1_1scripts_1_1Maquinas__de__estados_1_1State.html" title="Clase base para todos los estados de la máquina de movimiento. Contiene los métodos ciclo de vida que..." alt="" coords="665,20,721,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="735,30,855,30,855,35,735,35"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,104,61,129"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="65,95,110,74,232,39,330,24,430,20,557,23,665,28,665,34,557,29,430,26,331,29,233,45,112,79,67,99"/>
+<area shape="rect" id="Node000004" href="$classNuevoProyectodeJuego_1_1scripts_1_1Maquinas__de__estados_1_1Movimiento_1_1MovementStateMachine.html" title="Máquina de estados para el movimiento del jugador." alt="" coords="111,89,433,144"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="75,114,111,114,111,119,75,119"/>
+<area shape="rect" id="Node000005" href="$classNuevoProyectodeJuego_1_1scripts_1_1Maquinas__de__estados_1_1State.html" title="Clase base para todos los estados de la máquina de movimiento. Contiene los métodos ciclo de vida que..." alt="" coords="581,142,805,182"/>
+<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="66,134,112,154,177,170,234,179,284,183,331,183,431,177,557,169,581,168,581,173,557,174,431,182,332,189,284,189,233,184,176,175,110,159,63,139"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="423,84,665,35,666,41,424,89"/>
+<area shape="poly" id="edge7_Node000005_Node000004" title=" " alt="" coords="447,131,558,143,581,146,581,151,557,149,446,137"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="568,169,457,163,369,147,370,141,458,158,568,164"/>
+</map>
