@@ -17,7 +17,7 @@ namespace NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.Estados
 		/// <summary>
 		/// Método llamado al iniciar el nodo.
 		/// </summary>
-		public override async void Ready()
+		public override async System.Threading.Tasks.Task Ready()
 		{
 			_player = (PlayerType)GetTree().GetFirstNodeInGroup("NinjaFrogGroup");
 			if (!_player.IsNodeReady())

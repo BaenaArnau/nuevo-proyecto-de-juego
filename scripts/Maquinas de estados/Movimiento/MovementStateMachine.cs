@@ -30,7 +30,7 @@ namespace NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento
                 if (node is State s)
                 {
                     _states[node.Name] = s;
-                    s.stateMachine = this;
+                    s.StateMachine = this;
                     s.Ready();
                     s.Exit();
                 }

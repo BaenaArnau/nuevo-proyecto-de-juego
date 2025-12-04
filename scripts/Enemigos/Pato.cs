@@ -17,42 +17,44 @@ namespace NuevoProyectodeJuego.scripts.Enemigos
 		/// <summary>
 		/// Indica si el jugador está dentro del área de detección del pato.
 		/// </summary>
-		private bool isInside = false;
+		private bool _isInside;
 
 		/// <summary>
-		/// Velocidad de movimiento del pato.
+		/// Velocidad de movimiento del pato (editable en el inspector).
 		/// </summary>
-		public float speed = 5.0f;
+		[Export] public float Speed = 5.0f;
 
 		/// <summary>
 		/// Última componente Y de la velocidad del jugador para detectar el inicio del salto.
 		/// </summary>
-		private float _lastPlayerVelY = 0f;
+		private float _lastPlayerVelY;
     
 		/// <summary>
 		/// Indica si el pato puede saltar (evita saltos múltiples en el aire).
 		/// </summary>
-		private bool canJump = true;
+		private bool _canJump = true;
 		
 		/// <summary>
-		/// Referencia al jugador cuando está en el área de detección.
+		/// Referencia al jugador cuando está en el área de detección (Node guardado y casteado cuando hace falta).
 		/// </summary>
-		private Player.Player player;
-		
+		private Node _playerNode;
+
 		/// <summary>
-		/// Sprite animado del pato para controlar las animaciones.
+		/// Node del sprite animado del pato (se castea a AnimatedSprite2D al usar).
 		/// </summary>
-    	public AnimatedSprite2D animatedSprite;
-      
-		/// <summary>Bool para indicar que el jugador está en proceso de muerte.</summary>
-		public bool IsDying = false;
+		private Node _animatedSpriteNode;
+
+		/// <summary>Bool para indicar que el pato está en proceso de muerte (solo escritura interna).</summary>
+		public bool IsDying { get; private set; }
 
 		/// <summary>
 		/// Inicializa el pato obteniendo la referencia al AnimatedSprite2D.
 		/// </summary>
 		public override void _Ready()
 		{
-			animatedSprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
+			_animatedSpriteNode = GetNodeOrNull("AnimatedSprite2D");
+			if (_animatedSpriteNode == null)
+				GD.PrintErr("AnimatedSprite2D no encontrado en Pato. Comprueba la escena.");
 		}
 
 		/// <summary>
@@ -63,25 +65,25 @@ namespace NuevoProyectodeJuego.scripts.Enemigos
 		/// <param name="delta">Tiempo transcurrido desde el último frame</param>
 		public override void _Process(double delta)
 		{
-			if (isInside && player != null && !IsDying)
+			if (_isInside && _playerNode is NuevoProyectodeJuego.scripts.Player.Player playerRef && !IsDying)
 			{
-				if (player.Velocity.Y < -10f && _lastPlayerVelY >= -10f && canJump)
+				if (playerRef.Velocity.Y < -10f && _lastPlayerVelY >= -10f && _canJump)
 				{
-					animatedSprite.SetAnimation("jump");
+					SetAnimation("jump");
 					LinearVelocity = new Vector2(LinearVelocity.X, JumpVelocity);
-          			canJump = false; 
+					_canJump = false; 
 				}
 
-				_lastPlayerVelY = player.Velocity.Y;
+				_lastPlayerVelY = playerRef.Velocity.Y;
 			}
 			else
 				_lastPlayerVelY = 0f;
 
 			if (LinearVelocity.Y == 0)
-            {
-				animatedSprite.SetAnimation("idle");
-				canJump = true; 
-            }
+			{
+				SetAnimation("idle");
+				_canJump = true; 
+			}
 		}
 
 		/// <summary>
@@ -91,10 +93,10 @@ namespace NuevoProyectodeJuego.scripts.Enemigos
 		/// <param name="body">El cuerpo que entró en el área</param>
 		private void _on_area_2d_body_entered (Node2D body)
 		{
-			if (body.IsInGroup("NinjaFrogGroup") && !IsDying)
-			{	
+			if (body is NuevoProyectodeJuego.scripts.Player.Player p && !IsDying)
+			{ 
 				GD.Print("Player hit by duck, dying.");
-				body.Call("Hit");
+				_ = p.HitAsync();
 			}
 		}
 
@@ -105,10 +107,10 @@ namespace NuevoProyectodeJuego.scripts.Enemigos
 		/// <param name="body">El cuerpo que salió del área</param>
 		private void _on_trigger_area_2d_body_exited (Node2D body)
 		{
-			if (body is Player.Player)
+			if (body is NuevoProyectodeJuego.scripts.Player.Player)
 			{
-				isInside = false; // El jugador ya no está cerca
-				this.player = null; // Limpia la referencia al jugador
+				_isInside = false; // El jugador ya no está cerca
+				this._playerNode = null; // Limpia la referencia al jugador
 			}
 		}
 
@@ -119,10 +121,10 @@ namespace NuevoProyectodeJuego.scripts.Enemigos
 		/// <param name="body">El cuerpo que entró en el área</param>
 		private void _on_trigger_area_2d_body_entered (Node2D body)
 		{
-			if (body is Player.Player p)
+			if (body is NuevoProyectodeJuego.scripts.Player.Player p)
 			{
-				isInside = true; // El jugador está dentro del área de detección
-				this.player = p; // Guarda la referencia al jugador
+				_isInside = true; // El jugador está dentro del área de detección
+				this._playerNode = p; // Guarda la referencia al jugador (Node)
 			}
 		}
     
@@ -133,16 +135,15 @@ namespace NuevoProyectodeJuego.scripts.Enemigos
 		/// <param name="body">El cuerpo que entró en el área</param>
 		private void _on_damage_area_2d_body_entered (Node2D body)
 		{
-			if (body.IsInGroup("NinjaFrogGroup"))
+			if (body is NuevoProyectodeJuego.scripts.Player.Player p)
 			{
 				IsDying = true;
 				GD.Print("Duck hit by player, dying.");
 
-				Die();
+				_ = DieAsync();
 
-				player.Velocity = new Vector2(player.Velocity.X, Player.Player.BounceVelocity);
-				player.MoveAndSlide();
-				return;
+				p.Velocity = new Vector2(p.Velocity.X, NuevoProyectodeJuego.scripts.Player.Player.BounceVelocity);
+				p.MoveAndSlide();
 			}
 		}
     
@@ -152,9 +153,9 @@ namespace NuevoProyectodeJuego.scripts.Enemigos
 		/// <param name="animationName">Nombre de la animación a reproducir</param>
 		public void SetAnimation(string animationName)
 		{
-			if (animatedSprite != null)
+			if (_animatedSpriteNode is AnimatedSprite2D aspr)
 			{
-				animatedSprite.Play(animationName);
+				aspr.Play(animationName);
 				GD.Print($"Setting animation to: {animationName}");
 			}
 		}
@@ -163,12 +164,23 @@ namespace NuevoProyectodeJuego.scripts.Enemigos
 		/// Ejecuta la secuencia de muerte del pato.
 		/// Reproduce la animación "hit", espera a que termine y luego elimina el pato de la escena.
 		/// </summary>
-		public async void Die()
+		public async System.Threading.Tasks.Task DieAsync()
 		{
-			animatedSprite.Play("hit");
-			GD.Print("Duck is dying.");
-			await ToSignal(animatedSprite, "animation_finished");
-			QueueFree();
+			try
+			{
+				if (_animatedSpriteNode is AnimatedSprite2D aspr)
+				{
+					aspr.Play("hit");
+					GD.Print("Duck is dying.");
+					await ToSignal(aspr, "animation_finished");
+				}
+				QueueFree();
+			}
+			catch (Exception ex)
+			{
+				GD.PrintErr("Error en DieAsync: ", ex);
+				QueueFree();
+			}
 		}
 	}
 }

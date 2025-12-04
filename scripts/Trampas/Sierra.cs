@@ -9,16 +9,18 @@ namespace NuevoProyectodeJuego.scripts.Trampas
 	public partial class Sierra : Area2D
 	{
 		/// <summary>
-		/// Sprite de la trampa.
+		/// Nodo Sprite de la trampa (privado, casteado al usar).
 		/// </summary>
-		public Sprite2D sprite;
+		private Node _spriteNode;
 
 		/// <summary>
 		/// Método llamado al iniciar el nodo.
 		/// </summary>
 		public override void _Ready()
 		{
-			sprite = GetNode<Sprite2D>("Sprite2D");
+			_spriteNode = GetNodeOrNull("Sprite2D");
+			if (_spriteNode == null)
+				GD.PrintErr("Sprite2D no encontrado en Sierra. Comprueba la escena.");
 		}
 
 		/// <summary>
@@ -27,7 +29,8 @@ namespace NuevoProyectodeJuego.scripts.Trampas
 		/// <param name="delta">Delta en segundos desde el último frame.</param>		
 		public override void _Process(double delta)
 		{
-			sprite.Rotation += (float)(delta * 10.0);
+			if (_spriteNode is Sprite2D spr)
+				spr.Rotation += (float)(delta * 10.0);
 		}
 
 		/// <summary>
@@ -36,10 +39,10 @@ namespace NuevoProyectodeJuego.scripts.Trampas
 		/// <param name="body">El cuerpo que ha entrado en colisión.</param>
 		private void _on_body_entered(Node2D body)
 		{
-			if (body.IsInGroup("NinjaFrogGroup"))
+			if (body is NuevoProyectodeJuego.scripts.Player.Player p)
 			{
 				GD.Print("Player hit by saw trap, dying.");
-				body.Call("Hit");
+				_ = p.HitAsync();
 			}
 		}
 	}
