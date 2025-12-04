@@ -1,5 +1,0 @@
-<map id="NuevoProyectodeJuego.scripts.Enemigos.Pato._Process" name="NuevoProyectodeJuego.scripts.Enemigos.Pato._Process">
-<area shape="rect" id="Node000001" title="Procesa la lógica del pato en cada frame. Detecta cuando el jugador salta (cambio en velocidad Y) y h..." alt="" coords="5,5,213,48"/>
-<area shape="rect" id="Node000002" href="$class_nuevo_proyectode_juego_1_1scripts_1_1_enemigos_1_1_pato.html#a0163740c5daa3ab26d6a33d60a610676" title="Establece la animación del pato." alt="" coords="261,5,468,48"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="213,24,248,27,243,27,213,29"/>
-</map>
