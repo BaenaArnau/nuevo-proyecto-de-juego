@@ -14,6 +14,9 @@ namespace NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.Estados
 		/// </summary>
 		private PlayerType _player;
 
+		// Indica si en este estado se debe emitir la señal de salto cada frame
+		private bool _isEmittingJumpSignal = false;
+
 		/// <summary>
 		/// Método llamado al iniciar el nodo.
 		/// </summary>
@@ -29,10 +32,17 @@ namespace NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.Estados
 		{
 			_player.SetAnimation("jump");
 
-            // Resetear coyote time al saltar
             _player.CoyoteTimeCounter = 0f;
             _player.Velocity = new Vector2(_player.Velocity.X, PlayerType.JumpVelocity);
             _player.MoveAndSlide();
+
+			_isEmittingJumpSignal = true;
+			_player.EmitSignal(nameof(PlayerType.InJumping));
+		}
+
+		public override void Exit()
+		{
+			_isEmittingJumpSignal = false;
 		}
 
 		/// <summary>Actualización por frame durante el salto: gestiona transición a caída o al suelo.</summary>

@@ -228,6 +228,7 @@ shape = SubResource("CircleShape2D_4rrr4")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DamageArea2D"]
 position = Vector2(-42, -34)
 shape = SubResource("SegmentShape2D_x7n1l")
+debug_color = Color(0.997279, 0, 0.17911905, 0.41960785)
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

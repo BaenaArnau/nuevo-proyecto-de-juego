@@ -26,6 +26,8 @@ namespace NuevoProyectodeJuego.scripts.Player
 		private float _coyoteTimeCounter;
 		public float CoyoteTimeRemaining => _coyoteTimeCounter;
 
+		[Signal] public delegate void InJumpingEventHandler();
+
 		/// <summary>
 		/// Compatibilidad: propiedad con el nombre antiguo usada por estados externos.
 		/// Permite lectura pública y asignación interna.
