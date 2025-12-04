@@ -26,8 +26,10 @@ param(
 )
 
 function Run-Git([string]$cmd) {
-    Write-Host "git $cmd"
-    git $cmd
+    # Split the command into arguments so PowerShell invokes git with a proper argument array
+    $parts = $cmd -split ' '
+    Write-Host ("git " + ($parts -join ' '))
+    & git @parts
     return $LASTEXITCODE
 }
 
