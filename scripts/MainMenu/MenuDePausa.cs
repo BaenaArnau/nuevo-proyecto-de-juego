@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using NuevoProyectodeJuego.scripts.MainMenu.SubMenus;
 
 namespace NuevoProyectodeJuego.scripts.MainMenu
 {
@@ -9,8 +10,8 @@ namespace NuevoProyectodeJuego.scripts.MainMenu
 	/// </summary>
 	public partial class MenuDePausa : Control
 	{
-	[Export] private Button _continuar, _opciones, _salir, _exit;
-	[Export] private CanvasLayer _video, _sonido;
+		[Export] private Button _continuar, _opciones, _salir, _exit;
+		[Export] private CanvasLayer _video, _sonido;
 
 		/// <summary>
 		/// Inicializa el estado del menú.
