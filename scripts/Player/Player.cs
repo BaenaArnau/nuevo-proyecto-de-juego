@@ -118,7 +118,7 @@ namespace NuevoProyectodeJuego.scripts.Player
 			}
 			catch (Exception)
 			{
-				// Error capturado en HitAsync; se omite el log para producción.
+				GetTree().CallDeferred("reload_current_scene");
 			}
 		}
 	}

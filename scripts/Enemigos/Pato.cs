@@ -97,8 +97,8 @@ namespace NuevoProyectodeJuego.scripts.Enemigos
 				if (p.IsConnected("InJumping", callable))
 					p.Disconnect("InJumping", callable);
 
-				_isInside = false; // El jugador ya no está cerca
-				this._playerNode = null; // Limpia la referencia al jugador
+				_isInside = false;
+				this._playerNode = null; 
 			}
 		}
 

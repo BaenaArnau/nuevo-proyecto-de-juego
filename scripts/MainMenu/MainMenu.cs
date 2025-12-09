@@ -6,7 +6,7 @@ public partial class MainMenu : Node
 	private void _on_launch_pressed()
 	{
 		GD.Print("Launch button pressed. Starting the game...");
-		GetTree().ChangeSceneToFile("res://scenes/node_2d.tscn");
+		GetTree().ChangeSceneToFile("res://scenes/Niveles/node_2d.tscn");
 	}
 
 	private void _on_exit_pressed()

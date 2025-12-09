@@ -10,7 +10,7 @@ namespace NuevoProyectodeJuego.scripts.Scenes
 			if (body is NuevoProyectodeJuego.scripts.Player.Player)
 			{
 				GD.Print("Player entered next area, changing to next scene...");
-				GetTree().CallDeferred("change_scene_to_file", "res://scenes/level_2.tscn");
+				GetTree().CallDeferred("change_scene_to_file", "res://scenes/Niveles/level_2.tscn");
 			}
 		}
 	}
