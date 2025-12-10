@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bjsf3q6hvbyji" path="res://scenes/Player/player.tscn" id="4_yqi87"]
 [ext_resource type="PackedScene" uid="uid://dtwg6kltixrrg" path="res://scenes/Trampas/sierra.tscn" id="5_lxy38"]
 [ext_resource type="PackedScene" uid="uid://dfune0elld607" path="res://scenes/Enemigos/pato.tscn" id="6_6kb6f"]
-[ext_resource type="PackedScene" uid="uid://c0vydxagyq8pj" path="res://scenes/Menus/pausa.tscn" id="7_y2gkr"]
+[ext_resource type="PackedScene" uid="uid://cenbgkv52n2ts" path="res://scenes/Menus/PauseMenu.tscn" id="7_y2gkr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j7wrs"]
 texture = ExtResource("3_tk0d3")
@@ -211,6 +211,6 @@ shape = SubResource("RectangleShape2D_fws66")
 [node name="Pato2" parent="." instance=ExtResource("6_6kb6f")]
 position = Vector2(869, 404)
 
-[node name="CanvasLayer" parent="." instance=ExtResource("7_y2gkr")]
+[node name="PauseMenu" parent="." instance=ExtResource("7_y2gkr")]
 
 [connection signal="body_entered" from="NextArea2D" to="." method="_on_next_area_2d_body_entered"]

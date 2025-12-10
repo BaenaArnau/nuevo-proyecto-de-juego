@@ -1,0 +1,64 @@
+[gd_scene load_steps=3 format=3 uid="uid://cenbgkv52n2ts"]
+
+[ext_resource type="Script" uid="uid://i6om0l27gmce" path="res://scripts/Menu/PauseMenu.cs" id="1"]
+[ext_resource type="PackedScene" uid="uid://beoixew03so6a" path="res://scenes/Menus/SubMenus/settings.tscn" id="2"]
+
+[node name="PauseMenu" type="CanvasLayer" node_paths=PackedStringArray("_resumeButton", "_settingsButton", "_quitButton")]
+process_mode = 3
+visible = false
+script = ExtResource("1")
+_resumeButton = NodePath("Menu/Panel/VBox/ResumeButton")
+_settingsButton = NodePath("Menu/Panel/VBox/SettingsButton")
+_quitButton = NodePath("Menu/Panel/VBox/QuitButton")
+
+[node name="Background" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 0.5)
+
+[node name="Menu" type="CenterContainer" parent="."]
+anchors_preset = -1
+anchor_left = 0.25
+anchor_top = 0.25
+anchor_right = 0.75
+anchor_bottom = 0.75
+
+[node name="Panel" type="Panel" parent="Menu"]
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="Menu/Panel"]
+layout_mode = 0
+offset_left = -185.0
+offset_top = -101.0
+offset_right = 141.0
+offset_bottom = 56.0
+
+[node name="ResumeButton" type="Button" parent="Menu/Panel/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Continuar"
+
+[node name="SettingsButton" type="Button" parent="Menu/Panel/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Ajustes"
+
+[node name="QuitButton" type="Button" parent="Menu/Panel/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Salir"
+
+[node name="Settings2" parent="." instance=ExtResource("2")]
+visible = false
+anchors_preset = 15
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.0
+offset_top = 0.0
+
+[connection signal="pressed" from="Menu/Panel/VBox/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="Menu/Panel/VBox/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="Menu/Panel/VBox/QuitButton" to="." method="_on_quit_button_pressed"]

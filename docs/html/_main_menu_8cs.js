@@ -1,4 +1,4 @@
 var _main_menu_8cs =
 [
-    [ "MainMenu", "class_main_menu.html", "class_main_menu" ]
+    [ "NuevoProyectodeJuego.scripts.Menu.MainMenu", "class_nuevo_proyectode_juego_1_1scripts_1_1_menu_1_1_main_menu.html", "class_nuevo_proyectode_juego_1_1scripts_1_1_menu_1_1_main_menu" ]
 ];

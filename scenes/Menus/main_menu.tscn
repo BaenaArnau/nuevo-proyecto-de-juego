@@ -1,11 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://dslk3g1nkx32c"]
+[gd_scene load_steps=5 format=3 uid="uid://dslk3g1nkx32c"]
 
-[ext_resource type="Script" uid="uid://dp4nxduar80nn" path="res://scripts/MainMenu/MainMenu.cs" id="1_bqqt6"]
+[ext_resource type="Script" uid="uid://dp4nxduar80nn" path="res://scripts/Menu/MainMenu.cs" id="1_bqqt6"]
 [ext_resource type="Texture2D" uid="uid://cmmy0oqjwx21" path="res://assets/Background/Brown.png" id="1_ekxnf"]
 [ext_resource type="Texture2D" uid="uid://ibhdxwx1hljb" path="res://assets/MainMenu/cooltext497465168548738.png" id="2_bqqt6"]
+[ext_resource type="PackedScene" uid="uid://beoixew03so6a" path="res://scenes/Menus/SubMenus/settings.tscn" id="4_3b8pq"]
 
-[node name="MainMenu" type="Node"]
+[node name="MainMenu" type="Node" node_paths=PackedStringArray("settingsMenu", "launchButton", "exitButton", "settingsButton")]
 script = ExtResource("1_bqqt6")
+settingsMenu = NodePath("Settings2")
+launchButton = NodePath("Launch")
+exitButton = NodePath("Exit")
+settingsButton = NodePath("Settings")
 
 [node name="TextureRect2" type="TextureRect" parent="."]
 texture_filter = 1
@@ -23,10 +28,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -361.5
-offset_top = -116.0
-offset_right = 361.5
-offset_bottom = -9.0
+offset_left = -514.0
+offset_top = -265.0
+offset_right = 526.57935
+offset_bottom = -111.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -39,14 +44,30 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -364.0
-offset_top = 67.0
-offset_right = -55.0
-offset_bottom = 164.0
+offset_left = -150.0
+offset_top = -82.0
+offset_right = 159.0
+offset_bottom = 15.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 40
 text = "Launch
+"
+
+[node name="Settings" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = 29.0
+offset_right = 159.0
+offset_bottom = 126.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "Settings
 "
 
 [node name="Exit" type="Button" parent="."]
@@ -55,14 +76,22 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 43.0
-offset_top = 67.0
-offset_right = 352.0
-offset_bottom = 164.0
+offset_left = -150.0
+offset_top = 138.0
+offset_right = 159.0
+offset_bottom = 235.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 40
 text = "Exit"
 
+[node name="Settings2" parent="." instance=ExtResource("4_3b8pq")]
+visible = false
+offset_left = -464.464
+offset_top = -14.040009
+offset_right = 527.0
+offset_bottom = 82.360016
+
 [connection signal="pressed" from="Launch" to="." method="_on_launch_pressed"]
+[connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]

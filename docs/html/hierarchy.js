@@ -10,10 +10,9 @@ var hierarchy =
       [ "NuevoProyectodeJuego.scripts.Player.Player", "class_nuevo_proyectode_juego_1_1scripts_1_1_player_1_1_player.html", null ]
     ] ],
     [ "Control", null, [
-      [ "Settings", "class_settings.html", null ]
+      [ "NuevoProyectodeJuego.scripts.Menu.SubMenus.Settings", "class_nuevo_proyectode_juego_1_1scripts_1_1_menu_1_1_sub_menus_1_1_settings.html", null ]
     ] ],
     [ "Node", null, [
-      [ "MainMenu", "class_main_menu.html", null ],
       [ "NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.MovementStateMachine", "class_nuevo_proyectode_juego_1_1scripts_1_1_maquinas__de__estados_1_1_movimiento_1_1_movement_state_machine.html", null ],
       [ "NuevoProyectodeJuego.scripts.Maquinas_de_estados.State", "class_nuevo_proyectode_juego_1_1scripts_1_1_maquinas__de__estados_1_1_state.html", [
         [ "NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.Estados.DoubleJumpMovementState", "class_nuevo_proyectode_juego_1_1scripts_1_1_maquinas__de__estados_1_1_movimiento_1_1_estados_1_1_double_jump_movement_state.html", null ],
@@ -22,6 +21,7 @@ var hierarchy =
         [ "NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.Estados.JumpingMovementState", "class_nuevo_proyectode_juego_1_1scripts_1_1_maquinas__de__estados_1_1_movimiento_1_1_estados_1_1_jumping_movement_state.html", null ],
         [ "NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.Estados.RunningMovementState", "class_nuevo_proyectode_juego_1_1scripts_1_1_maquinas__de__estados_1_1_movimiento_1_1_estados_1_1_running_movement_state.html", null ]
       ] ],
+      [ "NuevoProyectodeJuego.scripts.Menu.MainMenu", "class_nuevo_proyectode_juego_1_1scripts_1_1_menu_1_1_main_menu.html", null ],
       [ "NuevoProyectodeJuego.scripts.Scenes.Node2d", "class_nuevo_proyectode_juego_1_1scripts_1_1_scenes_1_1_node2d.html", null ]
     ] ],
     [ "RigidBody2D", null, [

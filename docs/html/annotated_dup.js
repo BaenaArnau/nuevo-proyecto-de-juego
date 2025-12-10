@@ -19,6 +19,10 @@ var annotated_dup =
           [ "State", "class_nuevo_proyectode_juego_1_1scripts_1_1_maquinas__de__estados_1_1_state.html", "class_nuevo_proyectode_juego_1_1scripts_1_1_maquinas__de__estados_1_1_state" ]
         ] ],
         [ "Menu", "namespace_nuevo_proyectode_juego_1_1scripts_1_1_menu.html", [
+          [ "SubMenus", "namespace_nuevo_proyectode_juego_1_1scripts_1_1_menu_1_1_sub_menus.html", [
+            [ "Settings", "class_nuevo_proyectode_juego_1_1scripts_1_1_menu_1_1_sub_menus_1_1_settings.html", "class_nuevo_proyectode_juego_1_1scripts_1_1_menu_1_1_sub_menus_1_1_settings" ]
+          ] ],
+          [ "MainMenu", "class_nuevo_proyectode_juego_1_1scripts_1_1_menu_1_1_main_menu.html", "class_nuevo_proyectode_juego_1_1scripts_1_1_menu_1_1_main_menu" ],
           [ "PauseMenu", "class_nuevo_proyectode_juego_1_1scripts_1_1_menu_1_1_pause_menu.html", "class_nuevo_proyectode_juego_1_1scripts_1_1_menu_1_1_pause_menu" ]
         ] ],
         [ "Player", "namespace_nuevo_proyectode_juego_1_1scripts_1_1_player.html", [
@@ -31,7 +35,5 @@ var annotated_dup =
           [ "Sierra", "class_nuevo_proyectode_juego_1_1scripts_1_1_trampas_1_1_sierra.html", "class_nuevo_proyectode_juego_1_1scripts_1_1_trampas_1_1_sierra" ]
         ] ]
       ] ]
-    ] ],
-    [ "MainMenu", "class_main_menu.html", "class_main_menu" ],
-    [ "Settings", "class_settings.html", "class_settings" ]
+    ] ]
 ];
