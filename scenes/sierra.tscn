@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dtwg6kltixrrg"]
+[gd_scene load_steps=4 format=3 uid="uid://bf3gtetmf75ts"]
 
 [ext_resource type="Script" uid="uid://b2m8npcyjvfga" path="res://scripts/Trampas/Sierra.cs" id="1_7koqq"]
 [ext_resource type="Texture2D" uid="uid://hg5pw86ddjy2" path="res://assets/Traps/Saw/Off.png" id="2_untav"]

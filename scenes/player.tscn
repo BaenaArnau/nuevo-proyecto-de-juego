@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://bjsf3q6hvbyji"]
+[gd_scene load_steps=58 format=3 uid="uid://d078pdnj5acu"]
 
 [ext_resource type="Texture2D" uid="uid://dytn1kitsc804" path="res://assets/Main Characters/Ninja Frog/Idle (32x32).png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://b0m5xni6ow08l" path="res://scripts/Player/Player.cs" id="1_g2els"]

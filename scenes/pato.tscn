@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://dfune0elld607"]
+[gd_scene load_steps=33 format=3 uid="uid://b1w8tt12c3unl"]
 
 [ext_resource type="Texture2D" uid="uid://dmtv8d054duuq" path="res://assets/Enemies/Duck/Fall (36x36).png" id="1_4rrr4"]
 [ext_resource type="Script" uid="uid://v512a25atjbb" path="res://scripts/Enemigos/Pato.cs" id="1_x7n1l"]
