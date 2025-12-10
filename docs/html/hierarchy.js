@@ -4,14 +4,13 @@ var hierarchy =
       [ "NuevoProyectodeJuego.scripts.Trampas.Sierra", "class_nuevo_proyectode_juego_1_1scripts_1_1_trampas_1_1_sierra.html", null ]
     ] ],
     [ "CanvasLayer", null, [
-      [ "NuevoProyectodeJuego.scripts.MainMenu.SubMenus.Video_settings", "class_nuevo_proyectode_juego_1_1scripts_1_1_main_menu_1_1_sub_menus_1_1_video__settings.html", null ],
-      [ "NuevoProyectodeJuego.scripts.MainMenu.SubMenus.Volumen_settings", "class_nuevo_proyectode_juego_1_1scripts_1_1_main_menu_1_1_sub_menus_1_1_volumen__settings.html", null ]
+      [ "NuevoProyectodeJuego.scripts.Menu.PauseMenu", "class_nuevo_proyectode_juego_1_1scripts_1_1_menu_1_1_pause_menu.html", null ]
     ] ],
     [ "CharacterBody2D", null, [
       [ "NuevoProyectodeJuego.scripts.Player.Player", "class_nuevo_proyectode_juego_1_1scripts_1_1_player_1_1_player.html", null ]
     ] ],
     [ "Control", null, [
-      [ "NuevoProyectodeJuego.scripts.MainMenu.MenuDePausa", "class_nuevo_proyectode_juego_1_1scripts_1_1_main_menu_1_1_menu_de_pausa.html", null ]
+      [ "Settings", "class_settings.html", null ]
     ] ],
     [ "Node", null, [
       [ "MainMenu", "class_main_menu.html", null ],

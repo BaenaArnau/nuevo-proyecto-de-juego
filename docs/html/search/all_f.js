@@ -1,7 +1,13 @@
 var searchData=
 [
-  ['readme_2emd_0',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]],
-  ['ready_1',['Ready',['../class_nuevo_proyectode_juego_1_1scripts_1_1_maquinas__de__estados_1_1_movimiento_1_1_estados_1_1_double_jump_movement_state.html#a24e4a00035fd7f017e8a05b64bb1658f',1,'NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.Estados.DoubleJumpMovementState.Ready()'],['../class_nuevo_proyectode_juego_1_1scripts_1_1_maquinas__de__estados_1_1_movimiento_1_1_estados_1_1_falling_movement_state.html#a2255923daec0b33ec703adbc30f10d92',1,'NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.Estados.FallingMovementState.Ready()'],['../class_nuevo_proyectode_juego_1_1scripts_1_1_maquinas__de__estados_1_1_movimiento_1_1_estados_1_1_idle_movement_state.html#a9ca6c2fc7d3a070f9e1a15380d8aa27b',1,'NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.Estados.IdleMovementState.Ready()'],['../class_nuevo_proyectode_juego_1_1scripts_1_1_maquinas__de__estados_1_1_movimiento_1_1_estados_1_1_jumping_movement_state.html#aa480853b96db365dafb73966b34f02f7',1,'NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.Estados.JumpingMovementState.Ready()'],['../class_nuevo_proyectode_juego_1_1scripts_1_1_maquinas__de__estados_1_1_movimiento_1_1_estados_1_1_running_movement_state.html#a0cc235bc438eaa9e9d628f612a9e9a71',1,'NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.Estados.RunningMovementState.Ready()'],['../class_nuevo_proyectode_juego_1_1scripts_1_1_maquinas__de__estados_1_1_state.html#ad6fe59a7ef127170bc6cc1f7b5674ff5',1,'NuevoProyectodeJuego.scripts.Maquinas_de_estados.State.Ready()']]],
-  ['runningmovementstate_2',['RunningMovementState',['../class_nuevo_proyectode_juego_1_1scripts_1_1_maquinas__de__estados_1_1_movimiento_1_1_estados_1_1_running_movement_state.html',1,'NuevoProyectodeJuego::scripts::Maquinas_de_estados::Movimiento::Estados']]],
-  ['runningmovementstate_2ecs_3',['RunningMovementState.cs',['../_running_movement_state_8cs.html',1,'']]]
+  ['pages_0',['Publicación automática (GitHub Pages)',['../index.html#autotoc_md1',1,'']]],
+  ['pato_1',['Pato',['../class_nuevo_proyectode_juego_1_1scripts_1_1_enemigos_1_1_pato.html',1,'NuevoProyectodeJuego::scripts::Enemigos']]],
+  ['pato_2ecs_2',['Pato.cs',['../_pato_8cs.html',1,'']]],
+  ['pausemenu_3',['PauseMenu',['../class_nuevo_proyectode_juego_1_1scripts_1_1_menu_1_1_pause_menu.html',1,'NuevoProyectodeJuego::scripts::Menu']]],
+  ['pausemenu_2ecs_4',['PauseMenu.cs',['../_pause_menu_8cs.html',1,'']]],
+  ['player_5',['Player',['../class_nuevo_proyectode_juego_1_1scripts_1_1_player_1_1_player.html',1,'NuevoProyectodeJuego::scripts::Player']]],
+  ['player_2ecs_6',['Player.cs',['../_player_8cs.html',1,'']]],
+  ['playertype_7',['PlayerType',['../_double_jump_movement_state_8cs.html#a964957f2c83a7b256f6437aae8812251',1,'DoubleJumpMovementState.cs']]],
+  ['proyecto_8',['Documentación del proyecto',['../index.html',1,'']]],
+  ['publicación_20automática_20github_20pages_9',['Publicación automática (GitHub Pages)',['../index.html#autotoc_md1',1,'']]]
 ];

@@ -5,13 +5,6 @@ var annotated_dup =
         [ "Enemigos", "namespace_nuevo_proyectode_juego_1_1scripts_1_1_enemigos.html", [
           [ "Pato", "class_nuevo_proyectode_juego_1_1scripts_1_1_enemigos_1_1_pato.html", "class_nuevo_proyectode_juego_1_1scripts_1_1_enemigos_1_1_pato" ]
         ] ],
-        [ "MainMenu", "namespace_nuevo_proyectode_juego_1_1scripts_1_1_main_menu.html", [
-          [ "SubMenus", "namespace_nuevo_proyectode_juego_1_1scripts_1_1_main_menu_1_1_sub_menus.html", [
-            [ "Video_settings", "class_nuevo_proyectode_juego_1_1scripts_1_1_main_menu_1_1_sub_menus_1_1_video__settings.html", "class_nuevo_proyectode_juego_1_1scripts_1_1_main_menu_1_1_sub_menus_1_1_video__settings" ],
-            [ "Volumen_settings", "class_nuevo_proyectode_juego_1_1scripts_1_1_main_menu_1_1_sub_menus_1_1_volumen__settings.html", "class_nuevo_proyectode_juego_1_1scripts_1_1_main_menu_1_1_sub_menus_1_1_volumen__settings" ]
-          ] ],
-          [ "MenuDePausa", "class_nuevo_proyectode_juego_1_1scripts_1_1_main_menu_1_1_menu_de_pausa.html", "class_nuevo_proyectode_juego_1_1scripts_1_1_main_menu_1_1_menu_de_pausa" ]
-        ] ],
         [ "Maquinas_de_estados", "namespace_nuevo_proyectode_juego_1_1scripts_1_1_maquinas__de__estados.html", [
           [ "Movimiento", "namespace_nuevo_proyectode_juego_1_1scripts_1_1_maquinas__de__estados_1_1_movimiento.html", [
             [ "Estados", "namespace_nuevo_proyectode_juego_1_1scripts_1_1_maquinas__de__estados_1_1_movimiento_1_1_estados.html", [
@@ -25,6 +18,9 @@ var annotated_dup =
           ] ],
           [ "State", "class_nuevo_proyectode_juego_1_1scripts_1_1_maquinas__de__estados_1_1_state.html", "class_nuevo_proyectode_juego_1_1scripts_1_1_maquinas__de__estados_1_1_state" ]
         ] ],
+        [ "Menu", "namespace_nuevo_proyectode_juego_1_1scripts_1_1_menu.html", [
+          [ "PauseMenu", "class_nuevo_proyectode_juego_1_1scripts_1_1_menu_1_1_pause_menu.html", "class_nuevo_proyectode_juego_1_1scripts_1_1_menu_1_1_pause_menu" ]
+        ] ],
         [ "Player", "namespace_nuevo_proyectode_juego_1_1scripts_1_1_player.html", [
           [ "Player", "class_nuevo_proyectode_juego_1_1scripts_1_1_player_1_1_player.html", "class_nuevo_proyectode_juego_1_1scripts_1_1_player_1_1_player" ]
         ] ],
@@ -36,5 +32,6 @@ var annotated_dup =
         ] ]
       ] ]
     ] ],
-    [ "MainMenu", "class_main_menu.html", "class_main_menu" ]
+    [ "MainMenu", "class_main_menu.html", "class_main_menu" ],
+    [ "Settings", "class_settings.html", "class_settings" ]
 ];

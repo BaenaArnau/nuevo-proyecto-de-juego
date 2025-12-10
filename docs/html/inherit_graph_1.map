@@ -1,7 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" title=" " alt="" coords="5,51,104,77"/>
-<area shape="rect" id="Node000001" href="$class_nuevo_proyectode_juego_1_1scripts_1_1_main_menu_1_1_sub_menus_1_1_video__settings.html" title="Menú de las opciones de vídeo del juego. Implementa un listado de resoluciones y guarda la selección ..." alt="" coords="152,5,389,48"/>
-<area shape="poly" id="edge2_Node000000_Node000001" title=" " alt="" coords="118,50,154,46,149,48,120,55"/>
-<area shape="rect" id="Node000002" href="$class_nuevo_proyectode_juego_1_1scripts_1_1_main_menu_1_1_sub_menus_1_1_volumen__settings.html" title="Clase que gestiona las opciones de sonido (volúmenes). Ajusta los buses de audio usando AudioServer y..." alt="" coords="167,72,374,131"/>
-<area shape="poly" id="edge3_Node000000_Node000002" title=" " alt="" coords="119,72,169,83,164,84,119,78"/>
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,13,104,40"/>
+<area shape="rect" id="Node000001" href="$class_nuevo_proyectode_juego_1_1scripts_1_1_menu_1_1_pause_menu.html" title="Clase que controla el menú de pausa y el estado pausado del juego." alt="" coords="152,5,359,48"/>
+<area shape="poly" id="edge2_Node000000_Node000001" title=" " alt="" coords="119,24,154,26,149,27,119,29"/>
 </map>

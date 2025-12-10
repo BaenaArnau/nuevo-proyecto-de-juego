@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['jumpvelocity_0',['JumpVelocity',['../class_nuevo_proyectode_juego_1_1scripts_1_1_enemigos_1_1_pato.html#af33dca6c60f66a75eda1abcfe31e9c2b',1,'NuevoProyectodeJuego.scripts.Enemigos.Pato.JumpVelocity'],['../class_nuevo_proyectode_juego_1_1scripts_1_1_player_1_1_player.html#a579eed8ffbc8df11ed184363d248bc6d',1,'NuevoProyectodeJuego.scripts.Player.Player.JumpVelocity']]]
+  ['initialstate_0',['initialState',['../class_nuevo_proyectode_juego_1_1scripts_1_1_maquinas__de__estados_1_1_movimiento_1_1_movement_state_machine.html#a0639f2f1ec4b8e06ba57057aa6c48216',1,'NuevoProyectodeJuego::scripts::Maquinas_de_estados::Movimiento::MovementStateMachine']]]
 ];
