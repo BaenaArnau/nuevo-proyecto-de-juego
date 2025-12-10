@@ -24,10 +24,7 @@ namespace NuevoProyectodeJuego.scripts.Enemigos
 		/// </summary>
 		[Export] public float Speed = 5.0f;
 
-		/// <summary>
-		/// Última componente Y de la velocidad del jugador para detectar el inicio del salto.
-		/// </summary>
-		private float _lastPlayerVelY;
+		// Nota: ya no usamos el muestreo de la velocidad del jugador aquí.
     
 		/// <summary>
 		/// Indica si el pato puede saltar (evita saltos múltiples en el aire).
@@ -65,24 +62,10 @@ namespace NuevoProyectodeJuego.scripts.Enemigos
 		/// <param name="delta">Tiempo transcurrido desde el último frame</param>
 		public override void _Process(double delta)
 		{
-			if (_isInside && _playerNode is NuevoProyectodeJuego.scripts.Player.Player playerRef && !IsDying)
-			{
-				if (playerRef.Velocity.Y < -10f && _lastPlayerVelY >= -10f && _canJump)
-				{
-					SetAnimation("jump");
-					LinearVelocity = new Vector2(LinearVelocity.X, JumpVelocity);
-					_canJump = false; 
-				}
-
-				_lastPlayerVelY = playerRef.Velocity.Y;
-			}
-			else
-				_lastPlayerVelY = 0f;
-
-			if (LinearVelocity.Y == 0)
+			if (LinearVelocity.Y == 0 && !IsDying)
 			{
 				SetAnimation("idle");
-				_canJump = true; 
+				_canJump = true;
 			}
 		}
 
@@ -107,10 +90,15 @@ namespace NuevoProyectodeJuego.scripts.Enemigos
 		/// <param name="body">El cuerpo que salió del área</param>
 		private void _on_trigger_area_2d_body_exited (Node2D body)
 		{
-			if (body is NuevoProyectodeJuego.scripts.Player.Player)
+			if (body is NuevoProyectodeJuego.scripts.Player.Player p)
 			{
-				_isInside = false; // El jugador ya no está cerca
-				this._playerNode = null; // Limpia la referencia al jugador
+				// Desconectamos la señal de salto para no recibir más eventos
+				var callable = new Callable(this, nameof(OnPlayerInJumping));
+				if (p.IsConnected("InJumping", callable))
+					p.Disconnect("InJumping", callable);
+
+				_isInside = false;
+				this._playerNode = null; 
 			}
 		}
 
@@ -123,8 +111,26 @@ namespace NuevoProyectodeJuego.scripts.Enemigos
 		{
 			if (body is NuevoProyectodeJuego.scripts.Player.Player p)
 			{
-				_isInside = true; // El jugador está dentro del área de detección
-				this._playerNode = p; // Guarda la referencia al jugador (Node)
+				_isInside = true;
+				this._playerNode = p; 
+
+				var callable = new Callable(this, nameof(OnPlayerInJumping));
+				if (!p.IsConnected("InJumping", callable))
+					p.Connect("InJumping", callable);
+			}
+		}
+
+		/// <summary>
+		/// Manejador llamado cuando el jugador emite la señal de salto.
+		/// Hace que el pato salte si está dentro del área y puede hacerlo.
+		/// </summary>
+		private void OnPlayerInJumping()
+		{
+			if (_isInside && _canJump && !IsDying)
+			{
+				SetAnimation("jump");
+				LinearVelocity = new Vector2(LinearVelocity.X, JumpVelocity);
+				_canJump = false;
 			}
 		}
     
@@ -154,10 +160,7 @@ namespace NuevoProyectodeJuego.scripts.Enemigos
 		public void SetAnimation(string animationName)
 		{
 			if (_animatedSpriteNode is AnimatedSprite2D aspr)
-			{
 				aspr.Play(animationName);
-				GD.Print($"Setting animation to: {animationName}");
-			}
 		}
 
 		/// <summary>
@@ -174,12 +177,12 @@ namespace NuevoProyectodeJuego.scripts.Enemigos
 					GD.Print("Duck is dying.");
 					await ToSignal(aspr, "animation_finished");
 				}
-				QueueFree();
+				CallDeferred("queue_free");
 			}
 			catch (Exception ex)
 			{
 				GD.PrintErr("Error en DieAsync: ", ex);
-				QueueFree();
+				CallDeferred("queue_free");
 			}
 		}
 	}

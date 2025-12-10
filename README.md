@@ -29,21 +29,34 @@ dotnet build
 
 Nota: Si Godot no detecta los assemblies C#, puede que necesites reconstruir desde el editor o ajustar la versión de Mono usada por Godot.
 
-## Estructura destacada
+## Estructura destacada (rama Pato)
 
 - `assets/` — gráficos organizados por tipo (Enemies, Background, Terrain, etc.).
-- `scenes/` — escenas principales: `player.tscn`, `pato.tscn`, `sierra.tscn`, `node_2d.tscn`.
-- `scripts/` — código en C#:
-  - `Player/Player.cs` — lógica del jugador
-  - `Enemigos/Pato.cs` — ejemplo de enemigo "pato"
-  - `Trampas/Sierra.cs` — ejemplo de trampa
-  - `Maquinas de estados/State.cs` — base para máquinas de estado
+- `scenes/` — escenas implicadas en esta rama: `player.tscn`, `pato.tscn`, `sierra.tscn`.
+- `scripts/` — código en C# relevante añadido/actualizado en esta rama:
+  - `Enemigos/Pato.cs` — añadido un enemigo "Pato" que:
+    - hereda de `RigidBody2D` y maneja física y animaciones.
+    - detecta al jugador mediante áreas y reacciona con saltos cuando el jugador salta cerca.
+    - tiene área de daño: si el jugador impacta correctamente, el pato muere y el jugador recibe un rebote.
+  - `Player/Player.cs` — ajustado para soportar muerte y rebotes, y para interoperar con enemigos (colisiones/daño).
+  - `Trampas/Sierra.cs` — añadida/ajustada la sierra (trampa) que puede causar la muerte del jugador al contacto.
+  - `Maquinas de estados/` — pequeños ajustes en estados y `State` para mantener compatibilidad con los cambios de scripts.
 
 ## Buenas prácticas
 
 - Mantén los assets con nombres claros y rutas relativas para que Godot los encuentre.
 - Vincula scripts a nodos desde el editor de Godot para facilitar la depuración.
 - Usa el control de versiones (git) para registrar cambios y crear ramas por característica.
+
+## Cambios implementados en esta rama
+
+En esta rama (PatoEnSierraActividades) se han implementado y/o integrado las siguientes características principales:
+
+- Añadido el enemigo "Pato" (`scripts/Enemigos/Pato.cs`) con detección del jugador, salto reactivo y lógica de muerte.
+- Añadida la trampa "Sierra" (`scripts/Trampas/Sierra.cs`) que puede matar al jugador al colisionar.
+- Adaptaciones en `Player.cs` para soportar la muerte del jugador y el rebote al interactuar con enemigos.
+
+Estos cambios están pensados para pruebas y desarrollo; la documentación generada por Doxygen y la página publicada reflejarán la versión oficial cuando se haga merge a `main`.
 
 ## Licencia
 

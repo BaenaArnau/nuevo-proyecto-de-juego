@@ -45,6 +45,3 @@ Thumbs.db
 .DS_Store
 
 # Keep project files and scenes tracked (do NOT ignore .tscn or .gd or .cs files)
-
-# Generated documentation (Doxygen)
-docs/html/

@@ -1,0 +1,11 @@
+<map id="NuevoProyectodeJuego.scripts.Enemigos.Pato.SetAnimation" name="NuevoProyectodeJuego.scripts.Enemigos.Pato.SetAnimation">
+<area shape="rect" id="Node000001" title="Establece la animación del pato." alt="" coords="537,39,744,81"/>
+<area shape="rect" id="Node000002" href="$class_nuevo_proyectode_juego_1_1scripts_1_1_enemigos_1_1_pato.html#af93c80b4fa0a112056d2a79d91bbd7eb" title="Procesa la lógica del pato en cada frame. Detecta cuando el jugador salta (cambio en velocidad Y) y h..." alt="" coords="271,5,478,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="519,45,479,42,479,37,524,45"/>
+<area shape="rect" id="Node000003" href="$class_nuevo_proyectode_juego_1_1scripts_1_1_enemigos_1_1_pato.html#aad145dc8332ef8aedc7e568ecefafcfa" title="Manejador llamado cuando el jugador emite la señal de salto. Hace que el pato salte si está dentro de..." alt="" coords="261,72,489,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="519,75,490,82,489,76,524,75"/>
+<area shape="rect" id="Node000004" href="$class_nuevo_proyectode_juego_1_1scripts_1_1_enemigos_1_1_pato.html#a1ea55e0a029882013cf029d7e9825e6c" title="Se ejecuta cuando un cuerpo entra en el área de trigger del pato. Activa la detección del jugador par..." alt="" coords="5,23,213,81"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="243,74,213,71,213,65,248,73"/>
+<area shape="rect" id="Node000005" href="$class_nuevo_proyectode_juego_1_1scripts_1_1_enemigos_1_1_pato.html#aa6994e22b011fe12379dbd902d39ecc9" title="Se ejecuta cuando un cuerpo sale del área de trigger del pato. Desactiva la detección del jugador." alt="" coords="5,105,213,164"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="243,114,213,121,213,116,248,113"/>
+</map>

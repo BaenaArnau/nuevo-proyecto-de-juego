@@ -14,6 +14,9 @@ namespace NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.Estados
 		/// </summary>
 		private PlayerType _player;
 
+		// Indica si en este estado se debe emitir la señal de salto cada frame
+		private bool _isEmittingJumpSignal = false;
+
 		/// <summary>
 		/// Método llamado al iniciar el nodo.
 		/// </summary>
@@ -29,10 +32,17 @@ namespace NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.Estados
 		{
 			_player.SetAnimation("jump");
 
-            // Resetear coyote time al saltar
             _player.CoyoteTimeCounter = 0f;
             _player.Velocity = new Vector2(_player.Velocity.X, PlayerType.JumpVelocity);
             _player.MoveAndSlide();
+
+			_isEmittingJumpSignal = true;
+			_player.EmitSignal(nameof(PlayerType.InJumping));
+		}
+
+		public override void Exit()
+		{
+			_isEmittingJumpSignal = false;
 		}
 
 		/// <summary>Actualización por frame durante el salto: gestiona transición a caída o al suelo.</summary>
@@ -40,23 +50,14 @@ namespace NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.Estados
 		public override void Update(double delta)
 		{
 			if (_player.Velocity.Y >= 0)
-			{
-				GD.Print("Transitioning to falling state from jumping.");
 				stateMachine.TransitionTo("FallingMovementState");
-			}
 
 			if (_player.IsOnFloor())
 			{
 				if (Mathf.Abs(_player.Velocity.X) > 0.1f)
-				{
-					GD.Print("Transitioning to running state from jumping (landed).");
 					stateMachine.TransitionTo("RunningMovementState");
-				}
 				else
-				{
-					GD.Print("Transitioning to idle state from jumping (landed).");
 					stateMachine.TransitionTo("IdleMovementState");
-				}
 			}
 		}
 		
@@ -68,7 +69,6 @@ namespace NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.Estados
 			{
 				Vector2 velocity = _player.Velocity;
 				velocity += _player.GetGravity() * (float)delta;
-				// Horizontal air control tipo Hollow Knight: detenerse inmediatamente si no hay input
 				float move = Input.GetActionStrength("move_right") - Input.GetActionStrength("move_left");
 				if (Mathf.Abs(move) > 0f)
 					velocity.X = move * PlayerType.Speed;

@@ -14,6 +14,9 @@ namespace NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.Estados
 		/// </summary>
 		private PlayerType _player;
 
+		// Indica si en este estado se debe emitir la señal de salto cada frame
+		private bool _isEmittingJumpSignal = false;
+
 		/// <summary>
 		/// Método llamado al iniciar el nodo.
 		/// </summary>
@@ -30,10 +33,16 @@ namespace NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.Estados
 			_player.DoubleJumpAvailable = false;
 			_player.SetAnimation("double_jump");
 
-			GD.Print("Entered DoobleJumpMovementState (double jump)");
-
 			_player.Velocity = new Vector2(_player.Velocity.X, PlayerType.JumpVelocity);
 			_player.MoveAndSlide();
+
+			_isEmittingJumpSignal = true;
+			_player.EmitSignal(nameof(PlayerType.InJumping));
+		}
+
+		public override void Exit()
+		{
+			_isEmittingJumpSignal = false;
 		}
 
 		/// <summary>Update por frame en doble salto: transiciones a caída al empezar a descender.</summary>
@@ -41,16 +50,10 @@ namespace NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.Estados
 		public override void Update(double delta)
 		{
 			if (_player.Velocity.Y >= 0)
-			{
-				GD.Print("Transitioning to falling state from jumping.");
 				stateMachine.TransitionTo("FallingMovementState");
-			}
 
 			if (_player.animatedSprite.Frame == 5)
-			{
-				GD.Print("Double jump animation finished, transitioning to falling state.");
 				_player.SetAnimation("jump");
-			}
 		}
 		
 		/// <summary>Update de física durante el salto. Implementa control horizontal inmediato (stop si no hay input).</summary>

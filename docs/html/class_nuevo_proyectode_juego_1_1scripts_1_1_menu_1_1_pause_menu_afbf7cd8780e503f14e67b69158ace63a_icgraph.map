@@ -1,0 +1,5 @@
+<map id="NuevoProyectodeJuego.scripts.Menu.PauseMenu.TogglePause" name="NuevoProyectodeJuego.scripts.Menu.PauseMenu.TogglePause">
+<area shape="rect" id="Node000001" title="Alterna el estado de pausa (opcionalmente lo fija)." alt="" coords="282,5,489,48"/>
+<area shape="rect" id="Node000002" href="$class_nuevo_proyectode_juego_1_1scripts_1_1_menu_1_1_pause_menu.html#a89579c780e45a88fd1d6a93766fe3cc9" title="Maneja la entrada no procesada (como la pulsación de la tecla de pausa)." alt="" coords="5,5,234,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="263,27,234,29,234,24,268,27"/>
+</map>

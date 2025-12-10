@@ -35,10 +35,7 @@ namespace NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.Estados
 		public override void Update(double delta)
 		{
 			if (_player.IsOnFloor() && _player.Velocity.X == 0)
-			{
-				GD.Print("Transitioning to idle state from falling.");
 				stateMachine.TransitionTo("IdleMovementState");
-			}
 		}
 
 		/// <summary>Update de física en Falling: aplica gravedad y control horizontal inmediato en aire.</summary>
@@ -61,15 +58,9 @@ namespace NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.Estados
 			if (_player.IsOnFloor())
 			{
 				if (Mathf.Abs(_player.Velocity.X) > 0.1f)
-				{
-					GD.Print("Transitioning to running state from jumping (landed).");
 					stateMachine.TransitionTo("RunningMovementState");
-				}
 				else
-				{
-					GD.Print("Transitioning to idle state from jumping (landed).");
 					stateMachine.TransitionTo("IdleMovementState");
-				}
 			}
 		}
 
@@ -83,9 +74,7 @@ namespace NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.Estados
 				return;
 			}
 			if (ev.IsActionPressed("jump") && _player.DoubleJumpAvailable)
-			{
 				stateMachine.TransitionTo("DoubleJumpMovementState");
-			}
 		}
 	}
 }
