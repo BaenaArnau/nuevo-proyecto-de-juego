@@ -1,11 +1,14 @@
 var searchData=
 [
-  ['scripts_2fenemigos_2freadme_2emd_0',['README.md',['../scripts_2Enemigos_2README_8md.html',1,'']]],
-  ['setanimation_1',['setanimation',['../classNuevoProyectodeJuego_1_1scripts_1_1Enemigos_1_1Pato.html#a0163740c5daa3ab26d6a33d60a610676',1,'NuevoProyectodeJuego.scripts.Enemigos.Pato.SetAnimation()'],['../classNuevoProyectodeJuego_1_1scripts_1_1Player_1_1Player.html#a73f79a9d0dddc16ed65d49418a014062',1,'NuevoProyectodeJuego.scripts.Player.Player.SetAnimation()']]],
-  ['sierra_2',['Sierra',['../classNuevoProyectodeJuego_1_1scripts_1_1Trampas_1_1Sierra.html',1,'NuevoProyectodeJuego::scripts::Trampas']]],
-  ['sierra_2ecs_3',['Sierra.cs',['../Sierra_8cs.html',1,'']]],
-  ['speed_4',['speed',['../classNuevoProyectodeJuego_1_1scripts_1_1Enemigos_1_1Pato.html#a068acd62885a058c099737ac7b24f813',1,'NuevoProyectodeJuego.scripts.Enemigos.Pato.Speed'],['../classNuevoProyectodeJuego_1_1scripts_1_1Player_1_1Player.html#aec088fc7c4ed4c9f1bc0d349b267dbc5',1,'NuevoProyectodeJuego.scripts.Player.Player.Speed']]],
-  ['state_5',['State',['../classNuevoProyectodeJuego_1_1scripts_1_1Maquinas__de__estados_1_1State.html',1,'NuevoProyectodeJuego::scripts::Maquinas_de_estados']]],
-  ['state_2ecs_6',['State.cs',['../State_8cs.html',1,'']]],
-  ['statemachine_7',['statemachine',['../classNuevoProyectodeJuego_1_1scripts_1_1Maquinas__de__estados_1_1State.html#a3fca53af76facf2691dbc08be9d7b390',1,'NuevoProyectodeJuego.scripts.Maquinas_de_estados.State.stateMachine'],['../classNuevoProyectodeJuego_1_1scripts_1_1Maquinas__de__estados_1_1State.html#ad777efd280487b95a26b3868141e7ca2',1,'NuevoProyectodeJuego.scripts.Maquinas_de_estados.State.StateMachine']]]
+  ['pages_0',['Publicación automática (GitHub Pages)',['../index.html#autotoc_md2',1,'']]],
+  ['pato_1',['Pato',['../classNuevoProyectodeJuego_1_1scripts_1_1Enemigos_1_1Pato.html',1,'NuevoProyectodeJuego::scripts::Enemigos']]],
+  ['pato_20enemigo_2',['Pato (enemigo)',['../md__2home_2runner_2work_2nuevo-proyecto-de-juego_2nuevo-proyecto-de-juego_2scripts_2Enemigos_2README.html',1,'']]],
+  ['pato_2ecs_3',['Pato.cs',['../Pato_8cs.html',1,'']]],
+  ['pausemenu_4',['PauseMenu',['../classNuevoProyectodeJuego_1_1scripts_1_1Menu_1_1PauseMenu.html',1,'NuevoProyectodeJuego::scripts::Menu']]],
+  ['pausemenu_2ecs_5',['PauseMenu.cs',['../PauseMenu_8cs.html',1,'']]],
+  ['player_6',['Player',['../classNuevoProyectodeJuego_1_1scripts_1_1Player_1_1Player.html',1,'NuevoProyectodeJuego::scripts::Player']]],
+  ['player_2ecs_7',['Player.cs',['../Player_8cs.html',1,'']]],
+  ['playertype_8',['playertype',['../DoubleJumpMovementState_8cs.html#a964957f2c83a7b256f6437aae8812251',1,'PlayerType:&#160;DoubleJumpMovementState.cs'],['../FallingMovementState_8cs.html#a964957f2c83a7b256f6437aae8812251',1,'PlayerType:&#160;FallingMovementState.cs'],['../IdleMovementState_8cs.html#a964957f2c83a7b256f6437aae8812251',1,'PlayerType:&#160;IdleMovementState.cs'],['../JumpingMovementState_8cs.html#a964957f2c83a7b256f6437aae8812251',1,'PlayerType:&#160;JumpingMovementState.cs'],['../RunningMovementState_8cs.html#a964957f2c83a7b256f6437aae8812251',1,'PlayerType:&#160;RunningMovementState.cs']]],
+  ['proyecto_9',['Documentación del proyecto',['../index.html',1,'']]],
+  ['publicación_20automática_20github_20pages_10',['Publicación automática (GitHub Pages)',['../index.html#autotoc_md2',1,'']]]
 ];

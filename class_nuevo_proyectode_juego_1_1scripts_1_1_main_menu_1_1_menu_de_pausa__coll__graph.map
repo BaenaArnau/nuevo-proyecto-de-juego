@@ -1,0 +1,5 @@
+<map id="NuevoProyectodeJuego.scripts.MainMenu.MenuDePausa" name="NuevoProyectodeJuego.scripts.MainMenu.MenuDePausa">
+<area shape="rect" id="Node000001" title="Clase que gestiona el menú de pausa. Sigue el estilo y paradigmas usados en el resto del proyecto (na..." alt="" coords="5,80,213,123"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="77,5,141,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="111,46,111,81,107,79,107,50"/>
+</map>

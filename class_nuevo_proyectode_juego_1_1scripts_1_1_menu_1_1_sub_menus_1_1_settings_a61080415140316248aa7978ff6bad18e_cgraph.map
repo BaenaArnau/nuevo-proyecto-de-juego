@@ -1,0 +1,5 @@
+<map id="NuevoProyectodeJuego.scripts.Menu.SubMenus.Settings._Ready" name="NuevoProyectodeJuego.scripts.Menu.SubMenus.Settings._Ready">
+<area shape="rect" id="Node000001" title="Inicialización del panel de ajustes." alt="" coords="5,5,226,48"/>
+<area shape="rect" id="Node000002" href="$class_nuevo_proyectode_juego_1_1scripts_1_1_menu_1_1_sub_menus_1_1_settings.html#a574fa1ab9c5393a079e6d22cf0a6e72d" title="Handler llamado cuando la ventana/interna cambia de tamaño." alt="" coords="274,5,514,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="226,24,261,27,256,27,226,29"/>
+</map>

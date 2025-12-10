@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['setanimation_0',['setanimation',['../classNuevoProyectodeJuego_1_1scripts_1_1Enemigos_1_1Pato.html#a0163740c5daa3ab26d6a33d60a610676',1,'NuevoProyectodeJuego.scripts.Enemigos.Pato.SetAnimation()'],['../classNuevoProyectodeJuego_1_1scripts_1_1Player_1_1Player.html#a73f79a9d0dddc16ed65d49418a014062',1,'NuevoProyectodeJuego.scripts.Player.Player.SetAnimation()']]]
+  ['onplayerinjumping_0',['OnPlayerInJumping',['../classNuevoProyectodeJuego_1_1scripts_1_1Enemigos_1_1Pato.html#aad145dc8332ef8aedc7e568ecefafcfa',1,'NuevoProyectodeJuego::scripts::Enemigos::Pato']]],
+  ['onresized_1',['OnResized',['../classNuevoProyectodeJuego_1_1scripts_1_1Menu_1_1SubMenus_1_1Settings.html#a574fa1ab9c5393a079e6d22cf0a6e72d',1,'NuevoProyectodeJuego::scripts::Menu::SubMenus::Settings']]]
 ];

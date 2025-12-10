@@ -3,6 +3,7 @@ var classNuevoProyectodeJuego_1_1scripts_1_1Player_1_1Player =
     [ "_PhysicsProcess", "classNuevoProyectodeJuego_1_1scripts_1_1Player_1_1Player.html#a7520154b879651ad541e01120c7cc2ee", null ],
     [ "_Ready", "classNuevoProyectodeJuego_1_1scripts_1_1Player_1_1Player.html#af6c796862393b1f987acf486cdfed093", null ],
     [ "HitAsync", "classNuevoProyectodeJuego_1_1scripts_1_1Player_1_1Player.html#aaf2df0a736b4a5ffc29290ebf435526b", null ],
+    [ "InJumpingEventHandler", "classNuevoProyectodeJuego_1_1scripts_1_1Player_1_1Player.html#a1d0ddf9bb2a62c716a2aec16ce4a5d81", null ],
     [ "SetAnimation", "classNuevoProyectodeJuego_1_1scripts_1_1Player_1_1Player.html#a73f79a9d0dddc16ed65d49418a014062", null ],
     [ "_animatedSpriteNode", "classNuevoProyectodeJuego_1_1scripts_1_1Player_1_1Player.html#a7c66bda990c335065edbc483edf91b25", null ],
     [ "_coyoteTimeCounter", "classNuevoProyectodeJuego_1_1scripts_1_1Player_1_1Player.html#aa958e643b5adafb97ebd41ffb2262250", null ],

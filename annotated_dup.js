@@ -18,8 +18,18 @@ var annotated_dup =
           ] ],
           [ "State", "classNuevoProyectodeJuego_1_1scripts_1_1Maquinas__de__estados_1_1State.html", "classNuevoProyectodeJuego_1_1scripts_1_1Maquinas__de__estados_1_1State" ]
         ] ],
+        [ "Menu", "namespaceNuevoProyectodeJuego_1_1scripts_1_1Menu.html", [
+          [ "SubMenus", "namespaceNuevoProyectodeJuego_1_1scripts_1_1Menu_1_1SubMenus.html", [
+            [ "Settings", "classNuevoProyectodeJuego_1_1scripts_1_1Menu_1_1SubMenus_1_1Settings.html", "classNuevoProyectodeJuego_1_1scripts_1_1Menu_1_1SubMenus_1_1Settings" ]
+          ] ],
+          [ "MainMenu", "classNuevoProyectodeJuego_1_1scripts_1_1Menu_1_1MainMenu.html", "classNuevoProyectodeJuego_1_1scripts_1_1Menu_1_1MainMenu" ],
+          [ "PauseMenu", "classNuevoProyectodeJuego_1_1scripts_1_1Menu_1_1PauseMenu.html", "classNuevoProyectodeJuego_1_1scripts_1_1Menu_1_1PauseMenu" ]
+        ] ],
         [ "Player", "namespaceNuevoProyectodeJuego_1_1scripts_1_1Player.html", [
           [ "Player", "classNuevoProyectodeJuego_1_1scripts_1_1Player_1_1Player.html", "classNuevoProyectodeJuego_1_1scripts_1_1Player_1_1Player" ]
+        ] ],
+        [ "Scenes", "namespaceNuevoProyectodeJuego_1_1scripts_1_1Scenes.html", [
+          [ "Node2d", "classNuevoProyectodeJuego_1_1scripts_1_1Scenes_1_1Node2d.html", "classNuevoProyectodeJuego_1_1scripts_1_1Scenes_1_1Node2d" ]
         ] ],
         [ "Trampas", "namespaceNuevoProyectodeJuego_1_1scripts_1_1Trampas.html", [
           [ "Sierra", "classNuevoProyectodeJuego_1_1scripts_1_1Trampas_1_1Sierra.html", "classNuevoProyectodeJuego_1_1scripts_1_1Trampas_1_1Sierra" ]

@@ -116,6 +116,8 @@ Collaboration diagram for NuevoProyectodeJuego.scripts.Player.Player:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a1d0ddf9bb2a62c716a2aec16ce4a5d81" id="r_a1d0ddf9bb2a62c716a2aec16ce4a5d81"><td class="memItemLeft" align="right" valign="top">delegate void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNuevoProyectodeJuego_1_1scripts_1_1Player_1_1Player.html#a1d0ddf9bb2a62c716a2aec16ce4a5d81">InJumpingEventHandler</a> ()</td></tr>
+<tr class="separator:a1d0ddf9bb2a62c716a2aec16ce4a5d81"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af6c796862393b1f987acf486cdfed093" id="r_af6c796862393b1f987acf486cdfed093"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNuevoProyectodeJuego_1_1scripts_1_1Player_1_1Player.html#af6c796862393b1f987acf486cdfed093">_Ready</a> ()</td></tr>
 <tr class="memdesc:af6c796862393b1f987acf486cdfed093"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método llamado al iniciar el nodo.  <br /></td></tr>
 <tr class="separator:af6c796862393b1f987acf486cdfed093"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -229,7 +231,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   85</span>                    <a class="code hl_variable" href="classNuevoProyectodeJuego_1_1scripts_1_1Player_1_1Player.html#aa958e643b5adafb97ebd41ffb2262250">_coyoteTimeCounter</a> = 0f;</div>
 <div class="line"><span class="lineno">   86</span>            }</div>
 <div class="line"><span class="lineno">   87</span>        }</div>
-<div class="ttc" id="aclassNuevoProyectodeJuego_1_1scripts_1_1Player_1_1Player_html_a7c66bda990c335065edbc483edf91b25"><div class="ttname"><a href="classNuevoProyectodeJuego_1_1scripts_1_1Player_1_1Player.html#a7c66bda990c335065edbc483edf91b25">NuevoProyectodeJuego.scripts.Player.Player._animatedSpriteNode</a></div><div class="ttdeci">Node _animatedSpriteNode</div><div class="ttdoc">Sprite animado del jugador para controlar las animaciones (privado).</div><div class="ttdef"><b>Definition</b> <a href="Player_8cs_source.html#l00052">Player.cs:52</a></div></div>
+<div class="ttc" id="aclassNuevoProyectodeJuego_1_1scripts_1_1Player_1_1Player_html_a7c66bda990c335065edbc483edf91b25"><div class="ttname"><a href="classNuevoProyectodeJuego_1_1scripts_1_1Player_1_1Player.html#a7c66bda990c335065edbc483edf91b25">NuevoProyectodeJuego.scripts.Player.Player._animatedSpriteNode</a></div><div class="ttdeci">Node _animatedSpriteNode</div><div class="ttdoc">Sprite animado del jugador para controlar las animaciones (privado).</div><div class="ttdef"><b>Definition</b> <a href="Player_8cs_source.html#l00054">Player.cs:54</a></div></div>
 <div class="ttc" id="aclassNuevoProyectodeJuego_1_1scripts_1_1Player_1_1Player_html_aa958e643b5adafb97ebd41ffb2262250"><div class="ttname"><a href="classNuevoProyectodeJuego_1_1scripts_1_1Player_1_1Player.html#aa958e643b5adafb97ebd41ffb2262250">NuevoProyectodeJuego.scripts.Player.Player._coyoteTimeCounter</a></div><div class="ttdeci">float _coyoteTimeCounter</div><div class="ttdoc">Tiempo restante para salto coyote (lectura pública, modificación privada).</div><div class="ttdef"><b>Definition</b> <a href="Player_8cs_source.html#l00026">Player.cs:26</a></div></div>
 <div class="ttc" id="aclassNuevoProyectodeJuego_1_1scripts_1_1Player_1_1Player_html_ae24a206339a2e4db537786ae3e8504f2"><div class="ttname"><a href="classNuevoProyectodeJuego_1_1scripts_1_1Player_1_1Player.html#ae24a206339a2e4db537786ae3e8504f2">NuevoProyectodeJuego.scripts.Player.Player.CoyoteTimeMax</a></div><div class="ttdeci">const float CoyoteTimeMax</div><div class="ttdoc">Duración máxima del salto coyote en segundos.</div><div class="ttdef"><b>Definition</b> <a href="Player_8cs_source.html#l00024">Player.cs:24</a></div></div>
 </div><!-- fragment -->
@@ -260,11 +262,9 @@ Private Attributes</h2></td></tr>
 
 <p>Método llamado al iniciar el nodo. </p>
 
-<p class="definition">Definition at line <a class="el" href="Player_8cs_source.html#l00057">57</a> of file <a class="el" href="Player_8cs_source.html">Player.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   58</span>        {</div>
-<div class="line"><span class="lineno">   59</span>            <a class="code hl_variable" href="classNuevoProyectodeJuego_1_1scripts_1_1Player_1_1Player.html#a7c66bda990c335065edbc483edf91b25">_animatedSpriteNode</a> = GetNodeOrNull(<span class="stringliteral">&quot;AnimatedSprite2D&quot;</span>);</div>
-<div class="line"><span class="lineno">   60</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="classNuevoProyectodeJuego_1_1scripts_1_1Player_1_1Player.html#a7c66bda990c335065edbc483edf91b25">_animatedSpriteNode</a> == <span class="keyword">null</span>)</div>
-<div class="line"><span class="lineno">   61</span>                GD.PrintErr(<span class="stringliteral">&quot;AnimatedSprite2D no encontrado en Player. Comprueba la escena.&quot;</span>);</div>
+<p class="definition">Definition at line <a class="el" href="Player_8cs_source.html#l00059">59</a> of file <a class="el" href="Player_8cs_source.html">Player.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   60</span>        {</div>
+<div class="line"><span class="lineno">   61</span>            <a class="code hl_variable" href="classNuevoProyectodeJuego_1_1scripts_1_1Player_1_1Player.html#a7c66bda990c335065edbc483edf91b25">_animatedSpriteNode</a> = GetNodeOrNull(<span class="stringliteral">&quot;AnimatedSprite2D&quot;</span>);</div>
 <div class="line"><span class="lineno">   62</span>        }</div>
 </div><!-- fragment -->
 </div>
@@ -294,26 +294,42 @@ Private Attributes</h2></td></tr>
 
 <p>Método llamado cuando el jugador recibe daño. </p>
 
-<p class="definition">Definition at line <a class="el" href="Player_8cs_source.html#l00109">109</a> of file <a class="el" href="Player_8cs_source.html">Player.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  110</span>        {</div>
-<div class="line"><span class="lineno">  111</span>            <span class="keywordflow">try</span></div>
-<div class="line"><span class="lineno">  112</span>            {</div>
-<div class="line"><span class="lineno">  113</span>                <a class="code hl_property" href="classNuevoProyectodeJuego_1_1scripts_1_1Player_1_1Player.html#ab4873395a05fb5826708ad2511f0572c">IsDying</a> = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  114</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="classNuevoProyectodeJuego_1_1scripts_1_1Player_1_1Player.html#a7c66bda990c335065edbc483edf91b25">_animatedSpriteNode</a> is AnimatedSprite2D aspr)</div>
-<div class="line"><span class="lineno">  115</span>                {</div>
-<div class="line"><span class="lineno">  116</span>                    aspr.Play(<span class="stringliteral">&quot;hit&quot;</span>);</div>
-<div class="line"><span class="lineno">  117</span>                    await ToSignal(aspr, <span class="stringliteral">&quot;animation_finished&quot;</span>);</div>
-<div class="line"><span class="lineno">  118</span>                }</div>
-<div class="line"><span class="lineno">  119</span>                GD.Print(<span class="stringliteral">&quot;Reloading scene after player hit animation finished.&quot;</span>);</div>
-<div class="line"><span class="lineno">  120</span>                GetTree().ReloadCurrentScene();</div>
-<div class="line"><span class="lineno">  121</span>            }</div>
-<div class="line"><span class="lineno">  122</span>            <span class="keywordflow">catch</span> (Exception ex)</div>
-<div class="line"><span class="lineno">  123</span>            {</div>
-<div class="line"><span class="lineno">  124</span>                GD.PrintErr(<span class="stringliteral">&quot;Error en HitAsync: &quot;</span>, ex);</div>
-<div class="line"><span class="lineno">  125</span>            }</div>
-<div class="line"><span class="lineno">  126</span>        }</div>
-<div class="ttc" id="aclassNuevoProyectodeJuego_1_1scripts_1_1Player_1_1Player_html_ab4873395a05fb5826708ad2511f0572c"><div class="ttname"><a href="classNuevoProyectodeJuego_1_1scripts_1_1Player_1_1Player.html#ab4873395a05fb5826708ad2511f0572c">NuevoProyectodeJuego.scripts.Player.Player.IsDying</a></div><div class="ttdeci">bool IsDying</div><div class="ttdoc">Bool para indicar que el jugador está en proceso de muerte (solo lectura externa).</div><div class="ttdef"><b>Definition</b> <a href="Player_8cs_source.html#l00049">Player.cs:49</a></div></div>
+<p class="definition">Definition at line <a class="el" href="Player_8cs_source.html#l00107">107</a> of file <a class="el" href="Player_8cs_source.html">Player.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  108</span>        {</div>
+<div class="line"><span class="lineno">  109</span>            <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">  110</span>            {</div>
+<div class="line"><span class="lineno">  111</span>                <a class="code hl_property" href="classNuevoProyectodeJuego_1_1scripts_1_1Player_1_1Player.html#ab4873395a05fb5826708ad2511f0572c">IsDying</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  112</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="classNuevoProyectodeJuego_1_1scripts_1_1Player_1_1Player.html#a7c66bda990c335065edbc483edf91b25">_animatedSpriteNode</a> is AnimatedSprite2D aspr)</div>
+<div class="line"><span class="lineno">  113</span>                {</div>
+<div class="line"><span class="lineno">  114</span>                    aspr.Play(<span class="stringliteral">&quot;hit&quot;</span>);</div>
+<div class="line"><span class="lineno">  115</span>                    await ToSignal(aspr, <span class="stringliteral">&quot;animation_finished&quot;</span>);</div>
+<div class="line"><span class="lineno">  116</span>                }</div>
+<div class="line"><span class="lineno">  117</span>                GetTree().CallDeferred(<span class="stringliteral">&quot;reload_current_scene&quot;</span>);</div>
+<div class="line"><span class="lineno">  118</span>            }</div>
+<div class="line"><span class="lineno">  119</span>            <span class="keywordflow">catch</span> (Exception)</div>
+<div class="line"><span class="lineno">  120</span>            {</div>
+<div class="line"><span class="lineno">  121</span>                GetTree().CallDeferred(<span class="stringliteral">&quot;reload_current_scene&quot;</span>);</div>
+<div class="line"><span class="lineno">  122</span>            }</div>
+<div class="line"><span class="lineno">  123</span>        }</div>
+<div class="ttc" id="aclassNuevoProyectodeJuego_1_1scripts_1_1Player_1_1Player_html_ab4873395a05fb5826708ad2511f0572c"><div class="ttname"><a href="classNuevoProyectodeJuego_1_1scripts_1_1Player_1_1Player.html#ab4873395a05fb5826708ad2511f0572c">NuevoProyectodeJuego.scripts.Player.Player.IsDying</a></div><div class="ttdeci">bool IsDying</div><div class="ttdoc">Bool para indicar que el jugador está en proceso de muerte (solo lectura externa).</div><div class="ttdef"><b>Definition</b> <a href="Player_8cs_source.html#l00051">Player.cs:51</a></div></div>
 </div><!-- fragment -->
+</div>
+</div>
+<a id="a1d0ddf9bb2a62c716a2aec16ce4a5d81" name="a1d0ddf9bb2a62c716a2aec16ce4a5d81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d0ddf9bb2a62c716a2aec16ce4a5d81">&#9670;&#160;</a></span>InJumpingEventHandler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">delegate void NuevoProyectodeJuego.scripts.Player.Player.InJumpingEventHandler </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
 </div>
 </div>
 <a id="a73f79a9d0dddc16ed65d49418a014062" name="a73f79a9d0dddc16ed65d49418a014062"></a>
@@ -354,11 +370,9 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   97</span>                <span class="keywordflow">return</span>;</div>
 <div class="line"><span class="lineno">   98</span>            </div>
 <div class="line"><span class="lineno">   99</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="classNuevoProyectodeJuego_1_1scripts_1_1Player_1_1Player.html#a7c66bda990c335065edbc483edf91b25">_animatedSpriteNode</a> is AnimatedSprite2D aspr)</div>
-<div class="line"><span class="lineno">  100</span>            {</div>
-<div class="line"><span class="lineno">  101</span>                aspr.Play(animationName);</div>
-<div class="line"><span class="lineno">  102</span>                GD.Print($<span class="stringliteral">&quot;Setting animation to: {animationName}&quot;</span>);</div>
-<div class="line"><span class="lineno">  103</span>            }</div>
-<div class="line"><span class="lineno">  104</span>        }</div>
+<div class="line"><span class="lineno">  100</span>                aspr.Play(animationName);</div>
+<div class="line"><span class="lineno">  101</span> </div>
+<div class="line"><span class="lineno">  102</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -385,7 +399,7 @@ Private Attributes</h2></td></tr>
 
 <p>Sprite animado del jugador para controlar las animaciones (privado). </p>
 
-<p class="definition">Definition at line <a class="el" href="Player_8cs_source.html#l00052">52</a> of file <a class="el" href="Player_8cs_source.html">Player.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Player_8cs_source.html#l00054">54</a> of file <a class="el" href="Player_8cs_source.html">Player.cs</a>.</p>
 
 </div>
 </div>
@@ -542,15 +556,15 @@ Private Attributes</h2></td></tr>
 
 <p>Compatibilidad: exponer AnimatedSprite2D como propiedad pública para estados que lo usan directamente. </p>
 
-<p class="definition">Definition at line <a class="el" href="Player_8cs_source.html#l00038">38</a> of file <a class="el" href="Player_8cs_source.html">Player.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   39</span>        {</div>
-<div class="line"><span class="lineno">   40</span>            <span class="keyword">get</span></div>
-<div class="line"><span class="lineno">   41</span>            {</div>
-<div class="line"><span class="lineno">   42</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="classNuevoProyectodeJuego_1_1scripts_1_1Player_1_1Player.html#a7c66bda990c335065edbc483edf91b25">_animatedSpriteNode</a> is AnimatedSprite2D aspr)</div>
-<div class="line"><span class="lineno">   43</span>                    <span class="keywordflow">return</span> aspr;</div>
-<div class="line"><span class="lineno">   44</span>                <span class="keywordflow">return</span> GetNode&lt;AnimatedSprite2D&gt;(<span class="stringliteral">&quot;AnimatedSprite2D&quot;</span>);</div>
-<div class="line"><span class="lineno">   45</span>            }</div>
-<div class="line"><span class="lineno">   46</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="Player_8cs_source.html#l00040">40</a> of file <a class="el" href="Player_8cs_source.html">Player.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   41</span>        {</div>
+<div class="line"><span class="lineno">   42</span>            <span class="keyword">get</span></div>
+<div class="line"><span class="lineno">   43</span>            {</div>
+<div class="line"><span class="lineno">   44</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="classNuevoProyectodeJuego_1_1scripts_1_1Player_1_1Player.html#a7c66bda990c335065edbc483edf91b25">_animatedSpriteNode</a> is AnimatedSprite2D aspr)</div>
+<div class="line"><span class="lineno">   45</span>                    <span class="keywordflow">return</span> aspr;</div>
+<div class="line"><span class="lineno">   46</span>                <span class="keywordflow">return</span> GetNode&lt;AnimatedSprite2D&gt;(<span class="stringliteral">&quot;AnimatedSprite2D&quot;</span>);</div>
+<div class="line"><span class="lineno">   47</span>            }</div>
+<div class="line"><span class="lineno">   48</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -576,8 +590,8 @@ Private Attributes</h2></td></tr>
 
 <p>Compatibilidad: propiedad con el nombre antiguo usada por estados externos. Permite lectura pública y asignación interna. </p>
 
-<p class="definition">Definition at line <a class="el" href="Player_8cs_source.html#l00033">33</a> of file <a class="el" href="Player_8cs_source.html">Player.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   33</span>{ <span class="keyword">get</span> =&gt; <a class="code hl_variable" href="classNuevoProyectodeJuego_1_1scripts_1_1Player_1_1Player.html#aa958e643b5adafb97ebd41ffb2262250">_coyoteTimeCounter</a>; <span class="keyword">internal</span> <span class="keyword">set</span> =&gt; <a class="code hl_variable" href="classNuevoProyectodeJuego_1_1scripts_1_1Player_1_1Player.html#aa958e643b5adafb97ebd41ffb2262250">_coyoteTimeCounter</a> = value; }</div>
+<p class="definition">Definition at line <a class="el" href="Player_8cs_source.html#l00035">35</a> of file <a class="el" href="Player_8cs_source.html">Player.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   35</span>{ <span class="keyword">get</span> =&gt; <a class="code hl_variable" href="classNuevoProyectodeJuego_1_1scripts_1_1Player_1_1Player.html#aa958e643b5adafb97ebd41ffb2262250">_coyoteTimeCounter</a>; <span class="keyword">internal</span> <span class="keyword">set</span> =&gt; <a class="code hl_variable" href="classNuevoProyectodeJuego_1_1scripts_1_1Player_1_1Player.html#aa958e643b5adafb97ebd41ffb2262250">_coyoteTimeCounter</a> = value; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -654,8 +668,8 @@ Private Attributes</h2></td></tr>
 
 <p>Bool para indicar que el jugador está en proceso de muerte (solo lectura externa). </p>
 
-<p class="definition">Definition at line <a class="el" href="Player_8cs_source.html#l00049">49</a> of file <a class="el" href="Player_8cs_source.html">Player.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   49</span>{ <span class="keyword">get</span>; <span class="keyword">private</span> <span class="keyword">set</span>; }</div>
+<p class="definition">Definition at line <a class="el" href="Player_8cs_source.html#l00051">51</a> of file <a class="el" href="Player_8cs_source.html">Player.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   51</span>{ <span class="keyword">get</span>; <span class="keyword">private</span> <span class="keyword">set</span>; }</div>
 </div><!-- fragment -->
 </div>
 </div>

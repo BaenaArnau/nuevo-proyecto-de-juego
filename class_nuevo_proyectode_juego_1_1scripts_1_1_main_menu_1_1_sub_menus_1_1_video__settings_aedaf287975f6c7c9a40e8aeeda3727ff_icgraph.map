@@ -1,0 +1,5 @@
+<map id="NuevoProyectodeJuego.scripts.MainMenu.SubMenus.Video_settings.ApplyGameDataVideoSettings" name="NuevoProyectodeJuego.scripts.MainMenu.SubMenus.Video_settings.ApplyGameDataVideoSettings">
+<area shape="rect" id="Node000001" title="Aplica la resolución seleccionada al juego. Intenta usar la API de OS para cambiar el tamaño de venta..." alt="" coords="295,5,536,64"/>
+<area shape="rect" id="Node000002" href="$class_nuevo_proyectode_juego_1_1scripts_1_1_main_menu_1_1_sub_menus_1_1_video__settings.html#a9905b37ff4602ac3fc5df1935775162a" title="Botón &#39;Aplicar&#39; pulsado: aplica la resolución seleccionada y guarda la configuración." alt="" coords="5,5,247,64"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="276,35,247,37,247,32,281,34"/>
+</map>

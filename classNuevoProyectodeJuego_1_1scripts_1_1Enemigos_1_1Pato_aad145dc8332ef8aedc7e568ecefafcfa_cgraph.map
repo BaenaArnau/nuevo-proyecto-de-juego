@@ -1,0 +1,5 @@
+<map id="NuevoProyectodeJuego.scripts.Enemigos.Pato.OnPlayerInJumping" name="NuevoProyectodeJuego.scripts.Enemigos.Pato.OnPlayerInJumping">
+<area shape="rect" id="Node000001" title="Manejador llamado cuando el jugador emite la señal de salto. Hace que el pato salte si está dentro de..." alt="" coords="5,5,252,45"/>
+<area shape="rect" id="Node000002" href="$classNuevoProyectodeJuego_1_1scripts_1_1Enemigos_1_1Pato.html#a0163740c5daa3ab26d6a33d60a610676" title="Establece la animación del pato." alt="" coords="300,5,524,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="252,23,286,23,286,28,252,28"/>
+</map>

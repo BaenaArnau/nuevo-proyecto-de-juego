@@ -226,11 +226,11 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classNuevoProyectodeJuego_1_1scripts_1_1Maquinas__de__estados_1_1State.html#a6bf47cf972e3ae0cd084e88136bbd54d">NuevoProyectodeJuego.scripts.Maquinas_de_estados.State</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="RunningMovementState_8cs_source.html#l00073">73</a> of file <a class="el" href="RunningMovementState_8cs_source.html">RunningMovementState.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   74</span>        {</div>
-<div class="line"><span class="lineno">   75</span>            <span class="keywordflow">if</span> (ev.IsActionPressed(<span class="stringliteral">&quot;jump&quot;</span>) &amp;&amp; <a class="code hl_variable" href="classNuevoProyectodeJuego_1_1scripts_1_1Maquinas__de__estados_1_1Movimiento_1_1Estados_1_1RunningMovementState.html#a4d23aae46cd37bf479055fa2fb4105b3">_player</a>.IsOnFloor())</div>
-<div class="line"><span class="lineno">   76</span>                <a class="code hl_variable" href="classNuevoProyectodeJuego_1_1scripts_1_1Maquinas__de__estados_1_1State.html#a3fca53af76facf2691dbc08be9d7b390">stateMachine</a>.TransitionTo(<span class="stringliteral">&quot;JumpingMovementState&quot;</span>);</div>
-<div class="line"><span class="lineno">   77</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="RunningMovementState_8cs_source.html#l00069">69</a> of file <a class="el" href="RunningMovementState_8cs_source.html">RunningMovementState.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   70</span>        {</div>
+<div class="line"><span class="lineno">   71</span>            <span class="keywordflow">if</span> (ev.IsActionPressed(<span class="stringliteral">&quot;jump&quot;</span>) &amp;&amp; <a class="code hl_variable" href="classNuevoProyectodeJuego_1_1scripts_1_1Maquinas__de__estados_1_1Movimiento_1_1Estados_1_1RunningMovementState.html#a4d23aae46cd37bf479055fa2fb4105b3">_player</a>.IsOnFloor())</div>
+<div class="line"><span class="lineno">   72</span>                <a class="code hl_variable" href="classNuevoProyectodeJuego_1_1scripts_1_1Maquinas__de__estados_1_1State.html#a3fca53af76facf2691dbc08be9d7b390">stateMachine</a>.TransitionTo(<span class="stringliteral">&quot;JumpingMovementState&quot;</span>);</div>
+<div class="line"><span class="lineno">   73</span>        }</div>
 <div class="ttc" id="aclassNuevoProyectodeJuego_1_1scripts_1_1Maquinas__de__estados_1_1State_html_a3fca53af76facf2691dbc08be9d7b390"><div class="ttname"><a href="classNuevoProyectodeJuego_1_1scripts_1_1Maquinas__de__estados_1_1State.html#a3fca53af76facf2691dbc08be9d7b390">NuevoProyectodeJuego.scripts.Maquinas_de_estados.State.stateMachine</a></div><div class="ttdeci">MovementStateMachine stateMachine</div><div class="ttdoc">Campo protegido mantenido por compatibilidad. Los estados existentes usan stateMachine.</div><div class="ttdef"><b>Definition</b> <a href="State_8cs_source.html#l00036">State.cs:36</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -310,24 +310,20 @@ Additional Inherited Members</h2></td></tr>
 <div class="fragment"><div class="line"><span class="lineno">   37</span>        {</div>
 <div class="line"><span class="lineno">   38</span>            <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classNuevoProyectodeJuego_1_1scripts_1_1Maquinas__de__estados_1_1Movimiento_1_1Estados_1_1RunningMovementState.html#a4d23aae46cd37bf479055fa2fb4105b3">_player</a>.IsOnFloor())</div>
 <div class="line"><span class="lineno">   39</span>            {</div>
-<div class="line"><span class="lineno">   40</span>                GD.Print(<span class="stringliteral">&quot;Transitioning to falling or jumping state from running.&quot;</span>);</div>
-<div class="line"><span class="lineno">   41</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="classNuevoProyectodeJuego_1_1scripts_1_1Maquinas__de__estados_1_1Movimiento_1_1Estados_1_1RunningMovementState.html#a4d23aae46cd37bf479055fa2fb4105b3">_player</a>.Velocity.Y &lt; 0)</div>
-<div class="line"><span class="lineno">   42</span>                    <a class="code hl_variable" href="classNuevoProyectodeJuego_1_1scripts_1_1Maquinas__de__estados_1_1State.html#a3fca53af76facf2691dbc08be9d7b390">stateMachine</a>.TransitionTo(<span class="stringliteral">&quot;JumpingMovementState&quot;</span>);</div>
-<div class="line"><span class="lineno">   43</span>                <span class="keywordflow">else</span> </div>
-<div class="line"><span class="lineno">   44</span>                    <a class="code hl_variable" href="classNuevoProyectodeJuego_1_1scripts_1_1Maquinas__de__estados_1_1State.html#a3fca53af76facf2691dbc08be9d7b390">stateMachine</a>.TransitionTo(<span class="stringliteral">&quot;FallingMovementState&quot;</span>);</div>
-<div class="line"><span class="lineno">   45</span> </div>
-<div class="line"><span class="lineno">   46</span>                <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   47</span>            }</div>
-<div class="line"><span class="lineno">   48</span>            <span class="keywordflow">if</span> (Mathf.Abs((<span class="keywordtype">float</span>)<a class="code hl_variable" href="classNuevoProyectodeJuego_1_1scripts_1_1Maquinas__de__estados_1_1Movimiento_1_1Estados_1_1RunningMovementState.html#a4d23aae46cd37bf479055fa2fb4105b3">_player</a>.Velocity.X) &lt; 0.1f)</div>
-<div class="line"><span class="lineno">   49</span>            {</div>
-<div class="line"><span class="lineno">   50</span>                <span class="keywordtype">bool</span> inputPressed = Input.IsActionPressed(<span class="stringliteral">&quot;move_left&quot;</span>) || Input.IsActionPressed(<span class="stringliteral">&quot;move_right&quot;</span>);</div>
-<div class="line"><span class="lineno">   51</span>                <span class="keywordflow">if</span> (!inputPressed)</div>
-<div class="line"><span class="lineno">   52</span>                {</div>
-<div class="line"><span class="lineno">   53</span>                    GD.Print(<span class="stringliteral">&quot;Transitioning to idle state from running.&quot;</span>);</div>
-<div class="line"><span class="lineno">   54</span>                    <a class="code hl_variable" href="classNuevoProyectodeJuego_1_1scripts_1_1Maquinas__de__estados_1_1State.html#a3fca53af76facf2691dbc08be9d7b390">stateMachine</a>.TransitionTo(<span class="stringliteral">&quot;IdleMovementState&quot;</span>);</div>
-<div class="line"><span class="lineno">   55</span>                }</div>
-<div class="line"><span class="lineno">   56</span>            }</div>
-<div class="line"><span class="lineno">   57</span>        }</div>
+<div class="line"><span class="lineno">   40</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="classNuevoProyectodeJuego_1_1scripts_1_1Maquinas__de__estados_1_1Movimiento_1_1Estados_1_1RunningMovementState.html#a4d23aae46cd37bf479055fa2fb4105b3">_player</a>.Velocity.Y &lt; 0)</div>
+<div class="line"><span class="lineno">   41</span>                    <a class="code hl_variable" href="classNuevoProyectodeJuego_1_1scripts_1_1Maquinas__de__estados_1_1State.html#a3fca53af76facf2691dbc08be9d7b390">stateMachine</a>.TransitionTo(<span class="stringliteral">&quot;JumpingMovementState&quot;</span>);</div>
+<div class="line"><span class="lineno">   42</span>                <span class="keywordflow">else</span> </div>
+<div class="line"><span class="lineno">   43</span>                    <a class="code hl_variable" href="classNuevoProyectodeJuego_1_1scripts_1_1Maquinas__de__estados_1_1State.html#a3fca53af76facf2691dbc08be9d7b390">stateMachine</a>.TransitionTo(<span class="stringliteral">&quot;FallingMovementState&quot;</span>);</div>
+<div class="line"><span class="lineno">   44</span> </div>
+<div class="line"><span class="lineno">   45</span>                <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   46</span>            }</div>
+<div class="line"><span class="lineno">   47</span>            <span class="keywordflow">if</span> (Mathf.Abs((<span class="keywordtype">float</span>)<a class="code hl_variable" href="classNuevoProyectodeJuego_1_1scripts_1_1Maquinas__de__estados_1_1Movimiento_1_1Estados_1_1RunningMovementState.html#a4d23aae46cd37bf479055fa2fb4105b3">_player</a>.Velocity.X) &lt; 0.1f)</div>
+<div class="line"><span class="lineno">   48</span>            {</div>
+<div class="line"><span class="lineno">   49</span>                <span class="keywordtype">bool</span> inputPressed = Input.IsActionPressed(<span class="stringliteral">&quot;move_left&quot;</span>) || Input.IsActionPressed(<span class="stringliteral">&quot;move_right&quot;</span>);</div>
+<div class="line"><span class="lineno">   50</span>                <span class="keywordflow">if</span> (!inputPressed)</div>
+<div class="line"><span class="lineno">   51</span>                    <a class="code hl_variable" href="classNuevoProyectodeJuego_1_1scripts_1_1Maquinas__de__estados_1_1State.html#a3fca53af76facf2691dbc08be9d7b390">stateMachine</a>.TransitionTo(<span class="stringliteral">&quot;IdleMovementState&quot;</span>);</div>
+<div class="line"><span class="lineno">   52</span>            }</div>
+<div class="line"><span class="lineno">   53</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -365,15 +361,15 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classNuevoProyectodeJuego_1_1scripts_1_1Maquinas__de__estados_1_1State.html#a8503584e744d325f9a9b3b0bead586f9">NuevoProyectodeJuego.scripts.Maquinas_de_estados.State</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="RunningMovementState_8cs_source.html#l00061">61</a> of file <a class="el" href="RunningMovementState_8cs_source.html">RunningMovementState.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   62</span>        {</div>
-<div class="line"><span class="lineno">   63</span>            <span class="keywordtype">float</span> move = Input.GetActionStrength(<span class="stringliteral">&quot;move_right&quot;</span>) - Input.GetActionStrength(<span class="stringliteral">&quot;move_left&quot;</span>);</div>
-<div class="line"><span class="lineno">   64</span>            <span class="keywordflow">if</span> (Mathf.Abs(move) &gt; 0f)</div>
-<div class="line"><span class="lineno">   65</span>                _player.Velocity = <span class="keyword">new</span> Vector2(move * <a class="code hl_typedef" href="DoubleJumpMovementState_8cs.html#a964957f2c83a7b256f6437aae8812251">PlayerType</a>.Speed, <a class="code hl_variable" href="classNuevoProyectodeJuego_1_1scripts_1_1Maquinas__de__estados_1_1Movimiento_1_1Estados_1_1RunningMovementState.html#a4d23aae46cd37bf479055fa2fb4105b3">_player</a>.Velocity.Y);</div>
-<div class="line"><span class="lineno">   66</span>            <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">   67</span>                _player.Velocity = <span class="keyword">new</span> Vector2(0, <a class="code hl_variable" href="classNuevoProyectodeJuego_1_1scripts_1_1Maquinas__de__estados_1_1Movimiento_1_1Estados_1_1RunningMovementState.html#a4d23aae46cd37bf479055fa2fb4105b3">_player</a>.Velocity.Y);</div>
-<div class="line"><span class="lineno">   68</span>            <a class="code hl_variable" href="classNuevoProyectodeJuego_1_1scripts_1_1Maquinas__de__estados_1_1Movimiento_1_1Estados_1_1RunningMovementState.html#a4d23aae46cd37bf479055fa2fb4105b3">_player</a>.MoveAndSlide();</div>
-<div class="line"><span class="lineno">   69</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="RunningMovementState_8cs_source.html#l00057">57</a> of file <a class="el" href="RunningMovementState_8cs_source.html">RunningMovementState.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   58</span>        {</div>
+<div class="line"><span class="lineno">   59</span>            <span class="keywordtype">float</span> move = Input.GetActionStrength(<span class="stringliteral">&quot;move_right&quot;</span>) - Input.GetActionStrength(<span class="stringliteral">&quot;move_left&quot;</span>);</div>
+<div class="line"><span class="lineno">   60</span>            <span class="keywordflow">if</span> (Mathf.Abs(move) &gt; 0f)</div>
+<div class="line"><span class="lineno">   61</span>                _player.Velocity = <span class="keyword">new</span> Vector2(move * <a class="code hl_typedef" href="DoubleJumpMovementState_8cs.html#a964957f2c83a7b256f6437aae8812251">PlayerType</a>.Speed, <a class="code hl_variable" href="classNuevoProyectodeJuego_1_1scripts_1_1Maquinas__de__estados_1_1Movimiento_1_1Estados_1_1RunningMovementState.html#a4d23aae46cd37bf479055fa2fb4105b3">_player</a>.Velocity.Y);</div>
+<div class="line"><span class="lineno">   62</span>            <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   63</span>                _player.Velocity = <span class="keyword">new</span> Vector2(0, <a class="code hl_variable" href="classNuevoProyectodeJuego_1_1scripts_1_1Maquinas__de__estados_1_1Movimiento_1_1Estados_1_1RunningMovementState.html#a4d23aae46cd37bf479055fa2fb4105b3">_player</a>.Velocity.Y);</div>
+<div class="line"><span class="lineno">   64</span>            <a class="code hl_variable" href="classNuevoProyectodeJuego_1_1scripts_1_1Maquinas__de__estados_1_1Movimiento_1_1Estados_1_1RunningMovementState.html#a4d23aae46cd37bf479055fa2fb4105b3">_player</a>.MoveAndSlide();</div>
+<div class="line"><span class="lineno">   65</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
