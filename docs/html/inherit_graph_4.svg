@@ -78,7 +78,7 @@
 <!-- Node9 -->
 <g id="Node000009" class="node">
 <title>Node9</title>
-<g id="a_Node000009"><a xlink:href="class_nuevo_proyectode_juego_1_1scripts_1_1_scenes_1_1_node2d.html" target="_top" xlink:title=" ">
+<g id="a_Node000009"><a xlink:href="class_nuevo_proyectode_juego_1_1scripts_1_1_scenes_1_1_node2d.html" target="_top" xlink:title="Nodo2D que maneja la transición a la siguiente escena al entrar en un área específica.">
 <polygon fill="white" stroke="#666666" points="260.75,-62 105.25,-62 105.25,-30 260.75,-30 260.75,-62"/>
 <text xml:space="preserve" text-anchor="start" x="113.25" y="-48.5" font-family="Helvetica,sans-Serif" font-size="10.00">NuevoProyectodeJuego.scripts.</text>
 <text xml:space="preserve" text-anchor="middle" x="183" y="-36.5" font-family="Helvetica,sans-Serif" font-size="10.00">Scenes.Node2d</text>

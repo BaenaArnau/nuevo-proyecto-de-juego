@@ -6,11 +6,29 @@ using Godot;
 /// </summary>
 public partial class PauseMenu : CanvasLayer
 {
+    /// <summary>
+    /// Menú de configuración.
+    /// </summary>
     private Control _settingsMenu;
+
+    /// <summary>
+    /// Botón para reanudar el juego.
+    /// </summary>
     [Export] private Button _resumeButton;
+
+    /// <summary>
+    /// Botón para abrir el menú de configuración.
+    /// </summary>
     [Export] private Button _settingsButton;
+
+    /// <summary>
+    /// Botón para salir del juego.
+    /// </summary>
     [Export] private Button _quitButton;
 
+    /// <summary>
+    /// Inicializa el menú de pausa.
+    /// </summary>
     public override void _Ready()
     {
         Visible = false;
@@ -27,6 +45,9 @@ public partial class PauseMenu : CanvasLayer
             _quitButton.Visible = true;
     }
 
+    /// <summary>
+    /// Maneja la entrada no procesada (como la pulsación de la tecla de pausa).
+    /// </summary>
     public override void _UnhandledInput(InputEvent @event)
     {
         if (@event.IsActionPressed("pause") && !@event.IsEcho())
@@ -43,14 +64,23 @@ public partial class PauseMenu : CanvasLayer
         Visible = newState;
     }
 
+    /// <summary>
+    /// Maneja la pulsación del botón "Reanudar".
+    /// </summary>
     public void _on_resume_button_pressed() => TogglePause(false);
 
+    /// <summary>
+    /// Maneja la pulsación del botón "Salir".
+    /// </summary>
     public void _on_quit_button_pressed()
     {
         GetTree().Paused = false;
         GetTree().Quit();
     }
 
+    /// <summary>
+    /// Maneja la pulsación del botón "Configuración".
+    /// </summary>
     public void _on_settings_button_pressed()
     {
         if (_resumeButton != null)
@@ -63,6 +93,10 @@ public partial class PauseMenu : CanvasLayer
             _settingsMenu.Visible = true;
     }
 
+    /// <summary>
+    /// Procesa la lógica del menú de pausa.
+    /// </summary>
+    /// <param name="delta">Delta en segundos.</param>
     public override void _Process(double delta)
     {
         if (_settingsMenu != null && !_settingsMenu.Visible)

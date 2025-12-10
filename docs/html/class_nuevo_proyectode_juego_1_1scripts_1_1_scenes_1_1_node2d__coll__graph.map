@@ -1,5 +1,5 @@
 <map id="NuevoProyectodeJuego.scripts.Scenes.Node2d" name="NuevoProyectodeJuego.scripts.Scenes.Node2d">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,80,213,123"/>
+<area shape="rect" id="Node000001" title="Nodo2D que maneja la transición a la siguiente escena al entrar en un área específica." alt="" coords="5,80,213,123"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="83,5,135,32"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="111,46,111,81,107,79,107,50"/>
 </map>

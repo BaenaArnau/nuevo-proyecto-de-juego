@@ -6,7 +6,7 @@
 <area shape="poly" id="edge6_Node000000_Node000002" title=" " alt="" coords="72,225,147,214,143,218,74,230"/>
 <area shape="rect" id="Node000008" href="$class_nuevo_proyectode_juego_1_1scripts_1_1_menu_1_1_main_menu.html" title="Controla el menú principal del juego (botones de iniciar, opciones y salir). Se mantienen los nombres..." alt="" coords="146,245,353,288"/>
 <area shape="poly" id="edge12_Node000000_Node000008" title=" " alt="" coords="73,237,147,249,143,252,74,242"/>
-<area shape="rect" id="Node000009" href="$class_nuevo_proyectode_juego_1_1scripts_1_1_scenes_1_1_node2d.html" title=" " alt="" coords="146,312,353,355"/>
+<area shape="rect" id="Node000009" href="$class_nuevo_proyectode_juego_1_1scripts_1_1_scenes_1_1_node2d.html" title="Nodo2D que maneja la transición a la siguiente escena al entrar en un área específica." alt="" coords="146,312,353,355"/>
 <area shape="poly" id="edge13_Node000000_Node000009" title=" " alt="" coords="54,255,79,278,107,298,148,315,142,317,104,302,76,282,54,261"/>
 <area shape="rect" id="Node000003" href="$class_nuevo_proyectode_juego_1_1scripts_1_1_maquinas__de__estados_1_1_movimiento_1_1_estados_1_1_double_jump_movement_state.html" title="Estado de movimiento para el doble salto del jugador." alt="" coords="441,5,719,64"/>
 <area shape="poly" id="edge7_Node000002_Node000003" title=" " alt="" coords="366,179,391,165,408,144,415,121,421,97,439,74,460,63,456,66,443,78,426,100,420,122,413,146,395,169,369,184"/>

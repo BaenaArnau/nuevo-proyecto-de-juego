@@ -10,9 +10,24 @@ namespace NuevoProyectodeJuego.scripts.Menu
 	/// </summary>
 	public partial class MainMenu : Node
 	{
+		/// <summary>
+		/// Menú de configuración.
+		/// </summary>
 		[Export] private Settings settingsMenu;
+    
+		/// <summary>
+		/// Botón para iniciar el juego.
+		/// </summary>
 		[Export] private Button launchButton;
+    
+		/// <summary>
+		/// Botón para salir del juego.
+		/// </summary>
 		[Export] private Button exitButton;
+    
+		/// <summary>
+		/// Botón para abrir el menú de configuración.
+		/// </summary>
 		[Export] private Button settingsButton;
 
 		/// <summary>

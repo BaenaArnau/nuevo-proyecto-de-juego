@@ -21,7 +21,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="class_nuevo_proyectode_juego_1_1scripts_1_1_menu_1_1_pause_menu.html#a89579c780e45a88fd1d6a93766fe3cc9" target="_top" xlink:title=" ">
+<g id="a_Node000002"><a xlink:href="class_nuevo_proyectode_juego_1_1scripts_1_1_menu_1_1_pause_menu.html#a89579c780e45a88fd1d6a93766fe3cc9" target="_top" xlink:title="Maneja la entrada no procesada (como la pulsación de la tecla de pausa).">
 <polygon fill="white" stroke="#666666" points="171.25,-32 0,-32 0,0 171.25,0 171.25,-32"/>
 <text xml:space="preserve" text-anchor="start" x="8" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">NuevoProyectodeJuego.scripts.</text>
 <text xml:space="preserve" text-anchor="middle" x="85.62" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">Menu.PauseMenu._UnhandledInput</text>
