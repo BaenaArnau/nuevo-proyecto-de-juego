@@ -67,6 +67,20 @@ namespace NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.Estados
 		{
 			if (!_player.IsOnFloor())
 			{
+				// Si nos pegamos a una pared durante el salto, reproducir la animación de wall antes del wall-jump
+				if (_player.IsOnWall())
+				{
+					_player.SetAnimation("wall_jump");
+					// Forzar flip inmediato para mostrar que estamos pegados a la pared (mirar hacia fuera)
+					if (_player.animatedSprite is AnimatedSprite2D aspr)
+					{
+						if (_player.IsWallOnLeft())
+							aspr.FlipH = false;
+						else if (_player.IsWallOnRight())
+							aspr.FlipH = true;
+					}
+				}
+
 				Vector2 velocity = _player.Velocity;
 				velocity += _player.GetGravity() * (float)delta;
 				float move = Input.GetActionStrength("move_right") - Input.GetActionStrength("move_left");

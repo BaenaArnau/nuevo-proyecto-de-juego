@@ -44,6 +44,19 @@ namespace NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.Estados
 		{
 			if (!_player.IsOnFloor())
 			{
+				// Si el jugador está en una pared mientras cae, reproducir la animación de wall (antes de saltar)
+				if (_player.IsOnWall())
+				{
+					_player.SetAnimation("wall_jump");
+					if (_player.animatedSprite is AnimatedSprite2D aspr)
+					{
+						if (_player.IsWallOnLeft())
+							aspr.FlipH = false;
+						else if (_player.IsWallOnRight())
+							aspr.FlipH = true;
+					}
+				}
+
 				Vector2 velocity = _player.Velocity;
 				velocity += _player.GetGravity() * (float)delta;
 				float move = Input.GetActionStrength("move_right") - Input.GetActionStrength("move_left");

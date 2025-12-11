@@ -71,6 +71,19 @@ namespace NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.Estados
 		{
 			if (!_player.IsOnFloor())
 			{
+				// Si tocamos una pared en el doble salto, reproducir la animación de wall para indicar el contacto
+				if (_player.IsOnWall())
+				{
+					_player.SetAnimation("wall_jump");
+					if (_player.animatedSprite is AnimatedSprite2D aspr)
+					{
+						if (_player.IsWallOnLeft())
+							aspr.FlipH = false;
+						else if (_player.IsWallOnRight())
+							aspr.FlipH = true;
+					}
+				}
+
 				Vector2 velocity = _player.Velocity;
 				velocity += _player.GetGravity() * (float)delta;
 				// Horizontal air control tipo Hollow Knight: detenerse inmediatamente si no hay input
