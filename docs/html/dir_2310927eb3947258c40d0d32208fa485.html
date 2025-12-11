@@ -103,6 +103,44 @@ Directory dependency graph for Enemigos:</div>
 Files</h2></td></tr>
 <tr class="memitem:Pato_2Ecs" id="r_Pato_2Ecs"><td class="memItemLeft" align="right" valign="top"><a href="_pato_8cs_source.html"><span class="icondoc"><div class="doc-icon"></div></span></a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pato_8cs.html">Pato.cs</a></td></tr>
 </table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md0"></a>
+Pato (enemigo)</h1>
+<p>Descripción breve de lo implementado en <span class="tt"><a class="el" href="_pato_8cs.html">Pato.cs</a></span>:</p>
+<ul>
+<li>Tipo: nodo con física — hereda de <span class="tt">RigidBody2D</span>.</li>
+<li>Comportamiento principal:<ul>
+<li>Reacciona al jugador cuando este salta cerca: detecta cambios en la velocidad Y del jugador y salta (impulso vertical).</li>
+<li>Tiene una detección por área (trigger) para saber si el jugador está cercano y activar la reacción.</li>
+</ul>
+</li>
+<li>Movimiento:<ul>
+<li>Velocidad de movimiento configurable desde el inspector (<span class="tt">Export</span>/propiedad <span class="tt">Speed</span>).</li>
+<li>Lógica de salto controlada por flags para evitar saltos múltiples en el aire.</li>
+</ul>
+</li>
+<li>Interacción con el jugador:<ul>
+<li>Si el jugador colisiona con el área de daño del pato, el pato muere y el jugador recibe un rebote.</li>
+<li>Si el jugador choca con el pato por otro lado, puede recibir daño (dependiendo de la lógica del jugador).</li>
+</ul>
+</li>
+<li>Animaciones y nodos:<ul>
+<li>Usa un <span class="tt">AnimatedSprite2D</span> para las animaciones (<span class="tt">idle</span>, <span class="tt">run</span>, <span class="tt">hit</span>, <span class="tt">die</span>, etc.).</li>
+<li>El script obtiene nodos con accesos seguros y emite mensajes mediante llamadas tipadas.</li>
+</ul>
+</li>
+<li>Seguridad y compatibilidad:<ul>
+<li>Accesos a nodos realizados con <span class="tt">GetNodeOrNull</span> y castings seguros para evitar NullReference.</li>
+<li>La muerte y efectos usan métodos asíncronos (<span class="tt">async Task</span>) donde procede para no bloquear el hilo principal.</li>
+</ul>
+</li>
+</ul>
+<p>Notas de uso</p>
+<ul>
+<li>Escena de ejemplo: <span class="tt">scenes/pato.tscn</span> (instanciada en <span class="tt">scenes/node_2d.tscn</span>).</li>
+<li>Para probar: arrastra la escena <span class="tt">pato.tscn</span> a una escena de prueba y ejecuta el juego. Ajusta <span class="tt">Speed</span> y <span class="tt">JumpForce</span> en el inspector del pato.</li>
+</ul>
+<p>Si quieres, puedo resumir esto en la documentación generada por Doxygen o añadir ejemplos de configuración (valores recomendados para <span class="tt">Speed</span> y <span class="tt">JumpForce</span>). </p>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">

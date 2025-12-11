@@ -26,6 +26,7 @@ var annotated_dup =
           [ "PauseMenu", "class_nuevo_proyectode_juego_1_1scripts_1_1_menu_1_1_pause_menu.html", "class_nuevo_proyectode_juego_1_1scripts_1_1_menu_1_1_pause_menu" ]
         ] ],
         [ "Player", "namespace_nuevo_proyectode_juego_1_1scripts_1_1_player.html", [
+          [ "Camera2d", "class_nuevo_proyectode_juego_1_1scripts_1_1_player_1_1_camera2d.html", "class_nuevo_proyectode_juego_1_1scripts_1_1_player_1_1_camera2d" ],
           [ "Player", "class_nuevo_proyectode_juego_1_1scripts_1_1_player_1_1_player.html", "class_nuevo_proyectode_juego_1_1scripts_1_1_player_1_1_player" ]
         ] ],
         [ "Scenes", "namespace_nuevo_proyectode_juego_1_1scripts_1_1_scenes.html", [

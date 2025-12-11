@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['github_20pages_0',['Publicación automática (GitHub Pages)',['../index.html#autotoc_md1',1,'']]]
+  ['enemigo_0',['Pato (enemigo)',['../dir_2310927eb3947258c40d0d32208fa485.html#autotoc_md0',1,'']]]
 ];

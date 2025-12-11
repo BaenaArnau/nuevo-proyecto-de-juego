@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['togglepause_0',['TogglePause',['../class_nuevo_proyectode_juego_1_1scripts_1_1_menu_1_1_pause_menu.html#afbf7cd8780e503f14e67b69158ace63a',1,'NuevoProyectodeJuego::scripts::Menu::PauseMenu']]],
-  ['transitionto_1',['TransitionTo',['../class_nuevo_proyectode_juego_1_1scripts_1_1_maquinas__de__estados_1_1_movimiento_1_1_movement_state_machine.html#a5c267d10474c175dc5b121b4ee0a89ca',1,'NuevoProyectodeJuego::scripts::Maquinas_de_estados::Movimiento::MovementStateMachine']]]
+  ['setanimation_0',['SetAnimation',['../class_nuevo_proyectode_juego_1_1scripts_1_1_enemigos_1_1_pato.html#a0163740c5daa3ab26d6a33d60a610676',1,'NuevoProyectodeJuego.scripts.Enemigos.Pato.SetAnimation()'],['../class_nuevo_proyectode_juego_1_1scripts_1_1_player_1_1_player.html#a73f79a9d0dddc16ed65d49418a014062',1,'NuevoProyectodeJuego.scripts.Player.Player.SetAnimation()']]],
+  ['smoothingspeed_1',['smoothingSpeed',['../class_nuevo_proyectode_juego_1_1scripts_1_1_player_1_1_camera2d.html#a4b06822c2cac6ac6d4edd156d7399b7b',1,'NuevoProyectodeJuego::scripts::Player::Camera2d']]]
 ];

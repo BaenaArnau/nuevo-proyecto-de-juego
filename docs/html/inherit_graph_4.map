@@ -1,21 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" title=" " alt="" coords="5,220,58,247"/>
-<area shape="rect" id="Node000001" href="$class_nuevo_proyectode_juego_1_1scripts_1_1_maquinas__de__estados_1_1_movimiento_1_1_movement_state_machine.html" title="Máquina de estados para el movimiento del jugador." alt="" coords="106,96,393,155"/>
-<area shape="poly" id="edge5_Node000000_Node000001" title=" " alt="" coords="52,207,76,184,104,164,131,153,127,157,107,169,79,189,57,210"/>
-<area shape="rect" id="Node000002" href="$class_nuevo_proyectode_juego_1_1scripts_1_1_maquinas__de__estados_1_1_state.html" title="Clase base para todos los estados de la máquina de movimiento. Contiene los métodos ciclo de vida que..." alt="" coords="146,179,353,221"/>
-<area shape="poly" id="edge6_Node000000_Node000002" title=" " alt="" coords="72,225,147,214,143,218,74,230"/>
-<area shape="rect" id="Node000008" href="$class_nuevo_proyectode_juego_1_1scripts_1_1_menu_1_1_main_menu.html" title="Controla el menú principal del juego (botones de iniciar, opciones y salir). Se mantienen los nombres..." alt="" coords="146,245,353,288"/>
-<area shape="poly" id="edge12_Node000000_Node000008" title=" " alt="" coords="73,237,147,249,143,252,74,242"/>
-<area shape="rect" id="Node000009" href="$class_nuevo_proyectode_juego_1_1scripts_1_1_scenes_1_1_node2d.html" title="Nodo2D que maneja la transición a la siguiente escena al entrar en un área específica." alt="" coords="146,312,353,355"/>
-<area shape="poly" id="edge13_Node000000_Node000009" title=" " alt="" coords="54,255,79,278,107,298,148,315,142,317,104,302,76,282,54,261"/>
-<area shape="rect" id="Node000003" href="$class_nuevo_proyectode_juego_1_1scripts_1_1_maquinas__de__estados_1_1_movimiento_1_1_estados_1_1_double_jump_movement_state.html" title="Estado de movimiento para el doble salto del jugador." alt="" coords="441,5,719,64"/>
-<area shape="poly" id="edge7_Node000002_Node000003" title=" " alt="" coords="366,179,391,165,408,144,415,121,421,97,439,74,460,63,456,66,443,78,426,100,420,122,413,146,395,169,369,184"/>
-<area shape="rect" id="Node000004" href="$class_nuevo_proyectode_juego_1_1scripts_1_1_maquinas__de__estados_1_1_movimiento_1_1_estados_1_1_falling_movement_state.html" title="Estado de movimiento para la caída del jugador." alt="" coords="441,88,719,147"/>
-<area shape="poly" id="edge8_Node000002_Node000004" title=" " alt="" coords="360,172,392,164,471,146,466,148,394,169,362,177"/>
-<area shape="rect" id="Node000005" href="$class_nuevo_proyectode_juego_1_1scripts_1_1_maquinas__de__estados_1_1_movimiento_1_1_estados_1_1_idle_movement_state.html" title="Estado de movimiento para el estado Idle del jugador." alt="" coords="441,171,719,229"/>
-<area shape="poly" id="edge9_Node000002_Node000005" title=" " alt="" coords="368,197,443,199,438,201,369,203"/>
-<area shape="rect" id="Node000006" href="$class_nuevo_proyectode_juego_1_1scripts_1_1_maquinas__de__estados_1_1_movimiento_1_1_estados_1_1_jumping_movement_state.html" title="Estado de movimiento para el salto del jugador." alt="" coords="441,253,719,312"/>
-<area shape="poly" id="edge10_Node000002_Node000006" title=" " alt="" coords="361,223,394,231,471,252,466,253,392,236,361,228"/>
-<area shape="rect" id="Node000007" href="$class_nuevo_proyectode_juego_1_1scripts_1_1_maquinas__de__estados_1_1_movimiento_1_1_estados_1_1_running_movement_state.html" title="Estado de movimiento para la carrera del jugador." alt="" coords="441,336,719,395"/>
-<area shape="poly" id="edge11_Node000002_Node000007" title=" " alt="" coords="367,216,395,231,413,254,420,278,426,300,443,322,460,336,455,335,439,326,421,303,415,279,408,256,391,235,367,221"/>
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,13,69,40"/>
+<area shape="rect" id="Node000001" href="$class_nuevo_proyectode_juego_1_1scripts_1_1_menu_1_1_sub_menus_1_1_settings.html" title="Panel de configuración (resolución, volumen y otras opciones). Añadido namespace y comentarios para D..." alt="" coords="117,5,324,48"/>
+<area shape="poly" id="edge5_Node000000_Node000001" title=" " alt="" coords="84,24,119,26,113,27,84,29"/>
 </map>

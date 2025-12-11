@@ -3,6 +3,9 @@ var hierarchy =
     [ "Area2D", null, [
       [ "NuevoProyectodeJuego.scripts.Trampas.Sierra", "class_nuevo_proyectode_juego_1_1scripts_1_1_trampas_1_1_sierra.html", null ]
     ] ],
+    [ "Camera2D", null, [
+      [ "NuevoProyectodeJuego.scripts.Player.Camera2d", "class_nuevo_proyectode_juego_1_1scripts_1_1_player_1_1_camera2d.html", null ]
+    ] ],
     [ "CanvasLayer", null, [
       [ "NuevoProyectodeJuego.scripts.Menu.PauseMenu", "class_nuevo_proyectode_juego_1_1scripts_1_1_menu_1_1_pause_menu.html", null ]
     ] ],
