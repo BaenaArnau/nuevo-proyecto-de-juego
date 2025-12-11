@@ -76,7 +76,7 @@ namespace NuevoProyectodeJuego.scripts.Enemigos
 		/// <param name="body">El cuerpo que entró en el área</param>
 		private void _on_area_2d_body_entered (Node2D body)
 		{
-			if (body is NuevoProyectodeJuego.scripts.Player.Player p && !IsDying)
+			if (body is NuevoProyectodeJuego.scripts.Player.Player p && !this.IsDying)
 			{ 
 				GD.Print("Player hit by duck, dying.");
 				_ = p.HitAsync();
@@ -141,13 +141,14 @@ namespace NuevoProyectodeJuego.scripts.Enemigos
 		/// <param name="body">El cuerpo que entró en el área</param>
 		private void _on_damage_area_2d_body_entered (Node2D body)
 		{
-			if (body is NuevoProyectodeJuego.scripts.Player.Player p)
+			if (body is NuevoProyectodeJuego.scripts.Player.Player p && !p.IsDying)
 			{
 				IsDying = true;
 				GD.Print("Duck hit by player, dying.");
 
 				_ = DieAsync();
 
+				p.DoubleJumpAvailable = true;
 				p.Velocity = new Vector2(p.Velocity.X, NuevoProyectodeJuego.scripts.Player.Player.BounceVelocity);
 				p.MoveAndSlide();
 			}

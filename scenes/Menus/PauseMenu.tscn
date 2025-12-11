@@ -37,17 +37,17 @@ offset_bottom = 56.0
 [node name="ResumeButton" type="Button" parent="Menu/Panel/VBox"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 28
-text = "Continuar"
+text = "Return"
 
 [node name="SettingsButton" type="Button" parent="Menu/Panel/VBox"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 28
-text = "Ajustes"
+text = "Settings"
 
 [node name="QuitButton" type="Button" parent="Menu/Panel/VBox"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 28
-text = "Salir"
+text = "Exit"
 
 [node name="Settings2" parent="." instance=ExtResource("2")]
 visible = false

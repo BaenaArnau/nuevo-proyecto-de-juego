@@ -192,7 +192,7 @@ size = Vector2(63.33333, 57.5)
 radius = 212.23572
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g1r64"]
-size = Vector2(74, 12)
+size = Vector2(74, 4)
 
 [node name="Pato" type="RigidBody2D"]
 script = ExtResource("1_x7n1l")
@@ -227,7 +227,7 @@ debug_color = Color(0.5452348, 0.40505877, 1, 0.41960785)
 [node name="DamageArea2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DamageArea2D"]
-position = Vector2(0, -29)
+position = Vector2(1, -28)
 shape = SubResource("RectangleShape2D_g1r64")
 debug_color = Color(0.997279, 0, 0.17911905, 0.41960785)
 
