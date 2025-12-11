@@ -81,8 +81,17 @@ namespace NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.Estados
 
 		public override void HandleInput(InputEvent ev)
 		{
-			if (ev.IsActionPressed("jump") && _player.DoubleJumpAvailable)
-				stateMachine.TransitionTo("DoubleJumpMovementState");
+			if (ev.IsActionPressed("jump"))
+			{
+				// Priorizar transición a wall-jump si estamos en contacto con una pared
+				if (_player.IsOnWall())
+				{
+					stateMachine.TransitionTo("WallJumpMovementState");
+					return;
+				}
+				if (_player.DoubleJumpAvailable)
+					stateMachine.TransitionTo("DoubleJumpMovementState");
+			}
 		}
 	}
 }

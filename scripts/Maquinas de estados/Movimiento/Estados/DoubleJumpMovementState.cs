@@ -45,6 +45,15 @@ namespace NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.Estados
 			_isEmittingJumpSignal = false;
 		}
 
+		public override void HandleInput(InputEvent ev)
+		{
+			if (ev.IsActionPressed("jump") && _player.IsOnWall())
+			{
+				stateMachine.TransitionTo("WallJumpMovementState");
+				return;
+			}
+		}
+
 		/// <summary>Update por frame en doble salto: transiciones a caída al empezar a descender.</summary>
 		/// <param name="delta">Delta en segundos.</param>
 		public override void Update(double delta)

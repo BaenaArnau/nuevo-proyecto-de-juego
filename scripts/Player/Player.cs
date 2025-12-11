@@ -14,6 +14,12 @@ namespace NuevoProyectodeJuego.scripts.Player
 		/// <summary>Velocidad vertical aplicada al iniciar un salto (negativa = hacia arriba).</summary>
 		public const float JumpVelocity = -500.0f;
 
+		/// <summary>Velocidad horizontal aplicada al realizar un wall-jump (valor absoluto, se invertirá según lado).</summary>
+		public const float WallJumpHorizontal = 400.0f;
+
+		/// <summary>Velocidad vertical aplicada al realizar un wall-jump (negativa = hacia arriba).</summary>
+		public const float WallJumpVertical = -450.0f;
+
 		/// <summary>Velocidad vertical aplicada al rebotar sobre un enemigo (negativa = hacia arriba).</summary>
 		public const float BounceVelocity = -300.0f;
 
@@ -53,27 +59,56 @@ namespace NuevoProyectodeJuego.scripts.Player
 		/// <summary> Sprite animado del jugador para controlar las animaciones (privado).</summary>
 		private Node _animatedSpriteNode;
 
+		// RayCast2D opcionales colocados como hijos del jugador para detectar paredes de forma fiable
+		private RayCast2D _wallCheckLeftNode;
+		private RayCast2D _wallCheckRightNode;
+
+		/// <summary>
+		/// Distancia en píxeles para comprobar colisión con pared a izquierda/derecha.
+		/// </summary>
+		public const float WallCheckDistance = 12.0f;
+
 		/// <summary>
 		/// Método llamado al iniciar el nodo.
 		/// </summary>
 		public override void _Ready()
 		{
 			_animatedSpriteNode = GetNodeOrNull("AnimatedSprite2D");
+			_wallCheckLeftNode = GetNodeOrNull("WallCheckLeft") as RayCast2D;
+			_wallCheckRightNode = GetNodeOrNull("WallCheckRight") as RayCast2D;
 		}
 
 		/// <summary>Actualización de física del jugador. Mantener ligera para lógica central.</summary>
 		/// <param name="delta">Tiempo en segundos desde el último paso de física.</param>
-		public override void _PhysicsProcess(double delta) 
+		public override void _PhysicsProcess(double delta)
 		{
-			if (Velocity.X < 0f)
+			// Control de flip del sprite:
+			// - Si estamos pegados a una pared en el aire (IsOnWall && !IsOnFloor && !IsOnCeiling) usamos IsWallOnLeft/Right
+			//   para orientar al jugador AWAY de la pared (mirando hacia fuera).
+			// - En otro caso, conservar comportamiento por velocidad.
+			if (IsOnWall() && !IsOnFloor() && !IsOnCeiling())
 			{
 				if (_animatedSpriteNode is AnimatedSprite2D aspr)
-					aspr.FlipH = true;
+				{
+					// Si la pared está a la izquierda, queremos que el jugador mire a la derecha (FlipH = false).
+					if (IsWallOnLeft())
+						aspr.FlipH = false;
+					else if (IsWallOnRight())
+						aspr.FlipH = true;
+				}
 			}
-			else if (Velocity.X > 0f)
+			else
 			{
-				if (_animatedSpriteNode is AnimatedSprite2D aspr2)
-					aspr2.FlipH = false;
+				if (Velocity.X < 0f)
+				{
+					if (_animatedSpriteNode is AnimatedSprite2D aspr)
+						aspr.FlipH = true;
+				}
+				else if (Velocity.X > 0f)
+				{
+					if (_animatedSpriteNode is AnimatedSprite2D aspr2)
+						aspr2.FlipH = false;
+				}
 			}
 
 			if (IsOnFloor())
@@ -95,7 +130,7 @@ namespace NuevoProyectodeJuego.scripts.Player
 		{
 			if (IsDying)
 				return;
-			
+
 			if (_animatedSpriteNode is AnimatedSprite2D aspr)
 				aspr.Play(animationName);
 
@@ -120,6 +155,43 @@ namespace NuevoProyectodeJuego.scripts.Player
 			{
 				GetTree().CallDeferred("reload_current_scene");
 			}
+		}
+
+		/// <summary>
+		/// Comprueba si hay una pared a la izquierda del jugador en un pequeño rango.
+		/// </summary>
+		public bool IsWallOnLeft()
+		{
+			// Si existe un RayCast2D hijo, usarlo (más fiable y estable con el orden de física)
+			if (_wallCheckLeftNode != null)
+				return _wallCheckLeftNode.IsColliding();
+
+			var space = GetWorld2D().DirectSpaceState;
+			Vector2 from = GlobalPosition;
+			Vector2 to = from + new Vector2(-WallCheckDistance, 0);
+			var query = new PhysicsRayQueryParameters2D();
+			query.From = from;
+			query.To = to;
+			var result = space.IntersectRay(query);
+			return result != null && result.Count > 0;
+		}
+
+		/// <summary>
+		/// Comprueba si hay una pared a la derecha del jugador en un pequeño rango.
+		/// </summary>
+		public bool IsWallOnRight()
+		{
+			if (_wallCheckRightNode != null)
+				return _wallCheckRightNode.IsColliding();
+
+			var space = GetWorld2D().DirectSpaceState;
+			Vector2 from = GlobalPosition;
+			Vector2 to = from + new Vector2(WallCheckDistance, 0);
+			var query = new PhysicsRayQueryParameters2D();
+			query.From = from;
+			query.To = to;
+			var result = space.IntersectRay(query);
+			return result != null && result.Count > 0;
 		}
 	}
 }

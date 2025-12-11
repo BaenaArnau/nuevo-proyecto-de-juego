@@ -68,13 +68,22 @@ namespace NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.Estados
 		/// <param name="ev">Evento de entrada recibido.</param>
 		public override void HandleInput(InputEvent ev)
 		{
-			if (ev.IsActionPressed("jump") && _player.CoyoteTimeCounter > 0f)
+			if (ev.IsActionPressed("jump"))
 			{
-				stateMachine.TransitionTo("JumpingMovementState");
-				return;
+				// Priorizar wall-jump si hay pared
+				if (_player.IsOnWall())
+				{
+					stateMachine.TransitionTo("WallJumpMovementState");
+					return;
+				}
+				if (_player.CoyoteTimeCounter > 0f)
+				{
+					stateMachine.TransitionTo("JumpingMovementState");
+					return;
+				}
+				if (_player.DoubleJumpAvailable)
+					stateMachine.TransitionTo("DoubleJumpMovementState");
 			}
-			if (ev.IsActionPressed("jump") && _player.DoubleJumpAvailable)
-				stateMachine.TransitionTo("DoubleJumpMovementState");
 		}
 	}
 }
