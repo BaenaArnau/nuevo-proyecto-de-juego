@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://bjsf3q6hvbyji"]
+[gd_scene load_steps=59 format=3 uid="uid://bjsf3q6hvbyji"]
 
 [ext_resource type="Texture2D" uid="uid://dytn1kitsc804" path="res://assets/Main Characters/Ninja Frog/Idle (32x32).png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://b0m5xni6ow08l" path="res://scripts/Player/Player.cs" id="1_g2els"]
@@ -14,6 +14,7 @@
 [ext_resource type="Script" uid="uid://bqdyvw1r6p6lv" path="res://scripts/Maquinas de estados/Movimiento/Estados/JumpingMovementState.cs" id="12_3v2ag"]
 [ext_resource type="Script" uid="uid://do0bieokxjn43" path="res://scripts/Maquinas de estados/Movimiento/Estados/FallingMovementState.cs" id="13_jej6c"]
 [ext_resource type="Script" uid="uid://jci8sp5dmh5r" path="res://scripts/Maquinas de estados/Movimiento/Estados/DoubleJumpMovementState.cs" id="14_f1ej7"]
+[ext_resource type="Script" uid="uid://dxqx1mk6qc4jh" path="res://scripts/Player/Camera2d.cs" id="15_wyey8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f1ej7"]
 atlas = ExtResource("2_smehm")
@@ -346,8 +347,8 @@ animations = [{
 "speed": 14.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_f1ej7"]
-size = Vector2(24.444447, 25.555557)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wyey8"]
+height = 25.555557
 
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["NinjaFrogGroup"]]
 script = ExtResource("1_g2els")
@@ -362,7 +363,7 @@ frame_progress = 1.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 2.5)
 scale = Vector2(0.9, 0.9)
-shape = SubResource("RectangleShape2D_f1ej7")
+shape = SubResource("CapsuleShape2D_wyey8")
 
 [node name="MovementStateMachine" type="Node" parent="."]
 script = ExtResource("9_y4r1p")
@@ -382,5 +383,19 @@ script = ExtResource("13_jej6c")
 
 [node name="DoubleJumpMovementState" type="Node" parent="MovementStateMachine"]
 script = ExtResource("14_f1ej7")
+
+[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
+limit_left = 0
+limit_top = 0
+limit_right = 2000
+limit_bottom = 1215
+limit_smoothed = true
+position_smoothing_enabled = true
+position_smoothing_speed = 1.5
+rotation_smoothing_enabled = true
+rotation_smoothing_speed = 1.5
+drag_vertical_enabled = true
+script = ExtResource("15_wyey8")
+player = NodePath("..")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
