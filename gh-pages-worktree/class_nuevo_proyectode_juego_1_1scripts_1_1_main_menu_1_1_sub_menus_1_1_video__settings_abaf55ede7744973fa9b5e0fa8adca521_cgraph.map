@@ -1,5 +1,0 @@
-<map id="NuevoProyectodeJuego.scripts.MainMenu.SubMenus.Video_settings._Ready" name="NuevoProyectodeJuego.scripts.MainMenu.SubMenus.Video_settings._Ready">
-<area shape="rect" id="Node000001" title="Inicialización del nodo. Carga opciones y estado guardado si existe." alt="" coords="5,13,292,56"/>
-<area shape="rect" id="Node000002" href="$class_nuevo_proyectode_juego_1_1scripts_1_1_main_menu_1_1_sub_menus_1_1_video__settings.html#af1e7ea3058c93efdf33b75f65faa1e24" title="Añade resoluciones comunes al OptionButton y selecciona la que más se aproxime al tamaño actual de ve..." alt="" coords="340,5,581,64"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="292,32,327,35,321,35,292,37"/>
-</map>

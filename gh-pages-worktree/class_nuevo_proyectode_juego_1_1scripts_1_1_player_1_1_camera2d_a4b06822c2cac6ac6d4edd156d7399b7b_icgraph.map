@@ -1,5 +1,0 @@
-<map id="NuevoProyectodeJuego.scripts.Player.Camera2d.smoothingSpeed" name="NuevoProyectodeJuego.scripts.Player.Camera2d.smoothingSpeed">
-<area shape="rect" id="Node000001" title="Método que se llama para suavizar la velocidad de la cámara." alt="" coords="261,5,484,48"/>
-<area shape="rect" id="Node000002" href="$class_nuevo_proyectode_juego_1_1scripts_1_1_player_1_1_camera2d.html#a27083b0ae0a5966db41dfdb2d4aed7bf" title="Método que se llama en cada frame para actualizar la cámara." alt="" coords="5,5,213,48"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="242,27,213,29,213,24,248,27"/>
-</map>

@@ -1,5 +1,0 @@
-<map id="NuevoProyectodeJuego.scripts.MainMenu.SubMenus.Video_settings" name="NuevoProyectodeJuego.scripts.MainMenu.SubMenus.Video_settings">
-<area shape="rect" id="Node000001" title="Menú de las opciones de vídeo del juego. Implementa un listado de resoluciones y guarda la selección ..." alt="" coords="5,80,243,123"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="75,5,173,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="126,46,126,81,122,79,122,50"/>
-</map>

@@ -1,5 +1,0 @@
-<map id="NuevoProyectodeJuego.scripts.Menu.SubMenus.Settings" name="NuevoProyectodeJuego.scripts.Menu.SubMenus.Settings">
-<area shape="rect" id="Node000001" title="Panel de configuración (resolución, volumen y otras opciones). Añadido namespace y comentarios para D..." alt="" coords="5,80,213,123"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="77,5,141,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="111,46,111,81,107,79,107,50"/>
-</map>

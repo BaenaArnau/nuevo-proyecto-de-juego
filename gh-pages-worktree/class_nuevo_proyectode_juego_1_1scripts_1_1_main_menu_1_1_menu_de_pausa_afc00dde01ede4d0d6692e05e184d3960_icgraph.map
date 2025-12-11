@@ -1,5 +1,0 @@
-<map id="NuevoProyectodeJuego.scripts.MainMenu.MenuDePausa.ChangeSceneToMainMenu" name="NuevoProyectodeJuego.scripts.MainMenu.MenuDePausa.ChangeSceneToMainMenu">
-<area shape="rect" id="Node000001" title=" " alt="" coords="270,5,527,64"/>
-<area shape="rect" id="Node000002" href="$class_nuevo_proyectode_juego_1_1scripts_1_1_main_menu_1_1_menu_de_pausa.html#a18f40073b75e2da2a2654a3f7c6e8fbe" title="Sale al menú principal (usa CallDeferred para evitar cambios de escena en medio de callbacks Godot)." alt="" coords="5,5,222,64"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="251,35,222,37,222,32,257,34"/>
-</map>

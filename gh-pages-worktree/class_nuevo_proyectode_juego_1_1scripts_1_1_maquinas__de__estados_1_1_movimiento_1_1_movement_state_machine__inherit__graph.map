@@ -1,5 +1,0 @@
-<map id="NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.MovementStateMachine" name="NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.MovementStateMachine">
-<area shape="rect" id="Node000001" title="Máquina de estados para el movimiento del jugador." alt="" coords="5,80,293,139"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="123,5,175,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="151,46,151,81,147,78,147,50"/>
-</map>

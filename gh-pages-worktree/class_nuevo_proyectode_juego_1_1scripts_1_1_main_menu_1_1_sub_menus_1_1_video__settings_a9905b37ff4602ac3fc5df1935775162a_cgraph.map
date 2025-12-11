@@ -1,7 +1,0 @@
-<map id="NuevoProyectodeJuego.scripts.MainMenu.SubMenus.Video_settings._on_button_pressed" name="NuevoProyectodeJuego.scripts.MainMenu.SubMenus.Video_settings._on_button_pressed">
-<area shape="rect" id="Node000001" title="Botón &#39;Aplicar&#39; pulsado: aplica la resolución seleccionada y guarda la configuración." alt="" coords="5,43,247,101"/>
-<area shape="rect" id="Node000002" href="$class_nuevo_proyectode_juego_1_1scripts_1_1_main_menu_1_1_sub_menus_1_1_video__settings.html#aedaf287975f6c7c9a40e8aeeda3727ff" title="Aplica la resolución seleccionada al juego. Intenta usar la API de OS para cambiar el tamaño de venta..." alt="" coords="310,5,551,64"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="247,55,297,51,292,52,247,60"/>
-<area shape="rect" id="Node000003" href="$class_nuevo_proyectode_juego_1_1scripts_1_1_main_menu_1_1_sub_menus_1_1_video__settings.html#a02912ca5e8d1f47e45cd58f2a6889857" title="Guarda las opciones elegidas por el usuario en un XML dentro de la carpeta de datos del usuario." alt="" coords="295,88,566,131"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="247,84,282,91,276,91,247,89"/>
-</map>

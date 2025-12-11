@@ -1,5 +1,0 @@
-<map id="NuevoProyectodeJuego.scripts.Menu.PauseMenu" name="NuevoProyectodeJuego.scripts.Menu.PauseMenu">
-<area shape="rect" id="Node000001" title="Clase que controla el menú de pausa y el estado pausado del juego." alt="" coords="5,80,213,123"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="60,5,158,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="111,46,111,81,107,79,107,50"/>
-</map>

@@ -1,5 +1,0 @@
-<map id="NuevoProyectodeJuego.scripts.Menu.PauseMenu._UnhandledInput" name="NuevoProyectodeJuego.scripts.Menu.PauseMenu._UnhandledInput">
-<area shape="rect" id="Node000001" title="Maneja la entrada no procesada (como la pulsación de la tecla de pausa)." alt="" coords="5,5,234,48"/>
-<area shape="rect" id="Node000002" href="$class_nuevo_proyectode_juego_1_1scripts_1_1_menu_1_1_pause_menu.html#afbf7cd8780e503f14e67b69158ace63a" title="Alterna el estado de pausa (opcionalmente lo fija)." alt="" coords="282,5,489,48"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="234,24,269,27,264,27,234,29"/>
-</map>
