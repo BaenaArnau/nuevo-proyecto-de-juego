@@ -1,0 +1,9 @@
+<map id="NuevoProyectodeJuego.scripts.Menu.MainMenu" name="NuevoProyectodeJuego.scripts.Menu.MainMenu">
+<area shape="rect" id="Node000001" title="Controla el menú principal del juego (botones de iniciar, opciones y salir). Se mantienen los nombres..." alt="" coords="5,196,213,239"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="34,89,86,116"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="73,128,103,195,97,196,69,132"/>
+<area shape="rect" id="Node000003" href="$class_nuevo_proyectode_juego_1_1scripts_1_1_menu_1_1_sub_menus_1_1_settings.html" title="Panel de configuración (resolución, volumen y otras opciones). Añadido namespace y comentarios para D..." alt="" coords="109,81,317,124"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="186,135,130,198,126,194,181,137"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="181,5,245,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="214,45,215,82,211,80,212,50"/>
+</map>

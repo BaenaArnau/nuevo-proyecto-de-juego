@@ -1,0 +1,9 @@
+<map id="MainMenu" name="MainMenu">
+<area shape="rect" id="Node000001" title=" " alt="" coords="12,180,94,207"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,81,58,108"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="40,122,53,180,47,180,35,125"/>
+<area shape="rect" id="Node000003" href="$class_settings.html" title=" " alt="" coords="82,81,152,108"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="103,121,63,181,59,178,98,121"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="85,5,148,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="118,45,119,82,114,80,116,49"/>
+</map>
