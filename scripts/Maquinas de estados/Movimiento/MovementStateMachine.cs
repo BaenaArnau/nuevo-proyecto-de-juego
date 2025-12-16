@@ -54,6 +54,8 @@ namespace NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento
             _current_state.Update(delta);
         }
 
+        /// <summary>Procesamiento de física: delega al estado actual.</summary>
+        /// <param name="delta">Delta en segundos desde el último paso de física.</param
         public override void _PhysicsProcess(double delta)
         {
 			if (_player != null && _player.IsDying)
@@ -67,7 +69,6 @@ namespace NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento
         /// <returns>Si el evento fue procesado.</returns>
         public override void _UnhandledInput(InputEvent @event)
         {
-			// No procesar input si el jugador está muriendo
 			if (_player != null && _player.IsDying)
 				return;
 			
@@ -82,10 +83,7 @@ namespace NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento
         public void TransitionTo(string key)
         {
             if (!_states.ContainsKey(key) || _current_state == _states[key])
-            {
-                // Ignorar si la clave no existe o ya es el estado actual.
                 return;
-            }
 
             _current_state.Exit();
             _current_state = _states[key];

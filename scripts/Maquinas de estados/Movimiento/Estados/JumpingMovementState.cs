@@ -79,7 +79,9 @@ namespace NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.Estados
 			}
 		}
 
-		public override void HandleInput(InputEvent ev)
+        /// <summary>Gestión de input durante el salto: permite iniciar un doble salto si está disponible.</summary>
+		/// <param name="ev">Evento de input.</param>
+        public override void HandleInput(InputEvent ev)
 		{
 			if (ev.IsActionPressed("jump") && _player.DoubleJumpAvailable)
 				stateMachine.TransitionTo("DoubleJumpMovementState");

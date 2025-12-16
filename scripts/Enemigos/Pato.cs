@@ -23,9 +23,7 @@ namespace NuevoProyectodeJuego.scripts.Enemigos
 		/// Velocidad de movimiento del pato (editable en el inspector).
 		/// </summary>
 		[Export] public float Speed = 5.0f;
-
-		// Nota: ya no usamos el muestreo de la velocidad del jugador aquí.
-    
+	
 		/// <summary>
 		/// Indica si el pato puede saltar (evita saltos múltiples en el aire).
 		/// </summary>
@@ -41,7 +39,9 @@ namespace NuevoProyectodeJuego.scripts.Enemigos
 		/// </summary>
 		private Node _animatedSpriteNode;
 
-		/// <summary>Bool para indicar que el pato está en proceso de muerte (solo escritura interna).</summary>
+		/// <summary>
+		/// Bool para indicar que el pato está en proceso de muerte (solo escritura interna).
+		/// </summary>
 		public bool IsDying { get; private set; }
 
 		/// <summary>
@@ -92,7 +92,6 @@ namespace NuevoProyectodeJuego.scripts.Enemigos
 		{
 			if (body is NuevoProyectodeJuego.scripts.Player.Player p)
 			{
-				// Desconectamos la señal de salto para no recibir más eventos
 				var callable = new Callable(this, nameof(OnPlayerInJumping));
 				if (p.IsConnected("InJumping", callable))
 					p.Disconnect("InJumping", callable);
@@ -133,7 +132,7 @@ namespace NuevoProyectodeJuego.scripts.Enemigos
 				_canJump = false;
 			}
 		}
-    
+	
 		/// <summary>
 		/// Se ejecuta cuando un cuerpo entra en el área de daño del pato.
 		/// Si el jugador toca esta área, el pato muere y el jugador rebota.
@@ -153,7 +152,7 @@ namespace NuevoProyectodeJuego.scripts.Enemigos
 				p.MoveAndSlide();
 			}
 		}
-    
+	
 		/// <summary>
 		/// Establece la animación del pato.
 		/// </summary>

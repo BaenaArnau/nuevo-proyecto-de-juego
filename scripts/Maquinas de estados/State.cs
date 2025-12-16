@@ -16,6 +16,7 @@ namespace NuevoProyectodeJuego.scripts.Maquinas_de_estados
         /// Expuesta como lectura pública pero solo asignable internamente por la máquina.
         /// </summary>
         private MovementStateMachine _stateMachine;
+
         /// <summary>
         /// Propiedad pública para acceder a la máquina de estados. El setter es interno.
         /// </summary>
@@ -25,7 +26,6 @@ namespace NuevoProyectodeJuego.scripts.Maquinas_de_estados
             internal set
             {
                 _stateMachine = value;
-                // Mantener el campo protegido `stateMachine` para compatibilidad con estados existentes.
                 stateMachine = value;
             }
         }

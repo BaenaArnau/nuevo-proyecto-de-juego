@@ -50,17 +50,14 @@ namespace NuevoProyectodeJuego.scripts.Menu.SubMenus
 				default: size = DisplayServer.WindowGetSize(); break;
 			}
 
-			// Aplica el nuevo tamaño
 			DisplayServer.WindowSetSize(size);
 
-			// Centrar sólo si no estamos ejecutando embebido en el editor (el editor gestiona sus propios paneles)
 			if (!Engine.IsEditorHint())
 			{
 				var screenSize = DisplayServer.ScreenGetSize(0);
 				DisplayServer.WindowSetPosition((screenSize - size) / 2);
 			}
 		}
-
 
 		/// <summary>
 		/// Cambia entre modo ventana y pantalla completa.

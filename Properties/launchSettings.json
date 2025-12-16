@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "Nuevo Proyecto de Juego": {
+      "commandName": "Executable",
+      "executablePath": "E:\\Godot_v4.5.1-stable_mono_win64\\Godot_v4.5.1-stable_mono_win64.exe",
+      "commandLineArgs": "--path .\r\n",
+      "workingDirectory": "$(ProjectDir)",
+      "authenticationMode": "Windows"
+    }
+  }
+}

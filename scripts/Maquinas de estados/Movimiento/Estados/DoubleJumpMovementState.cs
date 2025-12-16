@@ -64,7 +64,6 @@ namespace NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.Estados
 			{
 				Vector2 velocity = _player.Velocity;
 				velocity += _player.GetGravity() * (float)delta;
-				// Horizontal air control tipo Hollow Knight: detenerse inmediatamente si no hay input
 				float move = Input.GetActionStrength("move_right") - Input.GetActionStrength("move_left");
 				if (Mathf.Abs(move) > 0f)
 					velocity.X = move * PlayerType.Speed;

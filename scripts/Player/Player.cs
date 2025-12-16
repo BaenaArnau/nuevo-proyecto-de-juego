@@ -22,8 +22,11 @@ namespace NuevoProyectodeJuego.scripts.Player
 
 		/// <summary>Duración máxima del salto coyote en segundos.</summary>
 		public const float CoyoteTimeMax = 0.15f;
+
 		/// <summary>Tiempo restante para salto coyote (lectura pública, modificación privada).</summary>
 		private float _coyoteTimeCounter;
+
+		/// <summary>Tiempo restante para salto coyote (solo lectura pública).</summary>
 		public float CoyoteTimeRemaining => _coyoteTimeCounter;
 
 		[Signal] public delegate void InJumpingEventHandler();
