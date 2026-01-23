@@ -40,9 +40,24 @@ namespace NuevoProyectodeJuego.scripts.Enemigos
 		private Node _animatedSpriteNode;
 
 		/// <summary>
-		/// Bool para indicar que el pato está en proceso de muerte (solo escritura interna).
+		/// 
 		/// </summary>
-		public bool IsDying { get; private set; }
+        public AudioStreamPlayer2D audioStreamPlayer2D
+        {
+            get
+            {
+                if (_animatedSpriteNode is AudioStreamPlayer2D aspr)
+                    return aspr;
+                return GetNode<AudioStreamPlayer2D>("AudioStreamPlayer2D");
+            }
+        }
+
+        private Node _audioStreamPlayer2D;
+
+        /// <summary>
+        /// Bool para indicar que el pato está en proceso de muerte (solo escritura interna).
+        /// </summary>
+        public bool IsDying { get; private set; }
 
 		/// <summary>
 		/// Inicializa el pato obteniendo la referencia al AnimatedSprite2D.
@@ -50,9 +65,8 @@ namespace NuevoProyectodeJuego.scripts.Enemigos
 		public override void _Ready()
 		{
 			_animatedSpriteNode = GetNodeOrNull("AnimatedSprite2D");
-			if (_animatedSpriteNode == null)
-				GD.PrintErr("AnimatedSprite2D no encontrado en Pato. Comprueba la escena.");
-		}
+            _audioStreamPlayer2D = GetNodeOrNull("AudioStreamPlayer2D");
+        }
 
 		/// <summary>
 		/// Procesa la lógica del pato en cada frame.
@@ -165,18 +179,33 @@ namespace NuevoProyectodeJuego.scripts.Enemigos
 
 		/// <summary>
 		/// Ejecuta la secuencia de muerte del pato.
-		/// Reproduce la animación "hit", espera a que termine y luego elimina el pato de la escena.
+		/// Oculta el sprite y desactiva las colisiones inmediatamente, pero mantiene el sonido hasta que termine.
 		/// </summary>
 		public async System.Threading.Tasks.Task DieAsync()
 		{
 			try
 			{
+				// Ocultar el sprite inmediatamente
 				if (_animatedSpriteNode is AnimatedSprite2D aspr)
 				{
-					aspr.Play("hit");
-					GD.Print("Duck is dying.");
-					await ToSignal(aspr, "animation_finished");
+					aspr.Visible = false;
 				}
+				
+				// Desactivar las colisiones y la física del pato usando SetDeferred
+				SetDeferred("collision_layer", 0);
+				SetDeferred("collision_mask", 0);
+				SetDeferred("freeze", true);
+				
+				// Reproducir el sonido
+				PlaySound("duck_hit");
+				GD.Print("Duck is dying.");
+				
+				// Esperar a que termine el sonido
+				if (_audioStreamPlayer2D is AudioStreamPlayer2D audioPlayer && audioPlayer.Playing)
+				{
+					await ToSignal(audioPlayer, "finished");
+				}
+				
 				CallDeferred("queue_free");
 			}
 			catch (Exception ex)
@@ -185,5 +214,15 @@ namespace NuevoProyectodeJuego.scripts.Enemigos
 				CallDeferred("queue_free");
 			}
 		}
-	}
+
+        public void PlaySound(string soundName)
+        {
+            if (_audioStreamPlayer2D is AudioStreamPlayer2D aspr)
+            {
+                aspr.Stream = GD.Load<AudioStream>($"res://sound/efects/Duck/{soundName}.wav");
+                aspr.PitchScale = (float)GD.RandRange(0.8f, 1.2f);
+                aspr.Play();
+            }
+        }
+    }
 }

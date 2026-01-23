@@ -56,7 +56,7 @@ namespace NuevoProyectodeJuego.scripts.Player
 			{
 				if (_animatedSpriteNode is AudioStreamPlayer2D aspr)
 					return aspr;
-				return GetNode<AudioStreamPlayer2D>("AnimatedSprite2D");
+				return GetNode<AudioStreamPlayer2D>("AudioStreamPlayer2D");
 			}
 		}
 

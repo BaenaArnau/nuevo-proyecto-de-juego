@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://dfune0elld607"]
+[gd_scene load_steps=34 format=3 uid="uid://dfune0elld607"]
 
 [ext_resource type="Texture2D" uid="uid://dmtv8d054duuq" path="res://assets/Enemies/Duck/Fall (36x36).png" id="1_4rrr4"]
 [ext_resource type="Script" uid="uid://v512a25atjbb" path="res://scripts/Enemigos/Pato.cs" id="1_x7n1l"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://ccituejfur3jd" path="res://assets/Enemies/Duck/Idle (36x36).png" id="3_g1r64"]
 [ext_resource type="Texture2D" uid="uid://c14l3c51wgbhv" path="res://assets/Enemies/Duck/Jump (36x36).png" id="4_8ag4g"]
 [ext_resource type="Texture2D" uid="uid://65voaushxwlf" path="res://assets/Enemies/Duck/Jump Anticipation (36x36).png" id="5_31ece"]
+[ext_resource type="AudioStream" uid="uid://clbnkdo0jxnb3" path="res://sound/efects/Duck/duck_hit.wav" id="7_epuld"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5t6tx"]
 atlas = ExtResource("1_4rrr4")
@@ -230,6 +231,9 @@ debug_color = Color(0.5452348, 0.40505877, 1, 0.41960785)
 position = Vector2(0, -30)
 shape = SubResource("RectangleShape2D_g1r64")
 debug_color = Color(0.997279, 0, 0.17911905, 0.41960785)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_epuld")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
