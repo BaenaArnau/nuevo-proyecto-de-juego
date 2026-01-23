@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['settingsbutton_0',['settingsButton',['../classNuevoProyectodeJuego_1_1scripts_1_1Menu_1_1MainMenu.html#a31a37243369f8b865072bcf13975ee41',1,'NuevoProyectodeJuego::scripts::Menu::MainMenu']]],
-  ['settingsmenu_1',['settingsMenu',['../classNuevoProyectodeJuego_1_1scripts_1_1Menu_1_1MainMenu.html#a46b1aaa1ef5a7b4128ae4880dd933af3',1,'NuevoProyectodeJuego::scripts::Menu::MainMenu']]],
-  ['speed_2',['speed',['../classNuevoProyectodeJuego_1_1scripts_1_1Enemigos_1_1Pato.html#a068acd62885a058c099737ac7b24f813',1,'NuevoProyectodeJuego.scripts.Enemigos.Pato.Speed'],['../classNuevoProyectodeJuego_1_1scripts_1_1Player_1_1Player.html#aec088fc7c4ed4c9f1bc0d349b267dbc5',1,'NuevoProyectodeJuego.scripts.Player.Player.Speed']]],
-  ['statemachine_3',['stateMachine',['../classNuevoProyectodeJuego_1_1scripts_1_1Maquinas__de__estados_1_1State.html#a3fca53af76facf2691dbc08be9d7b390',1,'NuevoProyectodeJuego::scripts::Maquinas_de_estados::State']]]
+  ['landingvelocitythreshold_0',['LandingVelocityThreshold',['../classNuevoProyectodeJuego_1_1scripts_1_1Maquinas__de__estados_1_1Movimiento_1_1Estados_1_1FallingMovementState.html#a610ebc3cad7c8d92a2f61b380b81ec37',1,'NuevoProyectodeJuego::scripts::Maquinas_de_estados::Movimiento::Estados::FallingMovementState']]],
+  ['launchbutton_1',['launchButton',['../classNuevoProyectodeJuego_1_1scripts_1_1Menu_1_1MainMenu.html#a0cb2c8a7b2ddac62a87f98f2a8514050',1,'NuevoProyectodeJuego::scripts::Menu::MainMenu']]]
 ];

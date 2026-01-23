@@ -53,8 +53,8 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"DoubleJumpMovementState_8cs.html",
-"classNuevoProyectodeJuego_1_1scripts_1_1Player_1_1Player.html#a579eed8ffbc8df11ed184363d248bc6d"
+"Camera2d_8cs.html",
+"classNuevoProyectodeJuego_1_1scripts_1_1Menu_1_1SubMenus_1_1Settings.html#ac8b3911f2980467a62f91a820f989fe6"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

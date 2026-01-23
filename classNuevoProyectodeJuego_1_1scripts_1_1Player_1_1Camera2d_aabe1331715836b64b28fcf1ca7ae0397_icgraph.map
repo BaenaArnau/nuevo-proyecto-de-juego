@@ -1,0 +1,5 @@
+<map id="NuevoProyectodeJuego.scripts.Player.Camera2d.controlDrag" name="NuevoProyectodeJuego.scripts.Player.Camera2d.controlDrag">
+<area shape="rect" id="Node000001" title="Controla el arrastre de la cámara según la velocidad del jugador." alt="" coords="277,5,501,45"/>
+<area shape="rect" id="Node000002" href="$classNuevoProyectodeJuego_1_1scripts_1_1Player_1_1Camera2d.html#a27083b0ae0a5966db41dfdb2d4aed7bf" title="Método que se llama en cada frame para actualizar la cámara." alt="" coords="5,5,229,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="264,28,229,28,229,23,264,23"/>
+</map>

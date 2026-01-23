@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['doublejumpmovementstate_0',['DoubleJumpMovementState',['../classNuevoProyectodeJuego_1_1scripts_1_1Maquinas__de__estados_1_1Movimiento_1_1Estados_1_1DoubleJumpMovementState.html',1,'NuevoProyectodeJuego::scripts::Maquinas_de_estados::Movimiento::Estados']]]
+  ['camera2d_0',['Camera2d',['../classNuevoProyectodeJuego_1_1scripts_1_1Player_1_1Camera2d.html',1,'NuevoProyectodeJuego::scripts::Player']]]
 ];

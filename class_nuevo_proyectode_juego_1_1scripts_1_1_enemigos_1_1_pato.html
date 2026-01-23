@@ -195,7 +195,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_pato_8cs_source.html#l00077">77</a> of file <a class="el" href="_pato_8cs_source.html">Pato.cs</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   78</span>        {</div>
-<div class="line"><span class="lineno">   79</span>            <span class="keywordflow">if</span> (body is NuevoProyectodeJuego.scripts.Player.Player p &amp;&amp; !IsDying)</div>
+<div class="line"><span class="lineno">   79</span>            <span class="keywordflow">if</span> (body is NuevoProyectodeJuego.scripts.Player.Player p &amp;&amp; !<span class="keyword">this</span>.IsDying)</div>
 <div class="line"><span class="lineno">   80</span>            { </div>
 <div class="line"><span class="lineno">   81</span>                GD.Print(<span class="stringliteral">&quot;Player hit by duck, dying.&quot;</span>);</div>
 <div class="line"><span class="lineno">   82</span>                _ = p.HitAsync();</div>
@@ -237,17 +237,18 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_pato_8cs_source.html#l00142">142</a> of file <a class="el" href="_pato_8cs_source.html">Pato.cs</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  143</span>        {</div>
-<div class="line"><span class="lineno">  144</span>            <span class="keywordflow">if</span> (body is NuevoProyectodeJuego.scripts.Player.Player p)</div>
+<div class="line"><span class="lineno">  144</span>            <span class="keywordflow">if</span> (body is NuevoProyectodeJuego.scripts.Player.Player p &amp;&amp; !p.IsDying)</div>
 <div class="line"><span class="lineno">  145</span>            {</div>
 <div class="line"><span class="lineno">  146</span>                IsDying = <span class="keyword">true</span>;</div>
 <div class="line"><span class="lineno">  147</span>                GD.Print(<span class="stringliteral">&quot;Duck hit by player, dying.&quot;</span>);</div>
 <div class="line"><span class="lineno">  148</span> </div>
 <div class="line"><span class="lineno">  149</span>                _ = DieAsync();</div>
 <div class="line"><span class="lineno">  150</span> </div>
-<div class="line"><span class="lineno">  151</span>                p.Velocity = <span class="keyword">new</span> Vector2(p.Velocity.X, NuevoProyectodeJuego.scripts.Player.Player.BounceVelocity);</div>
-<div class="line"><span class="lineno">  152</span>                p.MoveAndSlide();</div>
-<div class="line"><span class="lineno">  153</span>            }</div>
-<div class="line"><span class="lineno">  154</span>        }</div>
+<div class="line"><span class="lineno">  151</span>                p.DoubleJumpAvailable = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  152</span>                p.Velocity = <span class="keyword">new</span> Vector2(p.Velocity.X, NuevoProyectodeJuego.scripts.Player.Player.BounceVelocity);</div>
+<div class="line"><span class="lineno">  153</span>                p.MoveAndSlide();</div>
+<div class="line"><span class="lineno">  154</span>            }</div>
+<div class="line"><span class="lineno">  155</span>        }</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -465,24 +466,24 @@ Here is the call graph for this function:</div>
 
 <p>Ejecuta la secuencia de muerte del pato. Reproduce la animación "hit", espera a que termine y luego elimina el pato de la escena. </p>
 
-<p class="definition">Definition at line <a class="el" href="_pato_8cs_source.html#l00170">170</a> of file <a class="el" href="_pato_8cs_source.html">Pato.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  171</span>        {</div>
-<div class="line"><span class="lineno">  172</span>            <span class="keywordflow">try</span></div>
-<div class="line"><span class="lineno">  173</span>            {</div>
-<div class="line"><span class="lineno">  174</span>                <span class="keywordflow">if</span> (_animatedSpriteNode is AnimatedSprite2D aspr)</div>
-<div class="line"><span class="lineno">  175</span>                {</div>
-<div class="line"><span class="lineno">  176</span>                    aspr.Play(<span class="stringliteral">&quot;hit&quot;</span>);</div>
-<div class="line"><span class="lineno">  177</span>                    GD.Print(<span class="stringliteral">&quot;Duck is dying.&quot;</span>);</div>
-<div class="line"><span class="lineno">  178</span>                    await ToSignal(aspr, <span class="stringliteral">&quot;animation_finished&quot;</span>);</div>
-<div class="line"><span class="lineno">  179</span>                }</div>
-<div class="line"><span class="lineno">  180</span>                CallDeferred(<span class="stringliteral">&quot;queue_free&quot;</span>);</div>
-<div class="line"><span class="lineno">  181</span>            }</div>
-<div class="line"><span class="lineno">  182</span>            <span class="keywordflow">catch</span> (Exception ex)</div>
-<div class="line"><span class="lineno">  183</span>            {</div>
-<div class="line"><span class="lineno">  184</span>                GD.PrintErr(<span class="stringliteral">&quot;Error en DieAsync: &quot;</span>, ex);</div>
-<div class="line"><span class="lineno">  185</span>                CallDeferred(<span class="stringliteral">&quot;queue_free&quot;</span>);</div>
-<div class="line"><span class="lineno">  186</span>            }</div>
-<div class="line"><span class="lineno">  187</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_pato_8cs_source.html#l00171">171</a> of file <a class="el" href="_pato_8cs_source.html">Pato.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  172</span>        {</div>
+<div class="line"><span class="lineno">  173</span>            <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">  174</span>            {</div>
+<div class="line"><span class="lineno">  175</span>                <span class="keywordflow">if</span> (_animatedSpriteNode is AnimatedSprite2D aspr)</div>
+<div class="line"><span class="lineno">  176</span>                {</div>
+<div class="line"><span class="lineno">  177</span>                    aspr.Play(<span class="stringliteral">&quot;hit&quot;</span>);</div>
+<div class="line"><span class="lineno">  178</span>                    GD.Print(<span class="stringliteral">&quot;Duck is dying.&quot;</span>);</div>
+<div class="line"><span class="lineno">  179</span>                    await ToSignal(aspr, <span class="stringliteral">&quot;animation_finished&quot;</span>);</div>
+<div class="line"><span class="lineno">  180</span>                }</div>
+<div class="line"><span class="lineno">  181</span>                CallDeferred(<span class="stringliteral">&quot;queue_free&quot;</span>);</div>
+<div class="line"><span class="lineno">  182</span>            }</div>
+<div class="line"><span class="lineno">  183</span>            <span class="keywordflow">catch</span> (Exception ex)</div>
+<div class="line"><span class="lineno">  184</span>            {</div>
+<div class="line"><span class="lineno">  185</span>                GD.PrintErr(<span class="stringliteral">&quot;Error en DieAsync: &quot;</span>, ex);</div>
+<div class="line"><span class="lineno">  186</span>                CallDeferred(<span class="stringliteral">&quot;queue_free&quot;</span>);</div>
+<div class="line"><span class="lineno">  187</span>            }</div>
+<div class="line"><span class="lineno">  188</span>        }</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -569,11 +570,11 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_pato_8cs_source.html#l00160">160</a> of file <a class="el" href="_pato_8cs_source.html">Pato.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  161</span>        {</div>
-<div class="line"><span class="lineno">  162</span>            <span class="keywordflow">if</span> (_animatedSpriteNode is AnimatedSprite2D aspr)</div>
-<div class="line"><span class="lineno">  163</span>                aspr.Play(animationName);</div>
-<div class="line"><span class="lineno">  164</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_pato_8cs_source.html#l00161">161</a> of file <a class="el" href="_pato_8cs_source.html">Pato.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  162</span>        {</div>
+<div class="line"><span class="lineno">  163</span>            <span class="keywordflow">if</span> (_animatedSpriteNode is AnimatedSprite2D aspr)</div>
+<div class="line"><span class="lineno">  164</span>                aspr.Play(animationName);</div>
+<div class="line"><span class="lineno">  165</span>        }</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">

@@ -52,3 +52,61 @@ div.treeview {
   text-decoration: underline;
 }
 
+/* ===== Ajustes de contraste y seguridad visual adicionales =====
+   Forzamos colores legibles para elementos que Doxygen/Graphviz puedan
+   renderizar con estilos oscuros (por ejemplo, SVGs generados con fondo
+   oscuro o texto negro sobre fondo negro). Estos estilos usan !important
+   para sobrescribir hojas generadas automáticamente.
+*/
+
+/* Fondo y color por defecto: forzar fondo claro y texto oscuro en bloques */
+body, .contents, .navpath, .headertitle, .title, .contents *,
+.fragment, .memitem pre, pre, code, tt, kbd, .fieldtype, .fieldvalue {
+  background-color: #ffffff !important;
+  color: #111111 !important;
+}
+
+/* Forzar contraste en elementos de búsqueda y navegación */
+.search, .search input, .search button, .treeview, .directory {
+  background-color: #ffffff !important;
+  color: #111111 !important;
+}
+
+/* SVGs generados por dot/Graphviz: asegurar que el texto sea visible */
+svg, svg g, svg text, svg tspan {
+  fill: #111111 !important; /* color del texto dentro del SVG */
+  color: #111111 !important;
+}
+
+/* Algunos SVGs vienen con rects de fondo oscuros; los hacemos transparentes */
+svg rect, svg polygon, svg path {
+  fill-opacity: 1 !important;
+  stroke-opacity: 1 !important;
+}
+
+/* Si un SVG tiene fondo negro, intentar neutralizarlo estableciendo
+   un fondo blanco para su elemento contenedor. Esto mejora la legibilidad
+   en el HTML aunque el SVG tenga internamente un rect de fondo.
+*/
+.dot, .graphviz, .graph {
+  background-color: #ffffff !important;
+}
+
+/* Asegurar que los enlaces sean distinguibles */
+a, a:visited {
+  color: #0b66ff !important;
+}
+
+/* Mejor contraste en los bloques de índice/miembros */
+.memitem, .memberdecls, .section, .contents .title {
+  background-color: #ffffff !important;
+  color: #111111 !important;
+}
+
+/* Regla final: prevenir cualquier sitio donde el texto sea negro sobre negro
+   detectado por selectores comunes; si aún ves problemas concretos los
+   ajustamos puntualmente usando clases/IDs visibles en la página afectada. */
+* {
+  -webkit-text-fill-color: #111111 !important;
+}
+

@@ -228,8 +228,8 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   83</span>            }</div>
 <div class="line"><span class="lineno">   84</span>        }</div>
 <div class="ttc" id="aclassNuevoProyectodeJuego_1_1scripts_1_1Player_1_1Player_html"><div class="ttname"><a href="classNuevoProyectodeJuego_1_1scripts_1_1Player_1_1Player.html">NuevoProyectodeJuego.scripts.Player.Player</a></div><div class="ttdoc">Clase que representa al jugador.</div><div class="ttdef"><b>Definition</b> <a href="Player_8cs_source.html#l00009">Player.cs:10</a></div></div>
-<div class="ttc" id="aclassNuevoProyectodeJuego_1_1scripts_1_1Player_1_1Player_html_ab4873395a05fb5826708ad2511f0572c"><div class="ttname"><a href="classNuevoProyectodeJuego_1_1scripts_1_1Player_1_1Player.html#ab4873395a05fb5826708ad2511f0572c">NuevoProyectodeJuego.scripts.Player.Player.IsDying</a></div><div class="ttdeci">bool IsDying</div><div class="ttdoc">Bool para indicar que el jugador está en proceso de muerte (solo lectura externa).</div><div class="ttdef"><b>Definition</b> <a href="Player_8cs_source.html#l00051">Player.cs:51</a></div></div>
-<div class="ttc" id="anamespaceNuevoProyectodeJuego_1_1scripts_1_1Player_html"><div class="ttname"><a href="namespaceNuevoProyectodeJuego_1_1scripts_1_1Player.html">NuevoProyectodeJuego.scripts.Player</a></div><div class="ttdef"><b>Definition</b> <a href="Player_8cs_source.html#l00004">Player.cs:5</a></div></div>
+<div class="ttc" id="aclassNuevoProyectodeJuego_1_1scripts_1_1Player_1_1Player_html_ab4873395a05fb5826708ad2511f0572c"><div class="ttname"><a href="classNuevoProyectodeJuego_1_1scripts_1_1Player_1_1Player.html#ab4873395a05fb5826708ad2511f0572c">NuevoProyectodeJuego.scripts.Player.Player.IsDying</a></div><div class="ttdeci">bool IsDying</div><div class="ttdoc">Bool para indicar que el jugador está en proceso de muerte (solo lectura externa).</div><div class="ttdef"><b>Definition</b> <a href="Player_8cs_source.html#l00064">Player.cs:64</a></div></div>
+<div class="ttc" id="anamespaceNuevoProyectodeJuego_1_1scripts_1_1Player_html"><div class="ttname"><a href="namespaceNuevoProyectodeJuego_1_1scripts_1_1Player.html">NuevoProyectodeJuego.scripts.Player</a></div><div class="ttdef"><b>Definition</b> <a href="Camera2d_8cs_source.html#l00004">Camera2d.cs:5</a></div></div>
 <div class="ttc" id="anamespaceNuevoProyectodeJuego_1_1scripts_html"><div class="ttname"><a href="namespaceNuevoProyectodeJuego_1_1scripts.html">NuevoProyectodeJuego.scripts</a></div><div class="ttdef"><b>Definition</b> <a href="Pato_8cs_source.html#l00004">Pato.cs:5</a></div></div>
 <div class="ttc" id="anamespaceNuevoProyectodeJuego_html"><div class="ttname"><a href="namespaceNuevoProyectodeJuego.html">NuevoProyectodeJuego</a></div><div class="ttdef"><b>Definition</b> <a href="Pato_8cs_source.html#l00004">Pato.cs:5</a></div></div>
 </div><!-- fragment -->
@@ -267,21 +267,21 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="Pato_8cs_source.html#l00142">142</a> of file <a class="el" href="Pato_8cs_source.html">Pato.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  143</span>        {</div>
-<div class="line"><span class="lineno">  144</span>            <span class="keywordflow">if</span> (body is <a class="code hl_namespace" href="namespaceNuevoProyectodeJuego.html">NuevoProyectodeJuego</a>.<a class="code hl_namespace" href="namespaceNuevoProyectodeJuego_1_1scripts.html">scripts</a>.<a class="code hl_namespace" href="namespaceNuevoProyectodeJuego_1_1scripts_1_1Player.html">Player</a>.<a class="code hl_class" href="classNuevoProyectodeJuego_1_1scripts_1_1Player_1_1Player.html">Player</a> p &amp;&amp; !p.<a class="code hl_property" href="classNuevoProyectodeJuego_1_1scripts_1_1Player_1_1Player.html#ab4873395a05fb5826708ad2511f0572c">IsDying</a>)</div>
-<div class="line"><span class="lineno">  145</span>            {</div>
-<div class="line"><span class="lineno">  146</span>                <a class="code hl_property" href="classNuevoProyectodeJuego_1_1scripts_1_1Enemigos_1_1Pato.html#aafeb1ad01c1b63b500bc66a72008cd00">IsDying</a> = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  147</span>                GD.Print(<span class="stringliteral">&quot;Duck hit by player, dying.&quot;</span>);</div>
-<div class="line"><span class="lineno">  148</span> </div>
-<div class="line"><span class="lineno">  149</span>                _ = <a class="code hl_function" href="classNuevoProyectodeJuego_1_1scripts_1_1Enemigos_1_1Pato.html#a956011d1d3109fb4dafdaa53dcc2d637">DieAsync</a>();</div>
-<div class="line"><span class="lineno">  150</span> </div>
-<div class="line"><span class="lineno">  151</span>                p.DoubleJumpAvailable = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  152</span>                p.Velocity = <span class="keyword">new</span> Vector2(p.Velocity.X, <a class="code hl_namespace" href="namespaceNuevoProyectodeJuego.html">NuevoProyectodeJuego</a>.<a class="code hl_namespace" href="namespaceNuevoProyectodeJuego_1_1scripts.html">scripts</a>.<a class="code hl_namespace" href="namespaceNuevoProyectodeJuego_1_1scripts_1_1Player.html">Player</a>.<a class="code hl_class" href="classNuevoProyectodeJuego_1_1scripts_1_1Player_1_1Player.html">Player</a>.<a class="code hl_variable" href="classNuevoProyectodeJuego_1_1scripts_1_1Player_1_1Player.html#a2d50d0c008550f2365a39c09b78285fd">BounceVelocity</a>);</div>
-<div class="line"><span class="lineno">  153</span>                p.MoveAndSlide();</div>
-<div class="line"><span class="lineno">  154</span>            }</div>
-<div class="line"><span class="lineno">  155</span>        }</div>
-<div class="ttc" id="aclassNuevoProyectodeJuego_1_1scripts_1_1Enemigos_1_1Pato_html_a956011d1d3109fb4dafdaa53dcc2d637"><div class="ttname"><a href="classNuevoProyectodeJuego_1_1scripts_1_1Enemigos_1_1Pato.html#a956011d1d3109fb4dafdaa53dcc2d637">NuevoProyectodeJuego.scripts.Enemigos.Pato.DieAsync</a></div><div class="ttdeci">async System.Threading.Tasks.Task DieAsync()</div><div class="ttdoc">Ejecuta la secuencia de muerte del pato. Reproduce la animación &quot;hit&quot;, espera a que termine y luego e...</div><div class="ttdef"><b>Definition</b> <a href="Pato_8cs_source.html#l00171">Pato.cs:171</a></div></div>
+<p class="definition">Definition at line <a class="el" href="Pato_8cs_source.html#l00141">141</a> of file <a class="el" href="Pato_8cs_source.html">Pato.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  142</span>        {</div>
+<div class="line"><span class="lineno">  143</span>            <span class="keywordflow">if</span> (body is <a class="code hl_namespace" href="namespaceNuevoProyectodeJuego.html">NuevoProyectodeJuego</a>.<a class="code hl_namespace" href="namespaceNuevoProyectodeJuego_1_1scripts.html">scripts</a>.<a class="code hl_namespace" href="namespaceNuevoProyectodeJuego_1_1scripts_1_1Player.html">Player</a>.<a class="code hl_class" href="classNuevoProyectodeJuego_1_1scripts_1_1Player_1_1Player.html">Player</a> p &amp;&amp; !p.<a class="code hl_property" href="classNuevoProyectodeJuego_1_1scripts_1_1Player_1_1Player.html#ab4873395a05fb5826708ad2511f0572c">IsDying</a>)</div>
+<div class="line"><span class="lineno">  144</span>            {</div>
+<div class="line"><span class="lineno">  145</span>                <a class="code hl_property" href="classNuevoProyectodeJuego_1_1scripts_1_1Enemigos_1_1Pato.html#aafeb1ad01c1b63b500bc66a72008cd00">IsDying</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  146</span>                GD.Print(<span class="stringliteral">&quot;Duck hit by player, dying.&quot;</span>);</div>
+<div class="line"><span class="lineno">  147</span> </div>
+<div class="line"><span class="lineno">  148</span>                _ = <a class="code hl_function" href="classNuevoProyectodeJuego_1_1scripts_1_1Enemigos_1_1Pato.html#a956011d1d3109fb4dafdaa53dcc2d637">DieAsync</a>();</div>
+<div class="line"><span class="lineno">  149</span> </div>
+<div class="line"><span class="lineno">  150</span>                p.DoubleJumpAvailable = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  151</span>                p.Velocity = <span class="keyword">new</span> Vector2(p.Velocity.X, <a class="code hl_namespace" href="namespaceNuevoProyectodeJuego.html">NuevoProyectodeJuego</a>.<a class="code hl_namespace" href="namespaceNuevoProyectodeJuego_1_1scripts.html">scripts</a>.<a class="code hl_namespace" href="namespaceNuevoProyectodeJuego_1_1scripts_1_1Player.html">Player</a>.<a class="code hl_class" href="classNuevoProyectodeJuego_1_1scripts_1_1Player_1_1Player.html">Player</a>.<a class="code hl_variable" href="classNuevoProyectodeJuego_1_1scripts_1_1Player_1_1Player.html#a2d50d0c008550f2365a39c09b78285fd">BounceVelocity</a>);</div>
+<div class="line"><span class="lineno">  152</span>                p.MoveAndSlide();</div>
+<div class="line"><span class="lineno">  153</span>            }</div>
+<div class="line"><span class="lineno">  154</span>        }</div>
+<div class="ttc" id="aclassNuevoProyectodeJuego_1_1scripts_1_1Enemigos_1_1Pato_html_a956011d1d3109fb4dafdaa53dcc2d637"><div class="ttname"><a href="classNuevoProyectodeJuego_1_1scripts_1_1Enemigos_1_1Pato.html#a956011d1d3109fb4dafdaa53dcc2d637">NuevoProyectodeJuego.scripts.Enemigos.Pato.DieAsync</a></div><div class="ttdeci">async System.Threading.Tasks.Task DieAsync()</div><div class="ttdoc">Ejecuta la secuencia de muerte del pato. Reproduce la animación &quot;hit&quot;, espera a que termine y luego e...</div><div class="ttdef"><b>Definition</b> <a href="Pato_8cs_source.html#l00170">Pato.cs:170</a></div></div>
 <div class="ttc" id="aclassNuevoProyectodeJuego_1_1scripts_1_1Enemigos_1_1Pato_html_aafeb1ad01c1b63b500bc66a72008cd00"><div class="ttname"><a href="classNuevoProyectodeJuego_1_1scripts_1_1Enemigos_1_1Pato.html#aafeb1ad01c1b63b500bc66a72008cd00">NuevoProyectodeJuego.scripts.Enemigos.Pato.IsDying</a></div><div class="ttdeci">bool IsDying</div><div class="ttdoc">Bool para indicar que el pato está en proceso de muerte (solo escritura interna).</div><div class="ttdef"><b>Definition</b> <a href="Pato_8cs_source.html#l00045">Pato.cs:45</a></div></div>
 <div class="ttc" id="aclassNuevoProyectodeJuego_1_1scripts_1_1Player_1_1Player_html_a2d50d0c008550f2365a39c09b78285fd"><div class="ttname"><a href="classNuevoProyectodeJuego_1_1scripts_1_1Player_1_1Player.html#a2d50d0c008550f2365a39c09b78285fd">NuevoProyectodeJuego.scripts.Player.Player.BounceVelocity</a></div><div class="ttdeci">const float BounceVelocity</div><div class="ttdoc">Velocidad vertical aplicada al rebotar sobre un enemigo (negativa = hacia arriba).</div><div class="ttdef"><b>Definition</b> <a href="Player_8cs_source.html#l00018">Player.cs:18</a></div></div>
 </div><!-- fragment --><div class="dynheader">
@@ -324,19 +324,19 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="Pato_8cs_source.html#l00110">110</a> of file <a class="el" href="Pato_8cs_source.html">Pato.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  111</span>        {</div>
-<div class="line"><span class="lineno">  112</span>            <span class="keywordflow">if</span> (body is <a class="code hl_namespace" href="namespaceNuevoProyectodeJuego.html">NuevoProyectodeJuego</a>.<a class="code hl_namespace" href="namespaceNuevoProyectodeJuego_1_1scripts.html">scripts</a>.<a class="code hl_namespace" href="namespaceNuevoProyectodeJuego_1_1scripts_1_1Player.html">Player</a>.<a class="code hl_class" href="classNuevoProyectodeJuego_1_1scripts_1_1Player_1_1Player.html">Player</a> p)</div>
-<div class="line"><span class="lineno">  113</span>            {</div>
-<div class="line"><span class="lineno">  114</span>                <a class="code hl_variable" href="classNuevoProyectodeJuego_1_1scripts_1_1Enemigos_1_1Pato.html#aaf81e33c04df49aa5eba7f0350f1dfe1">_isInside</a> = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  115</span>                this._playerNode = p; </div>
-<div class="line"><span class="lineno">  116</span> </div>
-<div class="line"><span class="lineno">  117</span>                var callable = <span class="keyword">new</span> Callable(<span class="keyword">this</span>, nameof(<a class="code hl_function" href="classNuevoProyectodeJuego_1_1scripts_1_1Enemigos_1_1Pato.html#aad145dc8332ef8aedc7e568ecefafcfa">OnPlayerInJumping</a>));</div>
-<div class="line"><span class="lineno">  118</span>                <span class="keywordflow">if</span> (!p.IsConnected(<span class="stringliteral">&quot;InJumping&quot;</span>, callable))</div>
-<div class="line"><span class="lineno">  119</span>                    p.Connect(<span class="stringliteral">&quot;InJumping&quot;</span>, callable);</div>
-<div class="line"><span class="lineno">  120</span>            }</div>
-<div class="line"><span class="lineno">  121</span>        }</div>
-<div class="ttc" id="aclassNuevoProyectodeJuego_1_1scripts_1_1Enemigos_1_1Pato_html_aad145dc8332ef8aedc7e568ecefafcfa"><div class="ttname"><a href="classNuevoProyectodeJuego_1_1scripts_1_1Enemigos_1_1Pato.html#aad145dc8332ef8aedc7e568ecefafcfa">NuevoProyectodeJuego.scripts.Enemigos.Pato.OnPlayerInJumping</a></div><div class="ttdeci">void OnPlayerInJumping()</div><div class="ttdoc">Manejador llamado cuando el jugador emite la señal de salto. Hace que el pato salte si está dentro de...</div><div class="ttdef"><b>Definition</b> <a href="Pato_8cs_source.html#l00127">Pato.cs:127</a></div></div>
+<p class="definition">Definition at line <a class="el" href="Pato_8cs_source.html#l00109">109</a> of file <a class="el" href="Pato_8cs_source.html">Pato.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  110</span>        {</div>
+<div class="line"><span class="lineno">  111</span>            <span class="keywordflow">if</span> (body is <a class="code hl_namespace" href="namespaceNuevoProyectodeJuego.html">NuevoProyectodeJuego</a>.<a class="code hl_namespace" href="namespaceNuevoProyectodeJuego_1_1scripts.html">scripts</a>.<a class="code hl_namespace" href="namespaceNuevoProyectodeJuego_1_1scripts_1_1Player.html">Player</a>.<a class="code hl_class" href="classNuevoProyectodeJuego_1_1scripts_1_1Player_1_1Player.html">Player</a> p)</div>
+<div class="line"><span class="lineno">  112</span>            {</div>
+<div class="line"><span class="lineno">  113</span>                <a class="code hl_variable" href="classNuevoProyectodeJuego_1_1scripts_1_1Enemigos_1_1Pato.html#aaf81e33c04df49aa5eba7f0350f1dfe1">_isInside</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  114</span>                this._playerNode = p; </div>
+<div class="line"><span class="lineno">  115</span> </div>
+<div class="line"><span class="lineno">  116</span>                var callable = <span class="keyword">new</span> Callable(<span class="keyword">this</span>, nameof(<a class="code hl_function" href="classNuevoProyectodeJuego_1_1scripts_1_1Enemigos_1_1Pato.html#aad145dc8332ef8aedc7e568ecefafcfa">OnPlayerInJumping</a>));</div>
+<div class="line"><span class="lineno">  117</span>                <span class="keywordflow">if</span> (!p.IsConnected(<span class="stringliteral">&quot;InJumping&quot;</span>, callable))</div>
+<div class="line"><span class="lineno">  118</span>                    p.Connect(<span class="stringliteral">&quot;InJumping&quot;</span>, callable);</div>
+<div class="line"><span class="lineno">  119</span>            }</div>
+<div class="line"><span class="lineno">  120</span>        }</div>
+<div class="ttc" id="aclassNuevoProyectodeJuego_1_1scripts_1_1Enemigos_1_1Pato_html_aad145dc8332ef8aedc7e568ecefafcfa"><div class="ttname"><a href="classNuevoProyectodeJuego_1_1scripts_1_1Enemigos_1_1Pato.html#aad145dc8332ef8aedc7e568ecefafcfa">NuevoProyectodeJuego.scripts.Enemigos.Pato.OnPlayerInJumping</a></div><div class="ttdeci">void OnPlayerInJumping()</div><div class="ttdoc">Manejador llamado cuando el jugador emite la señal de salto. Hace que el pato salte si está dentro de...</div><div class="ttdef"><b>Definition</b> <a href="Pato_8cs_source.html#l00126">Pato.cs:126</a></div></div>
 <div class="ttc" id="aclassNuevoProyectodeJuego_1_1scripts_1_1Enemigos_1_1Pato_html_aaf81e33c04df49aa5eba7f0350f1dfe1"><div class="ttname"><a href="classNuevoProyectodeJuego_1_1scripts_1_1Enemigos_1_1Pato.html#aaf81e33c04df49aa5eba7f0350f1dfe1">NuevoProyectodeJuego.scripts.Enemigos.Pato._isInside</a></div><div class="ttdeci">bool _isInside</div><div class="ttdoc">Indica si el jugador está dentro del área de detección del pato.</div><div class="ttdef"><b>Definition</b> <a href="Pato_8cs_source.html#l00020">Pato.cs:20</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -382,15 +382,14 @@ Here is the call graph for this function:</div>
 <div class="fragment"><div class="line"><span class="lineno">   92</span>        {</div>
 <div class="line"><span class="lineno">   93</span>            <span class="keywordflow">if</span> (body is <a class="code hl_namespace" href="namespaceNuevoProyectodeJuego.html">NuevoProyectodeJuego</a>.<a class="code hl_namespace" href="namespaceNuevoProyectodeJuego_1_1scripts.html">scripts</a>.<a class="code hl_namespace" href="namespaceNuevoProyectodeJuego_1_1scripts_1_1Player.html">Player</a>.<a class="code hl_class" href="classNuevoProyectodeJuego_1_1scripts_1_1Player_1_1Player.html">Player</a> p)</div>
 <div class="line"><span class="lineno">   94</span>            {</div>
-<div class="line"><span class="lineno">   95</span>                <span class="comment">// Desconectamos la señal de salto para no recibir más eventos</span></div>
-<div class="line"><span class="lineno">   96</span>                var callable = <span class="keyword">new</span> Callable(<span class="keyword">this</span>, nameof(<a class="code hl_function" href="classNuevoProyectodeJuego_1_1scripts_1_1Enemigos_1_1Pato.html#aad145dc8332ef8aedc7e568ecefafcfa">OnPlayerInJumping</a>));</div>
-<div class="line"><span class="lineno">   97</span>                <span class="keywordflow">if</span> (p.IsConnected(<span class="stringliteral">&quot;InJumping&quot;</span>, callable))</div>
-<div class="line"><span class="lineno">   98</span>                    p.Disconnect(<span class="stringliteral">&quot;InJumping&quot;</span>, callable);</div>
-<div class="line"><span class="lineno">   99</span> </div>
-<div class="line"><span class="lineno">  100</span>                <a class="code hl_variable" href="classNuevoProyectodeJuego_1_1scripts_1_1Enemigos_1_1Pato.html#aaf81e33c04df49aa5eba7f0350f1dfe1">_isInside</a> = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  101</span>                this._playerNode = <span class="keyword">null</span>; </div>
-<div class="line"><span class="lineno">  102</span>            }</div>
-<div class="line"><span class="lineno">  103</span>        }</div>
+<div class="line"><span class="lineno">   95</span>                var callable = <span class="keyword">new</span> Callable(<span class="keyword">this</span>, nameof(<a class="code hl_function" href="classNuevoProyectodeJuego_1_1scripts_1_1Enemigos_1_1Pato.html#aad145dc8332ef8aedc7e568ecefafcfa">OnPlayerInJumping</a>));</div>
+<div class="line"><span class="lineno">   96</span>                <span class="keywordflow">if</span> (p.IsConnected(<span class="stringliteral">&quot;InJumping&quot;</span>, callable))</div>
+<div class="line"><span class="lineno">   97</span>                    p.Disconnect(<span class="stringliteral">&quot;InJumping&quot;</span>, callable);</div>
+<div class="line"><span class="lineno">   98</span> </div>
+<div class="line"><span class="lineno">   99</span>                <a class="code hl_variable" href="classNuevoProyectodeJuego_1_1scripts_1_1Enemigos_1_1Pato.html#aaf81e33c04df49aa5eba7f0350f1dfe1">_isInside</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  100</span>                this._playerNode = <span class="keyword">null</span>; </div>
+<div class="line"><span class="lineno">  101</span>            }</div>
+<div class="line"><span class="lineno">  102</span>        }</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -439,8 +438,8 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">   68</span>                <a class="code hl_variable" href="classNuevoProyectodeJuego_1_1scripts_1_1Enemigos_1_1Pato.html#a4096b18ae2bb70fdc5da8a23bfddb066">_canJump</a> = <span class="keyword">true</span>;</div>
 <div class="line"><span class="lineno">   69</span>            }</div>
 <div class="line"><span class="lineno">   70</span>        }</div>
-<div class="ttc" id="aclassNuevoProyectodeJuego_1_1scripts_1_1Enemigos_1_1Pato_html_a0163740c5daa3ab26d6a33d60a610676"><div class="ttname"><a href="classNuevoProyectodeJuego_1_1scripts_1_1Enemigos_1_1Pato.html#a0163740c5daa3ab26d6a33d60a610676">NuevoProyectodeJuego.scripts.Enemigos.Pato.SetAnimation</a></div><div class="ttdeci">void SetAnimation(string animationName)</div><div class="ttdoc">Establece la animación del pato.</div><div class="ttdef"><b>Definition</b> <a href="Pato_8cs_source.html#l00161">Pato.cs:161</a></div></div>
-<div class="ttc" id="aclassNuevoProyectodeJuego_1_1scripts_1_1Enemigos_1_1Pato_html_a4096b18ae2bb70fdc5da8a23bfddb066"><div class="ttname"><a href="classNuevoProyectodeJuego_1_1scripts_1_1Enemigos_1_1Pato.html#a4096b18ae2bb70fdc5da8a23bfddb066">NuevoProyectodeJuego.scripts.Enemigos.Pato._canJump</a></div><div class="ttdeci">bool _canJump</div><div class="ttdoc">Indica si el pato puede saltar (evita saltos múltiples en el aire).</div><div class="ttdef"><b>Definition</b> <a href="Pato_8cs_source.html#l00032">Pato.cs:32</a></div></div>
+<div class="ttc" id="aclassNuevoProyectodeJuego_1_1scripts_1_1Enemigos_1_1Pato_html_a0163740c5daa3ab26d6a33d60a610676"><div class="ttname"><a href="classNuevoProyectodeJuego_1_1scripts_1_1Enemigos_1_1Pato.html#a0163740c5daa3ab26d6a33d60a610676">NuevoProyectodeJuego.scripts.Enemigos.Pato.SetAnimation</a></div><div class="ttdeci">void SetAnimation(string animationName)</div><div class="ttdoc">Establece la animación del pato.</div><div class="ttdef"><b>Definition</b> <a href="Pato_8cs_source.html#l00160">Pato.cs:160</a></div></div>
+<div class="ttc" id="aclassNuevoProyectodeJuego_1_1scripts_1_1Enemigos_1_1Pato_html_a4096b18ae2bb70fdc5da8a23bfddb066"><div class="ttname"><a href="classNuevoProyectodeJuego_1_1scripts_1_1Enemigos_1_1Pato.html#a4096b18ae2bb70fdc5da8a23bfddb066">NuevoProyectodeJuego.scripts.Enemigos.Pato._canJump</a></div><div class="ttdeci">bool _canJump</div><div class="ttdoc">Indica si el pato puede saltar (evita saltos múltiples en el aire).</div><div class="ttdef"><b>Definition</b> <a href="Pato_8cs_source.html#l00030">Pato.cs:30</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -480,7 +479,7 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">   53</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="classNuevoProyectodeJuego_1_1scripts_1_1Enemigos_1_1Pato.html#ac1b937312459ec29e8d7ce85ed4294c8">_animatedSpriteNode</a> == <span class="keyword">null</span>)</div>
 <div class="line"><span class="lineno">   54</span>                GD.PrintErr(<span class="stringliteral">&quot;AnimatedSprite2D no encontrado en Pato. Comprueba la escena.&quot;</span>);</div>
 <div class="line"><span class="lineno">   55</span>        }</div>
-<div class="ttc" id="aclassNuevoProyectodeJuego_1_1scripts_1_1Enemigos_1_1Pato_html_ac1b937312459ec29e8d7ce85ed4294c8"><div class="ttname"><a href="classNuevoProyectodeJuego_1_1scripts_1_1Enemigos_1_1Pato.html#ac1b937312459ec29e8d7ce85ed4294c8">NuevoProyectodeJuego.scripts.Enemigos.Pato._animatedSpriteNode</a></div><div class="ttdeci">Node _animatedSpriteNode</div><div class="ttdoc">Node del sprite animado del pato (se castea a AnimatedSprite2D al usar).</div><div class="ttdef"><b>Definition</b> <a href="Pato_8cs_source.html#l00042">Pato.cs:42</a></div></div>
+<div class="ttc" id="aclassNuevoProyectodeJuego_1_1scripts_1_1Enemigos_1_1Pato_html_ac1b937312459ec29e8d7ce85ed4294c8"><div class="ttname"><a href="classNuevoProyectodeJuego_1_1scripts_1_1Enemigos_1_1Pato.html#ac1b937312459ec29e8d7ce85ed4294c8">NuevoProyectodeJuego.scripts.Enemigos.Pato._animatedSpriteNode</a></div><div class="ttdeci">Node _animatedSpriteNode</div><div class="ttdoc">Node del sprite animado del pato (se castea a AnimatedSprite2D al usar).</div><div class="ttdef"><b>Definition</b> <a href="Pato_8cs_source.html#l00040">Pato.cs:40</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -509,24 +508,24 @@ Here is the call graph for this function:</div>
 
 <p>Ejecuta la secuencia de muerte del pato. Reproduce la animación "hit", espera a que termine y luego elimina el pato de la escena. </p>
 
-<p class="definition">Definition at line <a class="el" href="Pato_8cs_source.html#l00171">171</a> of file <a class="el" href="Pato_8cs_source.html">Pato.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  172</span>        {</div>
-<div class="line"><span class="lineno">  173</span>            <span class="keywordflow">try</span></div>
-<div class="line"><span class="lineno">  174</span>            {</div>
-<div class="line"><span class="lineno">  175</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="classNuevoProyectodeJuego_1_1scripts_1_1Enemigos_1_1Pato.html#ac1b937312459ec29e8d7ce85ed4294c8">_animatedSpriteNode</a> is AnimatedSprite2D aspr)</div>
-<div class="line"><span class="lineno">  176</span>                {</div>
-<div class="line"><span class="lineno">  177</span>                    aspr.Play(<span class="stringliteral">&quot;hit&quot;</span>);</div>
-<div class="line"><span class="lineno">  178</span>                    GD.Print(<span class="stringliteral">&quot;Duck is dying.&quot;</span>);</div>
-<div class="line"><span class="lineno">  179</span>                    await ToSignal(aspr, <span class="stringliteral">&quot;animation_finished&quot;</span>);</div>
-<div class="line"><span class="lineno">  180</span>                }</div>
-<div class="line"><span class="lineno">  181</span>                CallDeferred(<span class="stringliteral">&quot;queue_free&quot;</span>);</div>
-<div class="line"><span class="lineno">  182</span>            }</div>
-<div class="line"><span class="lineno">  183</span>            <span class="keywordflow">catch</span> (Exception ex)</div>
-<div class="line"><span class="lineno">  184</span>            {</div>
-<div class="line"><span class="lineno">  185</span>                GD.PrintErr(<span class="stringliteral">&quot;Error en DieAsync: &quot;</span>, ex);</div>
-<div class="line"><span class="lineno">  186</span>                CallDeferred(<span class="stringliteral">&quot;queue_free&quot;</span>);</div>
-<div class="line"><span class="lineno">  187</span>            }</div>
-<div class="line"><span class="lineno">  188</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="Pato_8cs_source.html#l00170">170</a> of file <a class="el" href="Pato_8cs_source.html">Pato.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  171</span>        {</div>
+<div class="line"><span class="lineno">  172</span>            <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">  173</span>            {</div>
+<div class="line"><span class="lineno">  174</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="classNuevoProyectodeJuego_1_1scripts_1_1Enemigos_1_1Pato.html#ac1b937312459ec29e8d7ce85ed4294c8">_animatedSpriteNode</a> is AnimatedSprite2D aspr)</div>
+<div class="line"><span class="lineno">  175</span>                {</div>
+<div class="line"><span class="lineno">  176</span>                    aspr.Play(<span class="stringliteral">&quot;hit&quot;</span>);</div>
+<div class="line"><span class="lineno">  177</span>                    GD.Print(<span class="stringliteral">&quot;Duck is dying.&quot;</span>);</div>
+<div class="line"><span class="lineno">  178</span>                    await ToSignal(aspr, <span class="stringliteral">&quot;animation_finished&quot;</span>);</div>
+<div class="line"><span class="lineno">  179</span>                }</div>
+<div class="line"><span class="lineno">  180</span>                CallDeferred(<span class="stringliteral">&quot;queue_free&quot;</span>);</div>
+<div class="line"><span class="lineno">  181</span>            }</div>
+<div class="line"><span class="lineno">  182</span>            <span class="keywordflow">catch</span> (Exception ex)</div>
+<div class="line"><span class="lineno">  183</span>            {</div>
+<div class="line"><span class="lineno">  184</span>                GD.PrintErr(<span class="stringliteral">&quot;Error en DieAsync: &quot;</span>, ex);</div>
+<div class="line"><span class="lineno">  185</span>                CallDeferred(<span class="stringliteral">&quot;queue_free&quot;</span>);</div>
+<div class="line"><span class="lineno">  186</span>            }</div>
+<div class="line"><span class="lineno">  187</span>        }</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -560,15 +559,15 @@ Here is the caller graph for this function:</div>
 
 <p>Manejador llamado cuando el jugador emite la señal de salto. Hace que el pato salte si está dentro del área y puede hacerlo. </p>
 
-<p class="definition">Definition at line <a class="el" href="Pato_8cs_source.html#l00127">127</a> of file <a class="el" href="Pato_8cs_source.html">Pato.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  128</span>        {</div>
-<div class="line"><span class="lineno">  129</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="classNuevoProyectodeJuego_1_1scripts_1_1Enemigos_1_1Pato.html#aaf81e33c04df49aa5eba7f0350f1dfe1">_isInside</a> &amp;&amp; <a class="code hl_variable" href="classNuevoProyectodeJuego_1_1scripts_1_1Enemigos_1_1Pato.html#a4096b18ae2bb70fdc5da8a23bfddb066">_canJump</a> &amp;&amp; !<a class="code hl_property" href="classNuevoProyectodeJuego_1_1scripts_1_1Enemigos_1_1Pato.html#aafeb1ad01c1b63b500bc66a72008cd00">IsDying</a>)</div>
-<div class="line"><span class="lineno">  130</span>            {</div>
-<div class="line"><span class="lineno">  131</span>                <a class="code hl_function" href="classNuevoProyectodeJuego_1_1scripts_1_1Enemigos_1_1Pato.html#a0163740c5daa3ab26d6a33d60a610676">SetAnimation</a>(<span class="stringliteral">&quot;jump&quot;</span>);</div>
-<div class="line"><span class="lineno">  132</span>                LinearVelocity = <span class="keyword">new</span> Vector2(LinearVelocity.X, <a class="code hl_variable" href="classNuevoProyectodeJuego_1_1scripts_1_1Enemigos_1_1Pato.html#af33dca6c60f66a75eda1abcfe31e9c2b">JumpVelocity</a>);</div>
-<div class="line"><span class="lineno">  133</span>                <a class="code hl_variable" href="classNuevoProyectodeJuego_1_1scripts_1_1Enemigos_1_1Pato.html#a4096b18ae2bb70fdc5da8a23bfddb066">_canJump</a> = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  134</span>            }</div>
-<div class="line"><span class="lineno">  135</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="Pato_8cs_source.html#l00126">126</a> of file <a class="el" href="Pato_8cs_source.html">Pato.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  127</span>        {</div>
+<div class="line"><span class="lineno">  128</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="classNuevoProyectodeJuego_1_1scripts_1_1Enemigos_1_1Pato.html#aaf81e33c04df49aa5eba7f0350f1dfe1">_isInside</a> &amp;&amp; <a class="code hl_variable" href="classNuevoProyectodeJuego_1_1scripts_1_1Enemigos_1_1Pato.html#a4096b18ae2bb70fdc5da8a23bfddb066">_canJump</a> &amp;&amp; !<a class="code hl_property" href="classNuevoProyectodeJuego_1_1scripts_1_1Enemigos_1_1Pato.html#aafeb1ad01c1b63b500bc66a72008cd00">IsDying</a>)</div>
+<div class="line"><span class="lineno">  129</span>            {</div>
+<div class="line"><span class="lineno">  130</span>                <a class="code hl_function" href="classNuevoProyectodeJuego_1_1scripts_1_1Enemigos_1_1Pato.html#a0163740c5daa3ab26d6a33d60a610676">SetAnimation</a>(<span class="stringliteral">&quot;jump&quot;</span>);</div>
+<div class="line"><span class="lineno">  131</span>                LinearVelocity = <span class="keyword">new</span> Vector2(LinearVelocity.X, <a class="code hl_variable" href="classNuevoProyectodeJuego_1_1scripts_1_1Enemigos_1_1Pato.html#af33dca6c60f66a75eda1abcfe31e9c2b">JumpVelocity</a>);</div>
+<div class="line"><span class="lineno">  132</span>                <a class="code hl_variable" href="classNuevoProyectodeJuego_1_1scripts_1_1Enemigos_1_1Pato.html#a4096b18ae2bb70fdc5da8a23bfddb066">_canJump</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  133</span>            }</div>
+<div class="line"><span class="lineno">  134</span>        }</div>
 <div class="ttc" id="aclassNuevoProyectodeJuego_1_1scripts_1_1Enemigos_1_1Pato_html_af33dca6c60f66a75eda1abcfe31e9c2b"><div class="ttname"><a href="classNuevoProyectodeJuego_1_1scripts_1_1Enemigos_1_1Pato.html#af33dca6c60f66a75eda1abcfe31e9c2b">NuevoProyectodeJuego.scripts.Enemigos.Pato.JumpVelocity</a></div><div class="ttdeci">const float JumpVelocity</div><div class="ttdoc">Velocidad de salto del pato (valor negativo para ir hacia arriba).</div><div class="ttdef"><b>Definition</b> <a href="Pato_8cs_source.html#l00015">Pato.cs:15</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -615,11 +614,11 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="Pato_8cs_source.html#l00161">161</a> of file <a class="el" href="Pato_8cs_source.html">Pato.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  162</span>        {</div>
-<div class="line"><span class="lineno">  163</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="classNuevoProyectodeJuego_1_1scripts_1_1Enemigos_1_1Pato.html#ac1b937312459ec29e8d7ce85ed4294c8">_animatedSpriteNode</a> is AnimatedSprite2D aspr)</div>
-<div class="line"><span class="lineno">  164</span>                aspr.Play(animationName);</div>
-<div class="line"><span class="lineno">  165</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="Pato_8cs_source.html#l00160">160</a> of file <a class="el" href="Pato_8cs_source.html">Pato.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  161</span>        {</div>
+<div class="line"><span class="lineno">  162</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="classNuevoProyectodeJuego_1_1scripts_1_1Enemigos_1_1Pato.html#ac1b937312459ec29e8d7ce85ed4294c8">_animatedSpriteNode</a> is AnimatedSprite2D aspr)</div>
+<div class="line"><span class="lineno">  163</span>                aspr.Play(animationName);</div>
+<div class="line"><span class="lineno">  164</span>        }</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -651,7 +650,7 @@ Here is the caller graph for this function:</div>
 
 <p>Node del sprite animado del pato (se castea a AnimatedSprite2D al usar). </p>
 
-<p class="definition">Definition at line <a class="el" href="Pato_8cs_source.html#l00042">42</a> of file <a class="el" href="Pato_8cs_source.html">Pato.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Pato_8cs_source.html#l00040">40</a> of file <a class="el" href="Pato_8cs_source.html">Pato.cs</a>.</p>
 
 </div>
 </div>
@@ -677,7 +676,7 @@ Here is the caller graph for this function:</div>
 
 <p>Indica si el pato puede saltar (evita saltos múltiples en el aire). </p>
 
-<p class="definition">Definition at line <a class="el" href="Pato_8cs_source.html#l00032">32</a> of file <a class="el" href="Pato_8cs_source.html">Pato.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Pato_8cs_source.html#l00030">30</a> of file <a class="el" href="Pato_8cs_source.html">Pato.cs</a>.</p>
 
 </div>
 </div>
@@ -729,7 +728,7 @@ Here is the caller graph for this function:</div>
 
 <p>Referencia al jugador cuando está en el área de detección (Node guardado y casteado cuando hace falta). </p>
 
-<p class="definition">Definition at line <a class="el" href="Pato_8cs_source.html#l00037">37</a> of file <a class="el" href="Pato_8cs_source.html">Pato.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Pato_8cs_source.html#l00035">35</a> of file <a class="el" href="Pato_8cs_source.html">Pato.cs</a>.</p>
 
 </div>
 </div>

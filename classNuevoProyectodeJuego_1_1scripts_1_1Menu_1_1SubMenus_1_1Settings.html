@@ -203,13 +203,13 @@ Private Member Functions</h2></td></tr>
 
 <p>Cambia entre modo ventana y pantalla completa. </p>
 
-<p class="definition">Definition at line <a class="el" href="Settings_8cs_source.html#l00068">68</a> of file <a class="el" href="Settings_8cs_source.html">Settings.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   69</span>        {</div>
-<div class="line"><span class="lineno">   70</span>            <span class="keywordflow">if</span> (pressed)</div>
-<div class="line"><span class="lineno">   71</span>                GetWindow().SetMode(Window.ModeEnum.Fullscreen);</div>
-<div class="line"><span class="lineno">   72</span>            <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">   73</span>                GetWindow().SetMode(Window.ModeEnum.Windowed);</div>
-<div class="line"><span class="lineno">   74</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="Settings_8cs_source.html#l00065">65</a> of file <a class="el" href="Settings_8cs_source.html">Settings.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   66</span>        {</div>
+<div class="line"><span class="lineno">   67</span>            <span class="keywordflow">if</span> (pressed)</div>
+<div class="line"><span class="lineno">   68</span>                GetWindow().SetMode(Window.ModeEnum.Fullscreen);</div>
+<div class="line"><span class="lineno">   69</span>            <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   70</span>                GetWindow().SetMode(Window.ModeEnum.Windowed);</div>
+<div class="line"><span class="lineno">   71</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -253,16 +253,14 @@ Private Member Functions</h2></td></tr>
 <div class="line"><span class="lineno">   50</span>                <span class="keywordflow">default</span>: size = DisplayServer.WindowGetSize(); <span class="keywordflow">break</span>;</div>
 <div class="line"><span class="lineno">   51</span>            }</div>
 <div class="line"><span class="lineno">   52</span> </div>
-<div class="line"><span class="lineno">   53</span>            <span class="comment">// Aplica el nuevo tamaño</span></div>
-<div class="line"><span class="lineno">   54</span>            DisplayServer.WindowSetSize(size);</div>
-<div class="line"><span class="lineno">   55</span> </div>
-<div class="line"><span class="lineno">   56</span>            <span class="comment">// Centrar sólo si no estamos ejecutando embebido en el editor (el editor gestiona sus propios paneles)</span></div>
-<div class="line"><span class="lineno">   57</span>            <span class="keywordflow">if</span> (!Engine.IsEditorHint())</div>
-<div class="line"><span class="lineno">   58</span>            {</div>
-<div class="line"><span class="lineno">   59</span>                var screenSize = DisplayServer.ScreenGetSize(0);</div>
-<div class="line"><span class="lineno">   60</span>                DisplayServer.WindowSetPosition((screenSize - size) / 2);</div>
-<div class="line"><span class="lineno">   61</span>            }</div>
-<div class="line"><span class="lineno">   62</span>        }</div>
+<div class="line"><span class="lineno">   53</span>            DisplayServer.WindowSetSize(size);</div>
+<div class="line"><span class="lineno">   54</span> </div>
+<div class="line"><span class="lineno">   55</span>            <span class="keywordflow">if</span> (!Engine.IsEditorHint())</div>
+<div class="line"><span class="lineno">   56</span>            {</div>
+<div class="line"><span class="lineno">   57</span>                var screenSize = DisplayServer.ScreenGetSize(0);</div>
+<div class="line"><span class="lineno">   58</span>                DisplayServer.WindowSetPosition((screenSize - size) / 2);</div>
+<div class="line"><span class="lineno">   59</span>            }</div>
+<div class="line"><span class="lineno">   60</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -291,10 +289,10 @@ Private Member Functions</h2></td></tr>
 
 <p>Cierra el panel de ajustes volviendo invisble el control. </p>
 
-<p class="definition">Definition at line <a class="el" href="Settings_8cs_source.html#l00079">79</a> of file <a class="el" href="Settings_8cs_source.html">Settings.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   80</span>        {</div>
-<div class="line"><span class="lineno">   81</span>            Visible = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   82</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="Settings_8cs_source.html#l00076">76</a> of file <a class="el" href="Settings_8cs_source.html">Settings.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   77</span>        {</div>
+<div class="line"><span class="lineno">   78</span>            Visible = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   79</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -360,7 +358,7 @@ Private Member Functions</h2></td></tr>
 <div class="fragment"><div class="line"><span class="lineno">   16</span>        {</div>
 <div class="line"><span class="lineno">   17</span>            GetViewport().SizeChanged += <a class="code hl_function" href="classNuevoProyectodeJuego_1_1scripts_1_1Menu_1_1SubMenus_1_1Settings.html#a574fa1ab9c5393a079e6d22cf0a6e72d">OnResized</a>;</div>
 <div class="line"><span class="lineno">   18</span>        }</div>
-<div class="ttc" id="aclassNuevoProyectodeJuego_1_1scripts_1_1Menu_1_1SubMenus_1_1Settings_html_a574fa1ab9c5393a079e6d22cf0a6e72d"><div class="ttname"><a href="classNuevoProyectodeJuego_1_1scripts_1_1Menu_1_1SubMenus_1_1Settings.html#a574fa1ab9c5393a079e6d22cf0a6e72d">NuevoProyectodeJuego.scripts.Menu.SubMenus.Settings.OnResized</a></div><div class="ttdeci">void OnResized()</div><div class="ttdoc">Handler llamado cuando la ventana/interna cambia de tamaño.</div><div class="ttdef"><b>Definition</b> <a href="Settings_8cs_source.html#l00087">Settings.cs:87</a></div></div>
+<div class="ttc" id="aclassNuevoProyectodeJuego_1_1scripts_1_1Menu_1_1SubMenus_1_1Settings_html_a574fa1ab9c5393a079e6d22cf0a6e72d"><div class="ttname"><a href="classNuevoProyectodeJuego_1_1scripts_1_1Menu_1_1SubMenus_1_1Settings.html#a574fa1ab9c5393a079e6d22cf0a6e72d">NuevoProyectodeJuego.scripts.Menu.SubMenus.Settings.OnResized</a></div><div class="ttdeci">void OnResized()</div><div class="ttdoc">Handler llamado cuando la ventana/interna cambia de tamaño.</div><div class="ttdef"><b>Definition</b> <a href="Settings_8cs_source.html#l00084">Settings.cs:84</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -394,10 +392,10 @@ Here is the call graph for this function:</div>
 
 <p>Handler llamado cuando la ventana/interna cambia de tamaño. </p>
 
-<p class="definition">Definition at line <a class="el" href="Settings_8cs_source.html#l00087">87</a> of file <a class="el" href="Settings_8cs_source.html">Settings.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   88</span>        {</div>
-<div class="line"><span class="lineno">   89</span>            GD.Print(<span class="stringliteral">&quot;Resolución cambiada a: &quot;</span> + GetViewport().GetVisibleRect().Size);</div>
-<div class="line"><span class="lineno">   90</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="Settings_8cs_source.html#l00084">84</a> of file <a class="el" href="Settings_8cs_source.html">Settings.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   85</span>        {</div>
+<div class="line"><span class="lineno">   86</span>            GD.Print(<span class="stringliteral">&quot;Resolución cambiada a: &quot;</span> + GetViewport().GetVisibleRect().Size);</div>
+<div class="line"><span class="lineno">   87</span>        }</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">

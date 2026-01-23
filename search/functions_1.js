@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['dieasync_0',['DieAsync',['../classNuevoProyectodeJuego_1_1scripts_1_1Enemigos_1_1Pato.html#a956011d1d3109fb4dafdaa53dcc2d637',1,'NuevoProyectodeJuego::scripts::Enemigos::Pato']]]
+  ['controldrag_0',['controlDrag',['../classNuevoProyectodeJuego_1_1scripts_1_1Player_1_1Camera2d.html#aabe1331715836b64b28fcf1ca7ae0397',1,'NuevoProyectodeJuego::scripts::Player::Camera2d']]]
 ];

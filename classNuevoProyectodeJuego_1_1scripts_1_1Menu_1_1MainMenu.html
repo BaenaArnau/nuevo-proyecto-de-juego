@@ -148,6 +148,8 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a31a37243369f8b865072bcf13975ee41" id="r_a31a37243369f8b865072bcf13975ee41"><td class="memItemLeft" align="right" valign="top">Button&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNuevoProyectodeJuego_1_1scripts_1_1Menu_1_1MainMenu.html#a31a37243369f8b865072bcf13975ee41">settingsButton</a></td></tr>
 <tr class="memdesc:a31a37243369f8b865072bcf13975ee41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Botón para abrir el menú de configuración.  <br /></td></tr>
 <tr class="separator:a31a37243369f8b865072bcf13975ee41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab330aa9bf71a2527ed3dff04cc6f7c82" id="r_ab330aa9bf71a2527ed3dff04cc6f7c82"><td class="memItemLeft" align="right" valign="top">AudioStreamPlayer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNuevoProyectodeJuego_1_1scripts_1_1Menu_1_1MainMenu.html#ab330aa9bf71a2527ed3dff04cc6f7c82">audioStream</a></td></tr>
+<tr class="separator:ab330aa9bf71a2527ed3dff04cc6f7c82"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Controla el menú principal del juego (botones de iniciar, opciones y salir). Se mantienen los nombres de campos exportados para conservar las vinculaciones del inspector. </p>
@@ -179,11 +181,11 @@ Private Attributes</h2></td></tr>
 
 <p>Sale del juego. </p>
 
-<p class="definition">Definition at line <a class="el" href="MainMenu_8cs_source.html#l00069">69</a> of file <a class="el" href="MainMenu_8cs_source.html">MainMenu.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   70</span>        {</div>
-<div class="line"><span class="lineno">   71</span>            GD.Print(<span class="stringliteral">&quot;Exit button pressed. Quitting the game...&quot;</span>);</div>
-<div class="line"><span class="lineno">   72</span>            GetTree().Quit();</div>
-<div class="line"><span class="lineno">   73</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="MainMenu_8cs_source.html#l00071">71</a> of file <a class="el" href="MainMenu_8cs_source.html">MainMenu.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   72</span>        {</div>
+<div class="line"><span class="lineno">   73</span>            GD.Print(<span class="stringliteral">&quot;Exit button pressed. Quitting the game...&quot;</span>);</div>
+<div class="line"><span class="lineno">   74</span>            GetTree().Quit();</div>
+<div class="line"><span class="lineno">   75</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -212,11 +214,11 @@ Private Attributes</h2></td></tr>
 
 <p>Maneja la pulsación del botón "Iniciar" y cambia a la escena del nivel. </p>
 
-<p class="definition">Definition at line <a class="el" href="MainMenu_8cs_source.html#l00060">60</a> of file <a class="el" href="MainMenu_8cs_source.html">MainMenu.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   61</span>        {</div>
-<div class="line"><span class="lineno">   62</span>            GD.Print(<span class="stringliteral">&quot;Launch button pressed. Starting the game...&quot;</span>);</div>
-<div class="line"><span class="lineno">   63</span>            GetTree().ChangeSceneToFile(<span class="stringliteral">&quot;res://scenes/Niveles/node_2d.tscn&quot;</span>);</div>
-<div class="line"><span class="lineno">   64</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="MainMenu_8cs_source.html#l00062">62</a> of file <a class="el" href="MainMenu_8cs_source.html">MainMenu.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   63</span>        {</div>
+<div class="line"><span class="lineno">   64</span>            GD.Print(<span class="stringliteral">&quot;Launch button pressed. Starting the game...&quot;</span>);</div>
+<div class="line"><span class="lineno">   65</span>            GetTree().ChangeSceneToFile(<span class="stringliteral">&quot;res://scenes/Niveles/node_2d.tscn&quot;</span>);</div>
+<div class="line"><span class="lineno">   66</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -245,13 +247,13 @@ Private Attributes</h2></td></tr>
 
 <p>Abre el panel de opciones ocultando los botones principales. </p>
 
-<p class="definition">Definition at line <a class="el" href="MainMenu_8cs_source.html#l00078">78</a> of file <a class="el" href="MainMenu_8cs_source.html">MainMenu.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   79</span>        {</div>
-<div class="line"><span class="lineno">   80</span>            launchButton.Visible = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   81</span>            exitButton.Visible = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   82</span>            settingsButton.Visible = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   83</span>            settingsMenu.Visible = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">   84</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="MainMenu_8cs_source.html#l00080">80</a> of file <a class="el" href="MainMenu_8cs_source.html">MainMenu.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   81</span>        {</div>
+<div class="line"><span class="lineno">   82</span>            launchButton.Visible = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   83</span>            exitButton.Visible = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   84</span>            settingsButton.Visible = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   85</span>            settingsMenu.Visible = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   86</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -281,15 +283,15 @@ Private Attributes</h2></td></tr>
 
 <p>Procesamiento por frame del menú (mantiene visibilidad por simplicidad). </p>
 
-<p class="definition">Definition at line <a class="el" href="MainMenu_8cs_source.html#l00047">47</a> of file <a class="el" href="MainMenu_8cs_source.html">MainMenu.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   48</span>        {</div>
-<div class="line"><span class="lineno">   49</span>            <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classNuevoProyectodeJuego_1_1scripts_1_1Menu_1_1MainMenu.html#a46b1aaa1ef5a7b4128ae4880dd933af3">settingsMenu</a>.Visible)</div>
-<div class="line"><span class="lineno">   50</span>            {</div>
-<div class="line"><span class="lineno">   51</span>                launchButton.Visible = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">   52</span>                exitButton.Visible = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">   53</span>                settingsButton.Visible = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">   54</span>            }</div>
-<div class="line"><span class="lineno">   55</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="MainMenu_8cs_source.html#l00049">49</a> of file <a class="el" href="MainMenu_8cs_source.html">MainMenu.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   50</span>        {</div>
+<div class="line"><span class="lineno">   51</span>            <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classNuevoProyectodeJuego_1_1scripts_1_1Menu_1_1MainMenu.html#a46b1aaa1ef5a7b4128ae4880dd933af3">settingsMenu</a>.Visible)</div>
+<div class="line"><span class="lineno">   52</span>            {</div>
+<div class="line"><span class="lineno">   53</span>                launchButton.Visible = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   54</span>                exitButton.Visible = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   55</span>                settingsButton.Visible = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   56</span>            }</div>
+<div class="line"><span class="lineno">   57</span>        }</div>
 <div class="ttc" id="aclassNuevoProyectodeJuego_1_1scripts_1_1Menu_1_1MainMenu_html_a46b1aaa1ef5a7b4128ae4880dd933af3"><div class="ttname"><a href="classNuevoProyectodeJuego_1_1scripts_1_1Menu_1_1MainMenu.html#a46b1aaa1ef5a7b4128ae4880dd933af3">NuevoProyectodeJuego.scripts.Menu.MainMenu.settingsMenu</a></div><div class="ttdeci">Settings settingsMenu</div><div class="ttdoc">Menú de configuración.</div><div class="ttdef"><b>Definition</b> <a href="MainMenu_8cs_source.html#l00016">MainMenu.cs:16</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -319,17 +321,41 @@ Private Attributes</h2></td></tr>
 
 <p>Inicializa el estado del menú al entrar en la escena. </p>
 
-<p class="definition">Definition at line <a class="el" href="MainMenu_8cs_source.html#l00036">36</a> of file <a class="el" href="MainMenu_8cs_source.html">MainMenu.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   37</span>        {</div>
-<div class="line"><span class="lineno">   38</span>            settingsMenu.Visible = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   39</span>            launchButton.Visible = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">   40</span>            exitButton.Visible = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">   41</span>            settingsButton.Visible = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">   42</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="MainMenu_8cs_source.html#l00038">38</a> of file <a class="el" href="MainMenu_8cs_source.html">MainMenu.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   39</span>        {</div>
+<div class="line"><span class="lineno">   40</span>            settingsMenu.Visible = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   41</span>            launchButton.Visible = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   42</span>            exitButton.Visible = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   43</span>            settingsButton.Visible = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   44</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="ab330aa9bf71a2527ed3dff04cc6f7c82" name="ab330aa9bf71a2527ed3dff04cc6f7c82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab330aa9bf71a2527ed3dff04cc6f7c82">&#9670;&#160;</a></span>audioStream</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">AudioStreamPlayer NuevoProyectodeJuego.scripts.Menu.MainMenu.audioStream</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="MainMenu_8cs_source.html#l00033">33</a> of file <a class="el" href="MainMenu_8cs_source.html">MainMenu.cs</a>.</p>
+
+</div>
+</div>
 <a id="a0712b97a335cf9c7163c77f1d7d8f31a" name="a0712b97a335cf9c7163c77f1d7d8f31a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0712b97a335cf9c7163c77f1d7d8f31a">&#9670;&#160;</a></span>exitButton</h2>
 

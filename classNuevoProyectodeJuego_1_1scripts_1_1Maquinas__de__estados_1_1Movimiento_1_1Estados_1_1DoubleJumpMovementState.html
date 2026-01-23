@@ -358,16 +358,15 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><span class="lineno">   64</span>            {</div>
 <div class="line"><span class="lineno">   65</span>                Vector2 velocity = <a class="code hl_variable" href="classNuevoProyectodeJuego_1_1scripts_1_1Maquinas__de__estados_1_1Movimiento_1_1Estados_1_1DoubleJumpMovementState.html#a87a3818baaa84880d689633a5857efc3">_player</a>.Velocity;</div>
 <div class="line"><span class="lineno">   66</span>                velocity += <a class="code hl_variable" href="classNuevoProyectodeJuego_1_1scripts_1_1Maquinas__de__estados_1_1Movimiento_1_1Estados_1_1DoubleJumpMovementState.html#a87a3818baaa84880d689633a5857efc3">_player</a>.GetGravity() * (float)delta;</div>
-<div class="line"><span class="lineno">   67</span>                <span class="comment">// Horizontal air control tipo Hollow Knight: detenerse inmediatamente si no hay input</span></div>
-<div class="line"><span class="lineno">   68</span>                <span class="keywordtype">float</span> move = Input.GetActionStrength(<span class="stringliteral">&quot;move_right&quot;</span>) - Input.GetActionStrength(<span class="stringliteral">&quot;move_left&quot;</span>);</div>
-<div class="line"><span class="lineno">   69</span>                <span class="keywordflow">if</span> (Mathf.Abs(move) &gt; 0f)</div>
-<div class="line"><span class="lineno">   70</span>                    velocity.X = move * <a class="code hl_typedef" href="DoubleJumpMovementState_8cs.html#a964957f2c83a7b256f6437aae8812251">PlayerType</a>.Speed;</div>
-<div class="line"><span class="lineno">   71</span>                <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">   72</span>                    velocity.X = 0f;</div>
-<div class="line"><span class="lineno">   73</span>                _player.Velocity = velocity;</div>
-<div class="line"><span class="lineno">   74</span>                <a class="code hl_variable" href="classNuevoProyectodeJuego_1_1scripts_1_1Maquinas__de__estados_1_1Movimiento_1_1Estados_1_1DoubleJumpMovementState.html#a87a3818baaa84880d689633a5857efc3">_player</a>.MoveAndSlide();</div>
-<div class="line"><span class="lineno">   75</span>            }</div>
-<div class="line"><span class="lineno">   76</span>        }</div>
+<div class="line"><span class="lineno">   67</span>                <span class="keywordtype">float</span> move = Input.GetActionStrength(<span class="stringliteral">&quot;move_right&quot;</span>) - Input.GetActionStrength(<span class="stringliteral">&quot;move_left&quot;</span>);</div>
+<div class="line"><span class="lineno">   68</span>                <span class="keywordflow">if</span> (Mathf.Abs(move) &gt; 0f)</div>
+<div class="line"><span class="lineno">   69</span>                    velocity.X = move * <a class="code hl_typedef" href="DoubleJumpMovementState_8cs.html#a964957f2c83a7b256f6437aae8812251">PlayerType</a>.Speed;</div>
+<div class="line"><span class="lineno">   70</span>                <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   71</span>                    velocity.X = 0f;</div>
+<div class="line"><span class="lineno">   72</span>                _player.Velocity = velocity;</div>
+<div class="line"><span class="lineno">   73</span>                <a class="code hl_variable" href="classNuevoProyectodeJuego_1_1scripts_1_1Maquinas__de__estados_1_1Movimiento_1_1Estados_1_1DoubleJumpMovementState.html#a87a3818baaa84880d689633a5857efc3">_player</a>.MoveAndSlide();</div>
+<div class="line"><span class="lineno">   74</span>            }</div>
+<div class="line"><span class="lineno">   75</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>

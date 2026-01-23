@@ -22,7 +22,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="classNuevoProyectodeJuego_1_1scripts_1_1Maquinas__de__estados_1_1Movimiento_1_1MovementStateMachine.html#a73a9dae413f2afdd10df11df374deb06" target="_top" xlink:title=" ">
+<g id="a_Node000002"><a xlink:href="classNuevoProyectodeJuego_1_1scripts_1_1Maquinas__de__estados_1_1Movimiento_1_1MovementStateMachine.html#a73a9dae413f2afdd10df11df374deb06" target="_top" xlink:title="Procesamiento de física: delega al estado actual.">
 <polygon fill="white" stroke="#666666" points="242,-41 0,-41 0,0 242,0 242,-41"/>
 <text text-anchor="start" x="8" y="-29" font-family="Helvetica,sans-Serif" font-size="10.00">NuevoProyectodeJuego.scripts.</text>
 <text text-anchor="start" x="8" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">Maquinas_de_estados.Movimiento.Movement</text>

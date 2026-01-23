@@ -130,7 +130,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a2aa9033dfb1b178977d08e2b35e35972"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update de física durante el salto. Implementa control horizontal inmediato (stop si no hay input).  <br /></td></tr>
 <tr class="separator:a2aa9033dfb1b178977d08e2b35e35972"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6bcec9ca812de0f6d5ee769f6dbb71de" id="r_a6bcec9ca812de0f6d5ee769f6dbb71de"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNuevoProyectodeJuego_1_1scripts_1_1Maquinas__de__estados_1_1Movimiento_1_1Estados_1_1JumpingMovementState.html#a6bcec9ca812de0f6d5ee769f6dbb71de">HandleInput</a> (InputEvent ev)</td></tr>
-<tr class="memdesc:a6bcec9ca812de0f6d5ee769f6dbb71de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Procesa eventos de entrada no manejados (unhandled input).  <br /></td></tr>
+<tr class="memdesc:a6bcec9ca812de0f6d5ee769f6dbb71de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gestión de input durante el salto: permite iniciar un doble salto si está disponible.  <br /></td></tr>
 <tr class="separator:a6bcec9ca812de0f6d5ee769f6dbb71de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
@@ -259,21 +259,21 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Procesa eventos de entrada no manejados (unhandled input). </p>
+<p>Gestión de input durante el salto: permite iniciar un doble salto si está disponible. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">ev</td><td>Evento de entrada recibido.</td></tr>
+    <tr><td class="paramname">ev</td><td>Evento de input.</td></tr>
   </table>
   </dd>
 </dl>
 
 <p>Reimplemented from <a class="el" href="classNuevoProyectodeJuego_1_1scripts_1_1Maquinas__de__estados_1_1State.html#a6bf47cf972e3ae0cd084e88136bbd54d">NuevoProyectodeJuego.scripts.Maquinas_de_estados.State</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="JumpingMovementState_8cs_source.html#l00082">82</a> of file <a class="el" href="JumpingMovementState_8cs_source.html">JumpingMovementState.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   83</span>        {</div>
-<div class="line"><span class="lineno">   84</span>            <span class="keywordflow">if</span> (ev.IsActionPressed(<span class="stringliteral">&quot;jump&quot;</span>) &amp;&amp; <a class="code hl_variable" href="classNuevoProyectodeJuego_1_1scripts_1_1Maquinas__de__estados_1_1Movimiento_1_1Estados_1_1JumpingMovementState.html#af2da9eeb040954443bec19b22c2f8e06">_player</a>.DoubleJumpAvailable)</div>
-<div class="line"><span class="lineno">   85</span>                <a class="code hl_variable" href="classNuevoProyectodeJuego_1_1scripts_1_1Maquinas__de__estados_1_1State.html#a3fca53af76facf2691dbc08be9d7b390">stateMachine</a>.TransitionTo(<span class="stringliteral">&quot;DoubleJumpMovementState&quot;</span>);</div>
-<div class="line"><span class="lineno">   86</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="JumpingMovementState_8cs_source.html#l00084">84</a> of file <a class="el" href="JumpingMovementState_8cs_source.html">JumpingMovementState.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   85</span>        {</div>
+<div class="line"><span class="lineno">   86</span>            <span class="keywordflow">if</span> (ev.IsActionPressed(<span class="stringliteral">&quot;jump&quot;</span>) &amp;&amp; <a class="code hl_variable" href="classNuevoProyectodeJuego_1_1scripts_1_1Maquinas__de__estados_1_1Movimiento_1_1Estados_1_1JumpingMovementState.html#af2da9eeb040954443bec19b22c2f8e06">_player</a>.DoubleJumpAvailable)</div>
+<div class="line"><span class="lineno">   87</span>                <a class="code hl_variable" href="classNuevoProyectodeJuego_1_1scripts_1_1Maquinas__de__estados_1_1State.html#a3fca53af76facf2691dbc08be9d7b390">stateMachine</a>.TransitionTo(<span class="stringliteral">&quot;DoubleJumpMovementState&quot;</span>);</div>
+<div class="line"><span class="lineno">   88</span>        }</div>
 <div class="ttc" id="aclassNuevoProyectodeJuego_1_1scripts_1_1Maquinas__de__estados_1_1State_html_a3fca53af76facf2691dbc08be9d7b390"><div class="ttname"><a href="classNuevoProyectodeJuego_1_1scripts_1_1Maquinas__de__estados_1_1State.html#a3fca53af76facf2691dbc08be9d7b390">NuevoProyectodeJuego.scripts.Maquinas_de_estados.State.stateMachine</a></div><div class="ttdeci">MovementStateMachine stateMachine</div><div class="ttdoc">Campo protegido mantenido por compatibilidad. Los estados existentes usan stateMachine.</div><div class="ttdef"><b>Definition</b> <a href="State_8cs_source.html#l00036">State.cs:36</a></div></div>
 </div><!-- fragment -->
 </div>

@@ -1,0 +1,5 @@
+<map id="NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.Estados.FallingMovementState.TryPlayLandingSound" name="NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.Estados.FallingMovementState.TryPlayLandingSound">
+<area shape="rect" id="Node000001" title=" " alt="" coords="360,5,671,60"/>
+<area shape="rect" id="Node000002" href="$classNuevoProyectodeJuego_1_1scripts_1_1Maquinas__de__estados_1_1Movimiento_1_1Estados_1_1FallingMovementState.html#a2bad5242e444baf42cfdcb56a4114e7a" title="Update de física en Falling: aplica gravedad y control horizontal inmediato en aire." alt="" coords="5,5,312,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="346,35,312,35,312,30,346,30"/>
+</map>

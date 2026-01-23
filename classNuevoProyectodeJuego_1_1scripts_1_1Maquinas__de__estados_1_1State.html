@@ -220,7 +220,7 @@ Here is the caller graph for this function:</div>
 
 <p>Se invoca cuando el estado termina (se sale de él). </p>
 
-<p>Reimplemented in <a class="el" href="classNuevoProyectodeJuego_1_1scripts_1_1Maquinas__de__estados_1_1Movimiento_1_1Estados_1_1DoubleJumpMovementState.html#a0738993ae2e72f6ce1f527c0a1c93f0e">NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.Estados.DoubleJumpMovementState</a>, and <a class="el" href="classNuevoProyectodeJuego_1_1scripts_1_1Maquinas__de__estados_1_1Movimiento_1_1Estados_1_1JumpingMovementState.html#ad8b0bdcf4e45a84f7286f3920d1dc4e4">NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.Estados.JumpingMovementState</a>.</p>
+<p>Reimplemented in <a class="el" href="classNuevoProyectodeJuego_1_1scripts_1_1Maquinas__de__estados_1_1Movimiento_1_1Estados_1_1DoubleJumpMovementState.html#a0738993ae2e72f6ce1f527c0a1c93f0e">NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.Estados.DoubleJumpMovementState</a>, <a class="el" href="classNuevoProyectodeJuego_1_1scripts_1_1Maquinas__de__estados_1_1Movimiento_1_1Estados_1_1FallingMovementState.html#a184a35d3726526d960bdc08381544802">NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.Estados.FallingMovementState</a>, and <a class="el" href="classNuevoProyectodeJuego_1_1scripts_1_1Maquinas__de__estados_1_1Movimiento_1_1Estados_1_1JumpingMovementState.html#ad8b0bdcf4e45a84f7286f3920d1dc4e4">NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.Estados.JumpingMovementState</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="State_8cs_source.html#l00042">42</a> of file <a class="el" href="State_8cs_source.html">State.cs</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   42</span>{ }</div>
@@ -472,13 +472,12 @@ Here is the caller graph for this function:</div>
 
 <p>Propiedad pública para acceder a la máquina de estados. El setter es interno. </p>
 
-<p class="definition">Definition at line <a class="el" href="State_8cs_source.html#l00022">22</a> of file <a class="el" href="State_8cs_source.html">State.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   23</span>        {</div>
-<div class="line"><span class="lineno">   24</span>            <span class="keyword">get</span> =&gt; <a class="code hl_variable" href="classNuevoProyectodeJuego_1_1scripts_1_1Maquinas__de__estados_1_1State.html#a0d7179eda94ac2e5bd2b1de3873d8235">_stateMachine</a>;</div>
-<div class="line"><span class="lineno">   25</span>            <span class="keyword">internal</span> <span class="keyword">set</span></div>
-<div class="line"><span class="lineno">   26</span>            {</div>
-<div class="line"><span class="lineno">   27</span>                <a class="code hl_variable" href="classNuevoProyectodeJuego_1_1scripts_1_1Maquinas__de__estados_1_1State.html#a0d7179eda94ac2e5bd2b1de3873d8235">_stateMachine</a> = value;</div>
-<div class="line"><span class="lineno">   28</span>                <span class="comment">// Mantener el campo protegido `stateMachine` para compatibilidad con estados existentes.</span></div>
+<p class="definition">Definition at line <a class="el" href="State_8cs_source.html#l00023">23</a> of file <a class="el" href="State_8cs_source.html">State.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   24</span>        {</div>
+<div class="line"><span class="lineno">   25</span>            <span class="keyword">get</span> =&gt; <a class="code hl_variable" href="classNuevoProyectodeJuego_1_1scripts_1_1Maquinas__de__estados_1_1State.html#a0d7179eda94ac2e5bd2b1de3873d8235">_stateMachine</a>;</div>
+<div class="line"><span class="lineno">   26</span>            <span class="keyword">internal</span> <span class="keyword">set</span></div>
+<div class="line"><span class="lineno">   27</span>            {</div>
+<div class="line"><span class="lineno">   28</span>                <a class="code hl_variable" href="classNuevoProyectodeJuego_1_1scripts_1_1Maquinas__de__estados_1_1State.html#a0d7179eda94ac2e5bd2b1de3873d8235">_stateMachine</a> = value;</div>
 <div class="line"><span class="lineno">   29</span>                <a class="code hl_variable" href="classNuevoProyectodeJuego_1_1scripts_1_1Maquinas__de__estados_1_1State.html#a3fca53af76facf2691dbc08be9d7b390">stateMachine</a> = value;</div>
 <div class="line"><span class="lineno">   30</span>            }</div>
 <div class="line"><span class="lineno">   31</span>        }</div>
