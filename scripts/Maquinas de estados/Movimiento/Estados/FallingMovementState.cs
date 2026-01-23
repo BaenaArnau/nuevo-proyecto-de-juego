@@ -9,10 +9,14 @@ namespace NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.Estados
 	/// </summary>
 	public partial class FallingMovementState : State
 	{
+		private const float LandingVelocityThreshold = 250f;
+
 		/// <summary>
 		/// Referencia al jugador.
 		/// </summary>
 		private PlayerType _player;
+		private bool _landingSoundPlayed;
+		private float _lastVerticalVelocity;
 
 		/// <summary>
 		/// Método llamado al iniciar el nodo.
@@ -27,7 +31,15 @@ namespace NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.Estados
 		/// <summary>Al entrar en Falling: reproducir animación de caída.</summary>
 		public override void Enter()
 		{
+			_landingSoundPlayed = false;
+			_lastVerticalVelocity = 0f;
 			_player.SetAnimation("fall");
+		}
+
+		public override void Exit()
+		{
+			_landingSoundPlayed = false;
+			_lastVerticalVelocity = 0f;
 		}
 
 		/// <summary>Actualización por frame en Falling: transiciones al aterrizar o doble salto.</summary>
@@ -51,12 +63,17 @@ namespace NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.Estados
 					velocity.X = move * PlayerType.Speed;
 				else
 					velocity.X = 0f;
+
+				_lastVerticalVelocity = velocity.Y;
+				_landingSoundPlayed = false;
+
 				_player.Velocity = velocity;
 				_player.MoveAndSlide();
 			}
 
 			if (_player.IsOnFloor())
 			{
+				TryPlayLandingSound();
 				if (Mathf.Abs(_player.Velocity.X) > 0.1f)
 					stateMachine.TransitionTo("RunningMovementState");
 				else
@@ -75,6 +92,17 @@ namespace NuevoProyectodeJuego.scripts.Maquinas_de_estados.Movimiento.Estados
 			}
 			if (ev.IsActionPressed("jump") && _player.DoubleJumpAvailable)
 				stateMachine.TransitionTo("DoubleJumpMovementState");
+		}
+
+		private void TryPlayLandingSound()
+		{
+			if (_landingSoundPlayed)
+				return;
+
+			if (_lastVerticalVelocity > LandingVelocityThreshold)
+				_player.PlaySound("fall_sound");
+
+			_landingSoundPlayed = true;
 		}
 	}
 }

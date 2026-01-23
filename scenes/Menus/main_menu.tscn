@@ -1,16 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://dslk3g1nkx32c"]
+[gd_scene load_steps=6 format=3 uid="uid://dslk3g1nkx32c"]
 
 [ext_resource type="Script" uid="uid://dp4nxduar80nn" path="res://scripts/Menu/MainMenu.cs" id="1_bqqt6"]
 [ext_resource type="Texture2D" uid="uid://cmmy0oqjwx21" path="res://assets/Background/Brown.png" id="1_ekxnf"]
 [ext_resource type="Texture2D" uid="uid://ibhdxwx1hljb" path="res://assets/MainMenu/cooltext497465168548738.png" id="2_bqqt6"]
 [ext_resource type="PackedScene" uid="uid://beoixew03so6a" path="res://scenes/Menus/SubMenus/settings.tscn" id="4_3b8pq"]
+[ext_resource type="AudioStream" uid="uid://cjxqy23lffhvy" path="res://sound/music/tela-inicio-402266.mp3" id="5_xfgxo"]
 
-[node name="MainMenu" type="Node" node_paths=PackedStringArray("settingsMenu", "launchButton", "exitButton", "settingsButton")]
+[node name="MainMenu" type="Node" node_paths=PackedStringArray("settingsMenu", "launchButton", "exitButton", "settingsButton", "audioStream")]
 script = ExtResource("1_bqqt6")
 settingsMenu = NodePath("Settings2")
 launchButton = NodePath("Launch")
 exitButton = NodePath("Exit")
 settingsButton = NodePath("Settings")
+audioStream = NodePath("AudioStreamPlayer")
 
 [node name="TextureRect2" type="TextureRect" parent="."]
 texture_filter = 1
@@ -91,6 +93,12 @@ offset_left = -464.464
 offset_top = -14.040009
 offset_right = 527.0
 offset_bottom = 82.360016
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_xfgxo")
+autoplay = true
+bus = &"Musica"
+parameters/looping = true
 
 [connection signal="pressed" from="Launch" to="." method="_on_launch_pressed"]
 [connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]

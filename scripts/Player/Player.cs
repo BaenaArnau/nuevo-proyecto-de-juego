@@ -50,11 +50,23 @@ namespace NuevoProyectodeJuego.scripts.Player
 			}
 		}
 
+		public AudioStreamPlayer2D audioStreamPlayer2D
+		{
+			get
+			{
+				if (_animatedSpriteNode is AudioStreamPlayer2D aspr)
+					return aspr;
+				return GetNode<AudioStreamPlayer2D>("AnimatedSprite2D");
+			}
+		}
+
 		/// <summary>Bool para indicar que el jugador está en proceso de muerte (solo lectura externa).</summary>
 		public bool IsDying { get; private set; }
 
 		/// <summary> Sprite animado del jugador para controlar las animaciones (privado).</summary>
 		private Node _animatedSpriteNode;
+
+		private Node _audioStreamPlayer2D;
 
 		/// <summary>
 		/// Método llamado al iniciar el nodo.
@@ -62,6 +74,7 @@ namespace NuevoProyectodeJuego.scripts.Player
 		public override void _Ready()
 		{
 			_animatedSpriteNode = GetNodeOrNull("AnimatedSprite2D");
+			_audioStreamPlayer2D = GetNodeOrNull("AudioStreamPlayer2D");
 		}
 
 		/// <summary>Actualización de física del jugador. Mantener ligera para lógica central.</summary>
@@ -102,6 +115,16 @@ namespace NuevoProyectodeJuego.scripts.Player
 			if (_animatedSpriteNode is AnimatedSprite2D aspr)
 				aspr.Play(animationName);
 
+		}
+
+		public void PlaySound(string soundName)
+		{
+			if (_audioStreamPlayer2D is AudioStreamPlayer2D aspr)
+			{
+				aspr.Stream = GD.Load<AudioStream>($"res://sound/efects/Frog/{soundName}.mp3");
+				aspr.PitchScale = (float)GD.RandRange(0.8f, 1.2f);
+				aspr.Play();
+			}
 		}
 
 		/// <summary>

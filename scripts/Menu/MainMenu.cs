@@ -14,21 +14,23 @@ namespace NuevoProyectodeJuego.scripts.Menu
 		/// Menú de configuración.
 		/// </summary>
 		[Export] private Settings settingsMenu;
-    
+	
 		/// <summary>
 		/// Botón para iniciar el juego.
 		/// </summary>
 		[Export] private Button launchButton;
-    
+	
 		/// <summary>
 		/// Botón para salir del juego.
 		/// </summary>
 		[Export] private Button exitButton;
-    
+	
 		/// <summary>
 		/// Botón para abrir el menú de configuración.
 		/// </summary>
 		[Export] private Button settingsButton;
+
+		[Export] private AudioStreamPlayer audioStream;
 
 		/// <summary>
 		/// Inicializa el estado del menú al entrar en la escena.

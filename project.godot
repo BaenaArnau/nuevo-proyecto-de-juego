@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Nuevo Proyecto de Juego"
+config/name="Nuevo Proyecto de Juego (4.5)"
 run/main_scene="uid://dslk3g1nkx32c"
 config/features=PackedStringArray("4.5", "C#", "Forward Plus")
 
